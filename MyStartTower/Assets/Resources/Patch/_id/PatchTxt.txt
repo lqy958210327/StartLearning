@@ -1,0 +1,47 @@
+language	Bahasa Indonesia
+-- 此行为注释
+tipTitle	Tip
+newVersionTitle	Tip
+checkingUpdate	Memeriksa versi
+noNetwork	Game tidak dapat terhubung ke jaringan. Silakan periksa konfigurasi jaringan Anda.
+noWifi	Terdeteksi versi baru, saat ini tidak menggunakan WiFi, lanjutkan?
+inWifi	Tersambung ke jaringan WiFi, silakan unduh.
+updating	Update informasi sumber daya...
+checkingDownload	Memeriksa sumber daya...
+downloading	Mengunduh halaman patch
+downloadcanvas	Memuat turun antaramuka patch
+loadingAsset	Sedang memuat sumber daya, mohon tunggu
+oldEngine	Terdeteksi versi baru, silakan update melalui App Store
+oldEngineDownload	Terdeteksi versi baru, segera unduh?
+resDownload	Terdeteksi versi sumber daya baru, silakan restart update game
+oldEngineTitle	Update
+retryPatch	Sinyal jaringan saat ini tidak bagus, coba kembali?
+retryPatchTitle	Coba Lagi
+retryDownload	Koneksi jaringan buruk, coba lagi?
+alphaVersion	Server belum tersedia, mohon menunggu
+newVersionformat	Update terdeteksi ({0}M), yakin ingin mulai mengunduh?
+newVersionNotice	(Disarankan untuk mengunduh menggunakan WiFi.)
+appFatalError	Paket error, silakan unduh game kembali.
+patchErrorRetry	Update error, coba kembali, kode error: 
+patchErrorFatal	Update error, disarankan untuk memulai kembali, kode error: 
+fileCorrupt	File rusak, hapus konten yang telah diunduh?
+resSize	Ukuran Sumber Daya: 
+subpkgSpinner	Mengunduh\n
+patchVersion	Mengambil informasi versi...
+patchInfo	Mengambil informasi patch...
+patchVersionRetry	Gagal mengambil informasi versi, mencoba lagi...
+patchInfoRetry	Gagal mengambil informasi patch, mencoba lagi...
+fileDamagedTitle	File Rusak
+fileDamaged	Terdeteksi file rusak, dapat menyebabkan kesalahan game, disarankan untuk restart.
+btnConfirm	Konfirmasi
+btnCancel	Batal
+repaireWaiting	Mencoba memperbaiki file, mohon tunggu.
+scanSubpkg	Memindai sumber daya game: 
+scanPatch	Memindai sumber daya patch: 
+startSubpkg	Inisialisasi komponen subkontrak...
+waiting	Sedang proses, mohon tunggu.
+permissionTip	Permintaan Izin
+updateCostTip	Catatan: Jika tidak mengunduh menggunakan WiFi, biaya data tambahan mungkin berlaku
+android.permission.READ_PHONE_STATE	Izin Status Telepon | Sistem Akun menghasilkan akun dan mencatat informasi perangkat
+android.permission.CAMERA	Izin Kamera | Menggunakan kamera untuk memotret dalam fungsi AR
+android.permission.WRITE_EXTERNAL_STORAGE	Izin Penyimpanan | Menyimpan screenshot ke Album Foto

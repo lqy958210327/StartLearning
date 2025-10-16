@@ -1,0 +1,584 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267442296, guid: 94798f5f495e17d4985783dac1f87bf3, type: 3}
+  m_Name: HintConfig
+  m_EditorClassIdentifier: 
+  LayoutIdList:
+  - Weight: 1
+    Key: New
+    Desc: "\u65B0\u6807,\u65B0\u7CFB\u7EDF\u3001\u65B0\u6D3B\u52A8\u3001\u65B0\u8D44\u6E90\u5F00\u653E"
+  - Weight: 2
+    Key: Reward
+    Desc: "\u5956\u52B1,\u6D3B\u52A8\u3001\u4EFB\u52A1\u5927\u8282\u70B9\u5956\u52B1\u53EF\u9886\u65F6"
+  - Weight: 3
+    Key: Exclamation
+    Desc: "\u53F9\u53F7,\u517B\u6210\u7CFB\u7EDF\u91CD\u8981\u4E14\u4E0D\u9891\u7E41\u7684\u63D0\u5347\uFF0C\u4F8B\u5982\uFF1A\u89D2\u8272\u7A81\u7834\u3001\u5347\u661F
+      \u73A9\u6CD5\u91CD\u8981\u63D0\u793A"
+  - Weight: 4
+    Key: Up
+    Desc: "\u5347\u7EA7,\u517B\u6210\u7CFB\u7EDF\u57FA\u7840\u5347\u7EA7"
+  - Weight: 5
+    Key: Point
+    Desc: "\u5176\u5B83\u6B21\u91CD\u8981\u7684\u63D0\u793A"
+  FuncIdList:
+  - Key: GuildSign
+    Desc: "\u516C\u4F1A\u53EF\u7B7E\u5230\u65F6"
+  - Key: GuildNewAnnounce
+    Desc: "\u5DE5\u4F1A\u6709\u65B0\u516C\u544A"
+  - Key: GuildBoxCanReward
+    Desc: "\u5DE5\u4F1A\u5B9D\u7BB1\u6709\u4EFB\u610F\u53EF\u9886\u53D6\u7684\u5956\u52B1"
+  - Key: GuildTaskCanReward
+    Desc: "\u5DE5\u4F1A\u4EFB\u52A1\u6709\u4EFB\u610F\u53EF\u9886\u53D6\u7684\u5956\u52B1"
+  - Key: GuildShopCanBuy
+    Desc: "\u603B\u780D\u4EF7\u6B21\u6570\u8FBE\u5230\u914D\u7F6E\u7684\u6B21\u6570\u540E"
+  - Key: GuildShopCanPrice
+    Desc: "\u6709\u5269\u4F59\u780D\u4EF7\u6B21\u6570\u65F6"
+  - Key: GuildBossFreeCount
+    Desc: "\u516C\u4F1Aboss\u6709\u5269\u4F59\u6311\u6218\u6B21\u6570\u65F6"
+  - Key: GuildBossPassReward
+    Desc: "\u516C\u4F1Aboss\u901A\u5173\u5956\u52B1\u672A\u9886\u53D6\u65F6"
+  - Key: SelectHeroLvUp
+    Desc: "\u9009\u4E2D\u7684\u82F1\u96C4\u53EF\u5347\u7EA7\u4E86"
+  - Key: SelectHeroStarUp
+    Desc: "\u9009\u4E2D\u7684\u82F1\u96C4\u53EF\u5347\u661F\u4E86"
+  - Key: AnyHeroLvUp
+    Desc: "\u4EFB\u610F\u82F1\u96C4\u53EF\u5347\u7EA7"
+  - Key: AnyHeroStarUp
+    Desc: "\u4EFB\u610F\u82F1\u96C4\u53EF\u5347\u661F"
+  - Key: PlayerGetNewHead
+    Desc: "\u65B0\u83B7\u5F97\u4E86\u4E00\u4E2A\u65B0\u7684\u5934\u50CF\u8D44\u6E90"
+  - Key: PlayerGetNewFream
+    Desc: "\u65B0\u83B7\u5F97\u4E86\u4E00\u4E2A\u65B0\u7684\u5934\u50CF\u6846\u8D44\u6E90"
+  - Key: PlayerGetNewTitle
+    Desc: "\u65B0\u83B7\u5F97\u4E86\u4E00\u4E2A\u65B0\u7684\u79F0\u53F7\u8D44\u6E90"
+  - Key: PlayerGetNewMedal
+    Desc: "\u65B0\u83B7\u5F97\u4E86\u4E00\u4E2A\u65B0\u7684\u52CB\u7AE0\u8D44\u6E90"
+  - Key: PlayerGetNewNameCard
+    Desc: "\u65B0\u83B7\u5F97\u4E86\u4E00\u4E2A\u65B0\u7684\u540D\u7247\u8D44\u6E90"
+  - Key: EveryDayTask
+    Desc: "\u65E5\u5E38\u4EFB\u52A1-\u6BCF\u65E5\u4EFB\u52A1\u6709\u53EF\u9886\u53D6\u7684\u5956\u52B1"
+  - Key: WeeklyTask
+    Desc: "\u65E5\u5E38\u4EFB\u52A1-\u6BCF\u5468\u4EFB\u52A1\u6709\u53EF\u9886\u53D6\u7684\u5956\u52B1"
+  - Key: RimuruSkillUnlock
+    Desc: "\u5229\u59C6\u9C81\u6280\u80FD\u89E3\u9501"
+  - Key: Dialog
+    Desc: "\u56DE\u5FC6\u529F\u80FD"
+  - Key: DialogNode
+    Desc: "\u56DE\u5FC6\u7AE0\u8282\u7EA2\u70B9"
+  - Key: DialogReward
+    Desc: "\u56DE\u5FC6\u5956\u52B1\u7EA2\u70B9"
+  - Key: Recruit
+    Desc: "\u53EC\u5524\u7EA2\u70B9"
+  - Key: RecruitOrdinaryCallReward
+    Desc: "\u4F20\u8BF4\u53EC\u5524\u6210\u5C31\u7EA2\u70B9"
+  - Key: RecruitOrdinaryFreeDraw
+    Desc: "\u4F20\u8BF4\u53EC\u5524\u514D\u8D39\u7EA2\u70B9"
+  - Key: RecruitAdvancedCallReward
+    Desc: "\u7EDD\u4E16\u53EC\u5524\u6210\u5C31\u7EA2\u70B9"
+  - Key: ArenaDefenseDeployment1v1
+    Desc: "1v1\u7ADE\u6280\u9632\u5B88\u9635\u5BB9"
+  - Key: ArenaRankRaward1v1
+    Desc: "1v1 \u7ADE\u6280\u573A\u6BB5\u4F4D\u5956\u52B1"
+  - Key: ArenaWeekRaward1v1
+    Desc: "1v1\u7ADE\u6280\u573A\u5468\u5956\u52B1"
+  - Key: ArenaDefenseDeployment3v3
+    Desc: "3v3\u7ADE\u6280\u9632\u5B88\u9635\u5BB9"
+  - Key: ArenaRankRaward3v3
+    Desc: "3v3 \u7ADE\u6280\u573A\u6BB5\u4F4D\u5956\u52B1"
+  - Key: ArenaWeekRaward3v3
+    Desc: "3v3\u7ADE\u6280\u573A\u5468\u5956\u52B1"
+  - Key: ArenaBoxRaward3v3
+    Desc: "3v3\u7ADE\u6280\u573A\u5B9D\u7BB1\u5956\u52B1"
+  - Key: BossRefresh
+    Desc: "\u9B54\u7269\u5F81\u8BA8boss\u5237\u7EBF"
+  - Key: BossDamageRaward
+    Desc: "\u9B54\u7269\u5F81\u8BA8boss\u4F24\u5BB3\u5956\u52B1"
+  - Key: BossChallengeNum
+    Desc: "\u9B54\u7269\u5F81\u8BA8boss\u6311\u6218\u6B21\u6570"
+  - Key: WarpSpace_ChallengeNum_1
+    Desc: "\u8D44\u6E90\u6D1E\u7A9F\u7ECF\u9A8C\u526F\u672C\u6311\u6218\u6B21\u6570"
+  - Key: WarpSpace_ChallengeNum_2
+    Desc: "\u8D44\u6E90\u6D1E\u7A9F\u7A81\u7834\u526F\u672C\u6311\u6218\u6B21\u6570"
+  - Key: WarpSpace_ChallengeNum_3
+    Desc: "\u8D44\u6E90\u6D1E\u7A9F\u91D1\u5E01\u526F\u672C\u6311\u6218\u6B21\u6570"
+  - Key: RentNum
+    Desc: "\u60AC\u8D4F\u6B21\u6570"
+  - Key: RentRaward
+    Desc: "\u60AC\u8D4F\u5956\u52B1\u9886\u53D6"
+  - Key: MonumentAdventureAward
+    Desc: "\u6392\u884C\u699C\u5956\u52B1"
+  - Key: DemonKingRawardPage
+    Desc: "\u9B54\u738B\u9636\u68AF\u9875\u7B7E\u5956\u52B1"
+  - Key: DemonKingRawardChapter
+    Desc: "\u9B54\u738B\u9636\u68AF\u7AE0\u8282\u5956\u52B1"
+  - Key: DemonKingTaskRaward_1
+    Desc: "\u9B54\u738B\u9636\u68AF\u4EFB\u52A1"
+  - Key: DemonKingTaskRaward_2
+    Desc: "\u9B54\u738B\u9636\u68AF\u4EFB\u52A1"
+  - Key: DemonKingTaskRaward_3
+    Desc: "\u9B54\u738B\u9636\u68AF\u4EFB\u52A1"
+  - Key: DemonKingTaskRaward_4
+    Desc: "\u9B54\u738B\u9636\u68AF\u4EFB\u52A1"
+  - Key: MainFuncBtn
+    Desc: "\u4E3B\u754C\u9762\u6269\u5C55\u6309\u94AE"
+  - Key: BagItemRed
+    Desc: "\u80CC\u5305\u754C\u9762\u9053\u5177\u7EA2\u70B9"
+  - Key: UIMailRed
+    Desc: "\u90AE\u4EF6\u5165\u53E3\u7EA2\u70B9"
+  - Key: UIMailCanReadRed
+    Desc: "\u90AE\u4EF6\u53EF\u8BFB\u7EA2\u70B9"
+  - Key: UIMailCanGetRed
+    Desc: "\u90AE\u4EF6\u53EF\u9886\u9644\u4EF6\u7EA2\u70B9"
+  - Key: UpHeroBossRefresh
+    Desc: "\u9B54\u738B\u5F81\u8BA8boss\u5237\u7EBF"
+  - Key: UpHeroBossDamageRaward
+    Desc: "\u9B54\u738B\u5F81\u8BA8boss\u4F24\u5BB3\u5956\u52B1"
+  - Key: UpHeroBossChallengeNum
+    Desc: "\u9B54\u738B\u5F81\u8BA8boss\u6311\u6218\u6B21\u6570"
+  - Key: UIEquipDungeon
+    Desc: "\u519B\u56E2\u8BAD\u7EC3"
+  - Key: NoviceTaskPage
+    Desc: "\u542F\u7A0B\u8C6A\u793C"
+  - Key: NoviceTaskPageWeek1
+    Desc: "\u542F\u7A0B\u8C6A\u793C\u7B2C\u4E00\u5468"
+  - Key: NoviceTaskPageWeek2
+    Desc: "\u542F\u7A0B\u8C6A\u793C\u7B2C\u4E8C\u5468"
+  - Key: NoviceTaskPageWeek3
+    Desc: "\u542F\u7A0B\u8C6A\u793C\u7B2C\u4E09\u5468"
+  - Key: NoviceTaskPageWeek4
+    Desc: "\u542F\u7A0B\u8C6A\u793C\u7B2C\u56DB\u5468"
+  HintDataList:
+  - ID: Guild
+    Desc: "\u4E3B\u754C\u9762\u516C\u4F1A\u6309\u94AE"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: GuildSign
+      Desc: 
+      FuncID: GuildSign
+      LayoutID: Point
+      ChildHintList: []
+    - ID: GuildNewAnnounce
+      Desc: 
+      FuncID: GuildNewAnnounce
+      LayoutID: Point
+      ChildHintList: []
+    - ID: GuildBoxCanReward
+      Desc: 
+      FuncID: GuildBoxCanReward
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: GuildTaskCanReward
+      Desc: 
+      FuncID: GuildTaskCanReward
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: GuildShop
+      Desc: 
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: GuildShopCanBuy
+        Desc: 
+        FuncID: GuildShopCanBuy
+        LayoutID: Exclamation
+        ChildHintList: []
+      - ID: GuildShopCanPrice
+        Desc: 
+        FuncID: GuildShopCanPrice
+        LayoutID: Point
+        ChildHintList: []
+    - ID: GuildBoss
+      Desc: 
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: GuildBossFreeCount
+        Desc: 
+        FuncID: GuildBossFreeCount
+        LayoutID: Point
+        ChildHintList: []
+      - ID: GuildBossPassReward
+        Desc: 
+        FuncID: GuildBossPassReward
+        LayoutID: Reward
+        ChildHintList: []
+  - ID: Hero
+    Desc: "\u82F1\u96C4"
+    FuncID: 
+    LayoutID: Point
+    ChildHintList:
+    - ID: AnyHeroLvUp
+      Desc: 
+      FuncID: AnyHeroLvUp
+      LayoutID: Up
+      ChildHintList: []
+    - ID: AnyHeroStarUp
+      Desc: 
+      FuncID: AnyHeroStarUp
+      LayoutID: Point
+      ChildHintList: []
+  - ID: BtnHeroLvUp
+    Desc: "\u82F1\u96C4\u754C\u9762\u7684\u5347\u7EA7\u6309\u94AE"
+    FuncID: SelectHeroLvUp
+    LayoutID: Point
+    ChildHintList: []
+  - ID: ToggleHeroInfo
+    Desc: "\u82F1\u96C4\u5347\u7EA7\u9875\u7B7E"
+    FuncID: 
+    LayoutID: Point
+    ChildHintList: []
+  - ID: PlayerInfo
+    Desc: "\u4E3B\u754C\u9762\u5DE6\u4E0A\u89D2\u73A9\u5BB6\u5934\u50CF"
+    FuncID: 
+    LayoutID: Point
+    ChildHintList:
+    - ID: PlayerInfoNew
+      Desc: "\u4E3B\u89D2\u8BE6\u60C5\u754C\u9762\u5934\u50CF\u4E0A\u7684\u7EA2\u70B9\u548C\u66F4\u6362\u6309\u94AE\u4E0A\u7684\u7EA2\u70B9"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: PlayerInfoNewHead
+        Desc: 
+        FuncID: PlayerGetNewHead
+        LayoutID: New
+        ChildHintList: []
+      - ID: PlayerInfoNewFream
+        Desc: 
+        FuncID: PlayerGetNewFream
+        LayoutID: Point
+        ChildHintList: []
+      - ID: PlayerInfoNewTitle
+        Desc: 
+        FuncID: PlayerGetNewTitle
+        LayoutID: New
+        ChildHintList: []
+      - ID: PlayerInfoNewMedal
+        Desc: 
+        FuncID: PlayerGetNewMedal
+        LayoutID: New
+        ChildHintList: []
+      - ID: PlayerInfoNewNameCard
+        Desc: 
+        FuncID: PlayerGetNewNameCard
+        LayoutID: New
+        ChildHintList: []
+  - ID: ActiveTask
+    Desc: "\u4E3B\u754C\u9762\u4EFB\u52A1"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: EveryDayTask
+      Desc: "\u4E3B\u754C\u9762\u4EFB\u52A1-\u6BCF\u65E5\u4EFB\u52A1"
+      FuncID: EveryDayTask
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: WeeklyTask
+      Desc: "\u4E3B\u754C\u9762\u4EFB\u52A1-\u6BCF\u5468\u4EFB\u52A1"
+      FuncID: WeeklyTask
+      LayoutID: Reward
+      ChildHintList: []
+  - ID: RimuruSystem
+    Desc: "\u5229\u59C6\u9C81\u7CFB\u7EDF\u7EA2\u70B9"
+    FuncID: 
+    LayoutID: Point
+    ChildHintList:
+    - ID: RimuruSkillUnlock
+      Desc: "\u5229\u59C6\u9C81\u6280\u80FD\u89E3\u9501"
+      FuncID: RimuruSkillUnlock
+      LayoutID: Point
+      ChildHintList: []
+  - ID: MainFuncBtn
+    Desc: "\u4E3B\u754C\u9762\u529F\u80FD\u6309\u94AE\u7EA2\u70B9"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: Dialog
+      Desc: "\u56DE\u5FC6\u529F\u80FD\u7EA2\u70B9"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: DialogNode
+        Desc: "\u56DE\u5FC6\u8282\u70B9\u5956\u52B1"
+        FuncID: DialogNode
+        LayoutID: Reward
+        ChildHintList: []
+  - ID: Recruit
+    Desc: "\u53EC\u5524\u529F\u80FD\u7EA2\u70B9"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: RecruitOrdinaryCallReward
+      Desc: "\u4F20\u8BF4\u53EC\u5524\u6210\u5C31\u7EA2\u70B9"
+      FuncID: RecruitOrdinaryCallReward
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: RecruitOrdinaryFreeDraw
+      Desc: "\u4F20\u8BF4\u53EC\u5524\u514D\u8D39\u7EA2\u70B9"
+      FuncID: RecruitOrdinaryFreeDraw
+      LayoutID: Point
+      ChildHintList: []
+    - ID: RecruitAdvancedCallReward
+      Desc: "\u4F20\u8BF4\u53EC\u5524\u6210\u5C31\u7EA2\u70B9"
+      FuncID: RecruitAdvancedCallReward
+      LayoutID: Reward
+      ChildHintList: []
+  - ID: SecretRealm
+    Desc: "\u79D8\u5883\u73A9\u6CD5"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: UIStageArenaMain
+      Desc: "\u7ADE\u6280\u573A"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: Arena1v1
+        Desc: "\u7ADE\u6280\u573A1v1"
+        FuncID: 
+        LayoutID: 
+        ChildHintList:
+        - ID: ArenaDefenseDeployment1v1
+          Desc: "\u9632\u5B88\u5E03\u9635"
+          FuncID: ArenaDefenseDeployment1v1
+          LayoutID: Exclamation
+          ChildHintList: []
+        - ID: ArenaRankRaward1v1
+          Desc: "\u6BB5\u4F4D\u5956\u52B1"
+          FuncID: ArenaRankRaward1v1
+          LayoutID: Reward
+          ChildHintList: []
+        - ID: ArenaWeekRaward1v1
+          Desc: "\u5468\u5956\u52B1"
+          FuncID: ArenaWeekRaward1v1
+          LayoutID: Reward
+          ChildHintList: []
+      - ID: Arena3v3
+        Desc: "\u7ADE\u6280\u573A3v3"
+        FuncID: 
+        LayoutID: 
+        ChildHintList:
+        - ID: ArenaDefenseDeployment3v3
+          Desc: "\u9632\u5B88\u5E03\u9635"
+          FuncID: ArenaDefenseDeployment3v3
+          LayoutID: Exclamation
+          ChildHintList: []
+        - ID: ArenaRankRaward3v3
+          Desc: "\u6BB5\u4F4D\u5956\u52B1"
+          FuncID: ArenaRankRaward3v3
+          LayoutID: Reward
+          ChildHintList: []
+        - ID: ArenaWeekRaward3v3
+          Desc: "\u5468\u5956\u52B1"
+          FuncID: ArenaWeekRaward3v3
+          LayoutID: Reward
+          ChildHintList: []
+        - ID: ArenaBoxRaward3v3
+          Desc: "\u9632\u5B88\u5E03\u9635"
+          FuncID: ArenaBoxRaward3v3
+          LayoutID: Reward
+          ChildHintList: []
+    - ID: UIStageBossMain
+      Desc: "\u9B54\u7269\u5F81\u8BA8"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: BossRefresh
+        Desc: "boss\u5237\u65B0"
+        FuncID: BossRefresh
+        LayoutID: New
+        ChildHintList: []
+      - ID: BossDamageRaward
+        Desc: "\u4F24\u5BB3\u5956\u52B1"
+        FuncID: BossDamageRaward
+        LayoutID: Reward
+        ChildHintList: []
+      - ID: BossChallengeNum
+        Desc: "\u6311\u6218\u6B21\u6570"
+        FuncID: BossChallengeNum
+        LayoutID: Point
+        ChildHintList: []
+    - ID: UIWarpSpace
+      Desc: "\u8D44\u6E90\u6D1E\u7A9F"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: WarpSpace_1
+        Desc: "\u8D44\u6E90\u6D1E\u7A9F\u7ECF\u9A8C"
+        FuncID: 
+        LayoutID: 
+        ChildHintList:
+        - ID: WarpSpace_ChallengeNum_1
+          Desc: "\u6311\u6218\u6B21\u6570"
+          FuncID: WarpSpace_ChallengeNum_1
+          LayoutID: Point
+          ChildHintList: []
+      - ID: WarpSpace_2
+        Desc: "\u8D44\u6E90\u6D1E\u7A9F\u7A81\u7834"
+        FuncID: 
+        LayoutID: 
+        ChildHintList:
+        - ID: WarpSpace_ChallengeNum_2
+          Desc: "\u6311\u6218\u6B21\u6570"
+          FuncID: WarpSpace_ChallengeNum_2
+          LayoutID: Point
+          ChildHintList: []
+      - ID: WarpSpace_3
+        Desc: "\u8D44\u6E90\u6D1E\u7A9F\u91D1\u5E01"
+        FuncID: 
+        LayoutID: 
+        ChildHintList:
+        - ID: WarpSpace_ChallengeNum_3
+          Desc: "\u6311\u6218\u6B21\u6570"
+          FuncID: WarpSpace_ChallengeNum_3
+          LayoutID: Point
+          ChildHintList: []
+    - ID: UIRentTask
+      Desc: "\u60AC\u8D4F\u59D4\u6258"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: RentNum
+        Desc: "\u60AC\u8D4F\u6B21\u6570"
+        FuncID: RentNum
+        LayoutID: Point
+        ChildHintList: []
+      - ID: RentRaward
+        Desc: "\u60AC\u8D4F\u5956\u52B1"
+        FuncID: RentRaward
+        LayoutID: Reward
+        ChildHintList: []
+    - ID: UIUpHeroBoss
+      Desc: "\u9B54\u738B\u5F81\u8BA8"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: UpHeroBossRefresh
+        Desc: "\u9B54\u738B\u5F81\u8BA8boss"
+        FuncID: UpHeroBossRefresh
+        LayoutID: New
+        ChildHintList: []
+      - ID: UpHeroBossDamageRaward
+        Desc: "\u9B54\u738B\u5F81\u8BA8\u7D2F\u8BA1\u5956\u52B1"
+        FuncID: UpHeroBossDamageRaward
+        LayoutID: Reward
+        ChildHintList: []
+      - ID: UpHeroBossChallengeNum
+        Desc: "\u9B54\u738B\u5F81\u8BA8\u6311\u6218\u6B21\u6570"
+        FuncID: UpHeroBossChallengeNum
+        LayoutID: Point
+        ChildHintList: []
+    - ID: UIEquipDungeon
+      Desc: "\u519B\u56E2\u8BAD\u7EC3"
+      FuncID: UIEquipDungeon
+      LayoutID: Point
+      ChildHintList: []
+  - ID: Monument
+    Desc: "\u6392\u884C\u699C\u529F\u80FD\u7EA2\u70B9"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: MonumentAdventure_1
+      Desc: "\u6392\u884C\u699C\u5192\u9669\u529F\u80FD"
+      FuncID: 
+      LayoutID: 
+      ChildHintList:
+      - ID: MonumentAdventureAward
+        Desc: "\u6392\u884C\u699C\u5168\u670D\u5956\u52B1\u529F\u80FD"
+        FuncID: MonumentAdventureAward
+        LayoutID: Reward
+        ChildHintList: []
+  - ID: DemonKingLadder
+    Desc: "\u9B54\u738B\u9636\u68AF"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: DemonKingRawardPage
+      Desc: "\u7AE0\u8282\u5956\u52B1"
+      FuncID: 
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: DemonKingRawardChapter
+      Desc: "\u8282\u70B9\u5956\u52B1"
+      FuncID: 
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: DemonKingTaskRaward_1
+      Desc: "\u4EFB\u52A11\u5956\u52B1\u7EA2\u70B9"
+      FuncID: DemonKingTaskRaward_1
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: DemonKingTaskRaward_2
+      Desc: "\u4EFB\u52A12\u5956\u52B1\u7EA2\u70B9"
+      FuncID: DemonKingTaskRaward_2
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: DemonKingTaskRaward_3
+      Desc: "\u4EFB\u52A13\u5956\u52B1\u7EA2\u70B9"
+      FuncID: DemonKingTaskRaward_3
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: DemonKingTaskRaward_4
+      Desc: "\u4EFB\u52A14\u5956\u52B1\u7EA2\u70B9"
+      FuncID: DemonKingTaskRaward_4
+      LayoutID: Reward
+      ChildHintList: []
+  - ID: UIMainBag
+    Desc: "\u80CC\u5305"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: BagItemRed
+      Desc: 
+      FuncID: BagItemRed
+      LayoutID: Exclamation
+      ChildHintList: []
+  - ID: UIMailRed
+    Desc: "\u90AE\u4EF6"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: UIMailCanReadRed
+      Desc: 
+      FuncID: UIMailCanReadRed
+      LayoutID: Point
+      ChildHintList: []
+    - ID: UIMailCanGetRed
+      Desc: 
+      FuncID: UIMailCanGetRed
+      LayoutID: Reward
+      ChildHintList: []
+  - ID: NoviceTask
+    Desc: "\u542F\u7A0B\u8C6A\u793C"
+    FuncID: 
+    LayoutID: 
+    ChildHintList:
+    - ID: NoviceTaskPageWeek1
+      Desc: 
+      FuncID: UIMailCanReadRed
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: NoviceTaskPageWeek2
+      Desc: 
+      FuncID: UIMailCanGetRed
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: NoviceTaskPageWeek3
+      Desc: 
+      FuncID: UIMailCanGetRed
+      LayoutID: Reward
+      ChildHintList: []
+    - ID: NoviceTaskPageWeek4
+      Desc: 
+      FuncID: UIMailCanGetRed
+      LayoutID: Reward
+      ChildHintList: []

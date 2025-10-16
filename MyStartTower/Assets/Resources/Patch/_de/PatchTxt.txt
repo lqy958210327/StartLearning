@@ -1,0 +1,47 @@
+language	Deutsch
+-- 此行为注释
+tipTitle	Tipps
+newVersionTitle	Tipps
+checkingUpdate	Version wird überprüft
+noNetwork	Das Spiel kann keine Verbindung zum Netzwerk herstellen. Bitte überprüfe deine Netzwerkkonfiguration.
+noWifi	Neue Version erkannt, derzeit in einer Nicht-WLAN-Umgebung, fortfahren?
+inWifi	Du bist mit dem drahtlosen Netzwerk verbunden und kannst bedenkenlos herunterladen.
+updating	Ressourceninformationen werden aktualisiert...
+checkingDownload	Ressourcen werden überprüft...
+downloading	Ressourcen werden heruntergeladen...
+downloadcanvas	Patching-Schnittstelle wird heruntergeladen
+loadingAsset	Ressource wird geladen, bitte warten
+oldEngine	Eine neue Version wurde erkannt, bitte aktualisiere aus dem ursprünglichen App-Store
+oldEngineDownload	Neue Version erkannt, herunterladen?
+resDownload	Neue Ressourcenversion erkannt, bitte starte das Spiel-Update neu
+oldEngineTitle	Aktualisieren
+retryPatch	Aktuelles Netzwerksignal ist nicht gut, willst du es erneut versuchen?
+retryPatchTitle	Wiederholen
+retryDownload	Netzwerkverbindung schlecht, erneut versuchen?
+alphaVersion	Der Server ist noch nicht verfügbar, bitte warte, bis er bereit ist
+newVersionformat	Update erkannt ({0}M), bist du sicher, dass du den Download starten willst?
+newVersionNotice	(Es wird empfohlen, unter Wifi herunterzuladen.)
+appFatalError	Paketfehler, bitte lade das Spiel erneut herunter.
+patchErrorRetry	Update-Fehler, erneut versuchen oder nicht, Fehlercode: 
+patchErrorFatal	Update-Fehler, Neustart empfohlen, Fehlercode: 
+fileCorrupt	Datei beschädigt, willst du die heruntergeladenen Inhalte löschen?
+resSize	Ressourcengröße: 
+subpkgSpinner	Wird heruntergeladen\n
+patchVersion	Versionsinformationen werden abgerufen...
+patchInfo	Patch-Informationen werden abgerufen...
+patchVersionRetry	Versionsinformationen konnten nicht abgerufen werden, wird erneut versucht...
+patchInfoRetry	Patch-Informationen konnten nicht abgerufen werden, wird erneut versucht...
+fileDamagedTitle	Dateibeschädigung
+fileDamaged	Dateibeschädigung erkannt, kann zu Spielfehlern führen, Neustart empfohlen.
+btnConfirm	Bestätigen
+btnCancel	Abbrechen
+repaireWaiting	Es wird versucht, Dateien zu reparieren, bitte warte.
+scanSubpkg	Spielressourcen werden gescannt: 
+scanPatch	Patch-Ressourcen werden gescannt: 
+startSubpkg	Unterkomponente wird initialisiert...
+waiting	Wird bearbeitet, bitte warten.
+permissionTip	Berechtigungsantrag
+updateCostTip	Hinweis: Wenn es nicht in einer WLAN-Umgebung heruntergeladen wird, können zusätzliche Datengebühren anfallen
+android.permission.READ_PHONE_STATE	Telefonstatus-Berechtigungen | Das Kontosystem erstellt Konten und protokolliert Geräteinformationen
+android.permission.CAMERA	Kameraberechtigung | Verwende die Kamera für Aufnahmen in der AR-Funktion
+android.permission.WRITE_EXTERNAL_STORAGE	Speicherberechtigung | Speicher Screenshots im Fotoalbum

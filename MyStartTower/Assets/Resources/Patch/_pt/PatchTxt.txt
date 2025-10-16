@@ -1,0 +1,47 @@
+language	pt-BR
+-- 此行为注释
+tipTitle	Conselhos
+newVersionTitle	Conselhos
+checkingUpdate	Verificando versão
+noNetwork	O jogo não consegue se conectar à rede. Verifique sua configuração de rede.
+noWifi	Nova versão detectada. Você não se encontra em um ambiente wifi no momento, deseja continuar?
+inWifi	Conectado à rede wifi, pode fazer o download com tranquilidade.
+updating	Atualizando informações de recursos...
+checkingDownload	Verificando recursos...
+downloading	Baixando recursos...
+downloadcanvas	Baixando interface do patch
+loadingAsset	O recurso está sendo carregando, aguarde
+oldEngine	Uma nova versão foi detectada; atualize a partir da loja de aplicativos original
+oldEngineDownload	Nova versão detectada, deseja baixar?
+resDownload	Nova versão de recurso detectada; reinicie a atualização do jogo
+oldEngineTitle	Actualizar
+retryPatch	O sinal de rede atual não está bom, deseja tentar novamente?
+retryPatchTitle	Tentar novamente
+retryDownload	Conexão de rede fraca; deseja tentar novamente?
+alphaVersion	O servidor ainda não está disponível; aguarde até que esteja pronto
+newVersionformat	Atualização detectada ({0} MB), tem certeza de que deseja iniciar o download?
+newVersionNotice	(Recomenda-se baixar via wifi.)
+appFatalError	Erro no pacote. Baixe o jogo novamente.
+patchErrorRetry	Erro de atualização. Deseja tentar novamente? Código de erro: 
+patchErrorFatal	Erro de atualização; recomendamos o reinício. Código de erro: 
+fileCorrupt	Arquivo corrompido. Deseja limpar o conteúdo baixado?
+resSize	Tamanho do Recurso: 
+subpkgSpinner	Baixando\n
+patchVersion	Obtendo informações da versão...
+patchInfo	Obtendo informações do patch...
+patchVersionRetry	Falha ao recuperar informações da versão; tentando novamente...
+patchInfoRetry	Falha na recuperação das informações do patch; tentando novamente...
+fileDamagedTitle	Arquivo corrupto
+fileDamaged	Arquivo corrupto detectado, podendo causar erros no jogo; recomendamos reiniciar.
+btnConfirm	Confirmar
+btnCancel	Cancelar
+repaireWaiting	Tentando reparar arquivos; aguarde.
+scanSubpkg	Escaneando recursos do jogo: 
+scanPatch	Escaneando recursos do patch:
+startSubpkg	Inicializando componente de subcontratação...
+waiting	Processando. Aguarde.
+permissionTip	Aplicação de permissão
+updateCostTip	Nota: Se não for baixado em um ambiente wifi, podem ser aplicadas cobranças adicionais de dados
+android.permission.READ_PHONE_STATE	Permissões de Status do Telefone | O Sistema de Contas gera contas e registra informações do dispositivo
+android.permission.CAMERA	Permissão da Câmera | Usar a câmera para filmar na função AR
+android.permission.WRITE_EXTERNAL_STORAGE	Permissão de Armazenamento | Salvar capturas de tela no álbum de fotos

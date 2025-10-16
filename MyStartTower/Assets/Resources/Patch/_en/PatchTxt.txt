@@ -1,0 +1,47 @@
+language	English
+-- 此行为注释
+tipTitle	Tips
+newVersionTitle	Tips
+checkingUpdate	Checking version
+noNetwork	The game is unable to connect to the network. Please check your network configuration.
+noWifi	New version detected, currently in a non-WIFI environment, continue?
+inWifi	Connected to the wireless network, please download with confidence.
+updating	Update resource information...
+checkingDownload	Checking resources...
+downloading	Downloading resources...
+downloadcanvas	Downloading patch interface
+loadingAsset	Resource is loading, please wait
+oldEngine	A new version has been detected, please update from the original app store
+oldEngineDownload	New version detected, go to download?
+resDownload	New resource version detected, please restart game update
+oldEngineTitle	Update
+retryPatch	Current network signal is not good, do you want to try again?
+retryPatchTitle	Retry
+retryDownload	Network connection poor, retry?
+alphaVersion	The server is not yet available, please wait until it is ready
+newVersionformat	Update detected ({0}M), are you sure to start downloading?
+newVersionNotice	(It is recommended to download under Wifi.)
+appFatalError	Package error, please re-download the game.
+patchErrorRetry	Update error, retry or not, error code: 
+patchErrorFatal	Update error, restart recommended, Error code: 
+fileCorrupt	File corrupted, would you like to clear the downloaded content?
+resSize	Resource Size: 
+subpkgSpinner	Downloading\n
+patchVersion	Getting version information...
+patchInfo	Getting patch information...
+patchVersionRetry	Failed to retrieve version information, retrying...
+patchInfoRetry	Patch information retrieval failed, retrying...
+fileDamagedTitle	File corruption
+fileDamaged	File corruption detected, may cause game errors, restart recommended.
+btnConfirm	Confirm
+btnCancel	Cancel
+repaireWaiting	Attempting to repair files, please wait.
+scanSubpkg	Scanning game resources: 
+scanPatch	Scanning patch resources: 
+startSubpkg	Subcontracting component initialization...
+waiting	Processing, please wait.
+permissionTip	Permission application
+updateCostTip	Note: If not downloaded in a Wi-Fi environment, additional data charges may apply
+android.permission.READ_PHONE_STATE	Phone Status Permissions | Account System generates accounts and logs device information
+android.permission.CAMERA	Camera Permission|Use the camera for shooting in AR function
+android.permission.WRITE_EXTERNAL_STORAGE	Storage Permission | Save Screenshots to Photo Album

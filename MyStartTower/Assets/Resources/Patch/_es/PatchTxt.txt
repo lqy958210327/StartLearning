@@ -1,0 +1,47 @@
+language	Español
+-- 此行为注释
+tipTitle	Consejos
+newVersionTitle	Consejos
+checkingUpdate	Verificando versión
+noNetwork	El juego no puede conectarse a la red. Por favor, verifica tu configuración de red.
+noWifi	Se detectó una nueva versión, actualmente en un entorno sin Wi-Fi. ¿Deseas continuar?
+inWifi	Conectado a la red inalámbrica, por favor descarga con confianza.
+updating	Actualizando información de recursos...
+checkingDownload	Verificando recursos...
+downloading	Descargando recursos...
+downloadcanvas	Descargando interfaz de actualización
+loadingAsset	El recurso se está cargando, por favor espera
+oldEngine	Se ha detectado una nueva versión, por favor actualiza desde la tienda de aplicaciones original
+oldEngineDownload	Nueva versión detectada, ¿ir a descargar?
+resDownload	Nueva versión de recursos detectada, por favor reinicia la actualización del juego
+oldEngineTitle	Actualizar
+retryPatch	La señal de red actual no es buena, ¿quieres intentarlo de nuevo?
+retryPatchTitle	Reintentar
+retryDownload	Conexión de red deficiente, ¿intentar de nuevo?
+alphaVersion	El servidor aún no está disponible, por favor espera hasta que esté listo
+newVersionformat	Actualización detectada ({0}M), ¿estás seguro de comenzar la descarga?
+newVersionNotice	(Se recomienda descargar bajo conexión Wi-Fi.)
+appFatalError	Error de paquete, por favor vuelve a descargar el juego.
+patchErrorRetry	Error de actualización, ¿reintentar o no? Código de error: 
+patchErrorFatal	Error de actualización, se recomienda reiniciar, Código de error: 
+fileCorrupt	Archivo corrupto, ¿deseas borrar el contenido descargado?
+resSize	Tamaño del recurso: 
+subpkgSpinner	Descargando\n
+patchVersion	Obteniendo información de la versión...
+patchInfo	Obteniendo información de la actualización...
+patchVersionRetry	Error al recuperar la información de la versión, reintentando...
+patchInfoRetry	Error al recuperar la información de la actualización, reintentando...
+fileDamagedTitle	Corrupción de archivos
+fileDamaged	Se detectó corrupción de archivos, puede causar errores en el juego, se recomienda reiniciar.
+btnConfirm	Confirmar
+btnCancel	Cancelar
+repaireWaiting	Intentando reparar archivos, por favor espera.
+scanSubpkg	Escaneando recursos del juego: 
+scanPatch	Escaneando recursos de la actualización: 
+startSubpkg	Inicializando componente de subcontratación...
+waiting	Procesando, por favor espera.
+permissionTip	Solicitud de permiso
+updateCostTip	Nota: Si no se descarga en un entorno Wi-Fi, pueden aplicarse cargos adicionales por datos.
+android.permission.READ_PHONE_STATE	Permisos de estado del teléfono | El sistema de cuentas genera cuentas y registra información del dispositivo
+android.permission.CAMERA	Permiso de cámara | Usar la cámara para grabar en la función AR
+android.permission.WRITE_EXTERNAL_STORAGE	Permiso de almacenamiento | Guardar capturas de pantalla en el álbum de fotos

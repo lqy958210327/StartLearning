@@ -1,0 +1,47 @@
+language	Italiano
+-- 此行为注释
+tipTitle	Consigli
+newVersionTitle	Consigli
+checkingUpdate	Verifica della versione
+noNetwork	Il gioco non riesce a connettersi alla rete. Controlla la configurazione della rete.
+noWifi	Nuova versione rilevata, attualmente in un ambiente privo di WIFI, vuoi continuare?
+inWifi	Connesso alla rete wireless, scarica tranquillamente.
+updating	Aggiornamento delle informazioni sulle risorse...
+checkingDownload	Verifica delle risorse in corso...
+downloading	Download delle risorse in corso...
+downloadcanvas	Interfaccia di download di patch
+loadingAsset	Caricamento delle risorse in corso, attendere
+oldEngine	È stata rilevata una nuova versione, aggiorna dall'app store originale
+oldEngineDownload	Nuova versione rilevata, vuoi scaricarla?
+resDownload	Nuova versione delle risorse rilevata, riavvia l'aggiornamento del gioco
+oldEngineTitle	Aggiorna
+retryPatch	Il segnale di rete attuale è debole, vuoi riprovare?
+retryPatchTitle	Riprova
+retryDownload	Connessione di rete scarsa, vuoi riprovare?
+alphaVersion	Il server non è ancora disponibile, attendi fino a quando sarà pronto
+newVersionformat	Aggiornamento rilevato ({0}M), vuoi davvero iniziare il download?
+newVersionNotice	(Si consiglia di scaricare con il Wifi.)
+appFatalError	Errore del pacchetto, riscarica il gioco.
+patchErrorRetry	Errore di aggiornamento, riprovare o no, codice di errore: 
+patchErrorFatal	Errore di aggiornamento, è consigliabile riavviare, codice errore: 
+fileCorrupt	File corrotto, vuoi cancellare il contenuto scaricato?
+resSize	Dimensione della risorsa: 
+subpkgSpinner	Download in corso\n
+patchVersion	Ottenimento delle informazioni sulla versione...
+patchInfo	Ottenimento delle informazioni di patch...
+patchVersionRetry	Recupero delle informazioni sulla versione fallito, riprovando...
+patchInfoRetry	Recupero delle informazioni sulla patch fallito, riprovando...
+fileDamagedTitle	Corruzione del file
+fileDamaged	Rilevata corruzione del file, potrebbe causare errori di gioco, è consigliabile riavviare.
+btnConfirm	Conferma
+btnCancel	Annulla
+repaireWaiting	Tentativo di riparazione dei file in corso, attendere prego.
+scanSubpkg	Scansione delle risorse di gioco: 
+scanPatch	Scansione delle risorse di patch: 
+startSubpkg	Inizializzazione del componente di subappalto...
+waiting	Elaborazione in corso, attendere prego.
+permissionTip	Richiesta di autorizzazione
+updateCostTip	Nota: se non scaricato in un ambiente con Wi-Fi, potrebbero essere applicati costi aggiuntivi per i dati
+android.permission.READ_PHONE_STATE	Permessi di Stato del Telefono | Il Sistema Account genera account e registra le informazioni del dispositivo
+android.permission.CAMERA	Permesso della Fotocamera | Usa la fotocamera per le riprese nella funzione AR
+android.permission.WRITE_EXTERNAL_STORAGE	Permesso di Archiviazione | Salva gli screenshot nell'album fotografico

@@ -1,0 +1,47 @@
+language	Polski
+-- 此行为注释
+tipTitle	Porady
+newVersionTitle	Porady
+checkingUpdate	Sprawdzanie wersji
+noNetwork	Gra nie może połączyć się z siecią. Sprawdź konfigurację sieci.
+noWifi	Wykryto nową wersję, a nie masz teraz połączenia z Wi-Fi. Kontynuować?
+inWifi	Połączono z siecią bezprzewodową, pobieraj śmiało.
+updating	Aktualizowanie informacji o zasobach...
+checkingDownload	Sprawdzanie zasobów...
+downloading	Pobieranie zasobów...
+downloadcanvas	Pobieranie interfejsu poprawki
+loadingAsset	Ładowanie zasobów, proszę czekać
+oldEngine	Wykryto nową wersję. Zaktualizuj grę w swoim sklepie z aplikacjami.
+oldEngineDownload	Wykryto nową wersję. Przejść do pobierania?
+resDownload	Wykryto nową wersję zasobów. Uruchom ponownie aktualizację gry.
+oldEngineTitle	Aktualizacja
+retryPatch	Słaby sygnał sieci. Chcesz spróbować ponownie?
+retryPatchTitle	Ponów próbę
+retryDownload	Słabe połączenie sieciowe. Ponowić próbę?
+alphaVersion	Serwer nie jest jeszcze dostępny. Poczekaj, aż będzie gotowy.
+newVersionformat	Wykryto aktualizację ({0} M). Czy na pewno chcesz rozpocząć pobieranie?
+newVersionNotice	(Zalecamy pobieranie przez Wi-Fi).
+appFatalError	Błąd pakietu. Pobierz grę ponownie.
+patchErrorRetry	Błąd aktualizacji, spróbuj ponownie lub nie. Kod błędu: 
+patchErrorFatal	Błąd aktualizacji, zalecane ponowne uruchomienie. Kod błędu: 
+fileCorrupt	Plik uszkodzony. Czy chcesz wyczyścić pobraną zawartość?
+resSize	Rozmiar zasobu:
+subpkgSpinner	Pobieranie\n
+patchVersion	Pobieranie informacji o wersji...
+patchInfo	Pobieranie informacji o poprawce...
+patchVersionRetry	Nie udało się pobrać informacji o wersji, ponawianie próby...
+patchInfoRetry	Nie udało się pobrać informacji o poprawce, ponawianie próby...
+fileDamagedTitle	Uszkodzenie pliku
+fileDamaged	Wykryto uszkodzenie pliku, co może powodować błędy w grze. Zalecamy ponowne uruchomienie.
+btnConfirm	Potwierdź
+btnCancel	Anuluj
+repaireWaiting	Próba naprawy plików, proszę czekać.
+scanSubpkg	Skanowanie zasobów gry:
+scanPatch	Skanowanie zasobów poprawki: 
+startSubpkg	Inicjalizacja komponentu podwykonawczego...
+waiting	Przetwarzanie, proszę czekać.
+permissionTip	Wniosek o uprawnienia
+updateCostTip	Uwaga: jeśli nie pobierasz przez Wi-Fi, mogą obowiązywać dodatkowe opłaty za dane.
+android.permission.READ_PHONE_STATE	Uprawnienia do informacji o statusie telefonu | System kont generuje konta i rejestruje informacje o urządzeniu
+android.permission.CAMERA	Uprawnienia do aparatu | Użyj aparatu do fotografowania w funkcji AR (rzeczywistość rozszerzona)
+android.permission.WRITE_EXTERNAL_STORAGE	Uprawnienia do przechowywania | Zapisz zrzuty ekranu w albumie ze zdjęciami

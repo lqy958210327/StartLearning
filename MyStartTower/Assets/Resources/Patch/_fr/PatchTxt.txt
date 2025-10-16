@@ -1,0 +1,47 @@
+language	Français
+-- 此行为注释
+tipTitle	Conseils
+newVersionTitle	Conseils
+checkingUpdate	Vérification de la version
+noNetwork	Le jeu ne peut pas se connecter au réseau. Veuillez vérifier votre configuration réseau.
+noWifi	Nouvelle version détectée, actuellement dans un environnement non-WIFI, continuer ?
+inWifi	Connecté au réseau sans fil, veuillez télécharger en toute confiance.
+updating	Mise à jour des informations de ressources...
+checkingDownload	Vérification des ressources...
+downloading	Téléchargement des ressources...
+downloadcanvas	Téléchargement de l'interface du correctif...
+loadingAsset	Chargement des ressources, veuillez patienter...
+oldEngine	Une nouvelle version a été détectée, veuillez mettre à jour depuis l'App Store d'origine.
+oldEngineDownload	Nouvelle version détectée, aller télécharger ?
+resDownload	Nouvelle version de ressources détectée, veuillez redémarrer la mise à jour du jeu.
+oldEngineTitle	Mettre à jour
+retryPatch	Le signal réseau actuel n'est pas bon, voulez-vous réessayer ?
+retryPatchTitle	Réessayer
+retryDownload	Connexion réseau médiocre, réessayer ?
+alphaVersion	Le serveur n'est pas encore disponible, veuillez attendre qu'il soit prêt.
+newVersionformat	Mise à jour détectée ({0}M), êtes-vous sûr(e) de commencer le téléchargement ?
+newVersionNotice	(Il est recommandé de télécharger sous Wifi.)
+appFatalError	Erreur de paquet, veuillez re-télécharger le jeu.
+patchErrorRetry	Erreur de mise à jour, réessayer ou non, code d'erreur : 
+patchErrorFatal	Erreur de mise à jour, redémarrage recommandé, code d'erreur : 
+fileCorrupt	Fichier corrompu, souhaitez-vous effacer le contenu téléchargé ?
+resSize	Taille des ressources : 
+subpkgSpinner	Téléchargement\n
+patchVersion	Obtention des informations de version...
+patchInfo	Obtention des informations du correctif...
+patchVersionRetry	Échec de la récupération des informations de version, nouvelle tentative...
+patchInfoRetry	Échec de la récupération des informations du correctif, nouvelle tentative...
+fileDamagedTitle	Corruption de fichier
+fileDamaged	Corruption de fichier détectée, peut causer des erreurs de jeu, redémarrage recommandé.
+btnConfirm	Confirmer
+btnCancel	Annuler
+repaireWaiting	Tentative de réparation des fichiers, veuillez patienter.
+scanSubpkg	Analyse des ressources du jeu : 
+scanPatch	Analyse des ressources du correctif : 
+startSubpkg	Initialisation du composant de sous-traitance...
+waiting	Traitement en cours, veuillez patienter.
+permissionTip	Demande d'autorisation
+updateCostTip	Remarque : si le téléchargement n'est pas effectué dans un environnement Wi-Fi, des frais de données supplémentaires sont susceptibles de s'appliquer.
+android.permission.READ_PHONE_STATE	Autorisations de statut du téléphone | Le système de compte génère les comptes et archive les informations sur l'appareil.
+android.permission.CAMERA	Autorisation de la caméra | Utilise la caméra pour filmer avec la fonction AR.
+android.permission.WRITE_EXTERNAL_STORAGE	Autorisation de stockage | Sauvegarde les captures d'écran dans l'album photo.

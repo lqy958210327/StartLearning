@@ -1,0 +1,1298 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07518bd885294e228bb841d819efeb69, type: 3}
+  m_Name: UIAnimationConfig
+  m_EditorClassIdentifier: 
+  Templates:
+  - Type: common
+    Desc: "\u5E38\u89C4\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_common
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: confirm
+    Desc: "\u786E\u8BA4\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_confirm
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: cancel
+    Desc: "\u53D6\u6D88\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_cancel
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: stresses
+    Desc: "\u63A8\u8350\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_stresses
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: stop
+    Desc: "\u7981\u7528\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_stop
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: function
+    Desc: "\u529F\u80FD\u6309\u94AE"
+    Scale: {x: 1, y: 1, z: 1}
+    Offset: {x: 1, y: -5, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_common
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.37249476
+        outSlope: 0.37249476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.107315384
+      - serializedVersion: 3
+        time: 0.118
+        value: 1
+        inSlope: 13.421262
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.05510115
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.824
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9463047
+        value: 0.84427935
+        inSlope: -3.980734
+        outSlope: -4.867579
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.09700906
+        outWeight: 0.22536182
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -32.27856
+        outSlope: -32.27856
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06667755
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: lock
+    Desc: "\u529F\u80FD\u9501\u5B9A\u6309\u94AE"
+    Scale: {x: 1, y: 1, z: 1}
+    Offset: {x: 0, y: -5, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_stop
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.37249476
+        outSlope: 0.37249476
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.107315384
+      - serializedVersion: 3
+        time: 0.118
+        value: 1
+        inSlope: 13.421262
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.05510115
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.824
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9463047
+        value: 0.84427935
+        inSlope: -3.980734
+        outSlope: -4.867579
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.09700906
+        outWeight: 0.22536182
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -32.27856
+        outSlope: -32.27856
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06667755
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: return
+    Desc: "\u8FD4\u56DE\u6309\u94AE"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_return
+    During: 0.34
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: close
+    Desc: "\u5173\u95ED\u6309\u94AE-\u53C9"
+    Scale: {x: 1, y: 1, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: -30
+    Sound: Audio/Dynamic/UISound/UI_btn_close
+    During: 0.35
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.22338234
+        outSlope: 0.22338234
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.17364047
+      - serializedVersion: 3
+        time: 0.14006835
+        value: 0.16593572
+        inSlope: 4.827976
+        outSlope: 7.734377
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.09055793
+        outWeight: 0.36639532
+      - serializedVersion: 3
+        time: 0.171
+        value: 1
+        inSlope: 69.32687
+        outSlope: -0.004397676
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08319491
+        outWeight: 1
+      - serializedVersion: 3
+        time: 0.629
+        value: 1
+        inSlope: -0.014085531
+        outSlope: -42.423
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.9967225
+        outWeight: 0.106858216
+      - serializedVersion: 3
+        time: 0.6756593
+        value: 0.1659357
+        inSlope: -6.726657
+        outSlope: -4.7643337
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.36494413
+        outWeight: 0.09816974
+      - serializedVersion: 3
+        time: 0.8
+        value: 0
+        inSlope: -0.04052368
+        outSlope: 0.04074999
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.8547762
+        outWeight: 0.4471447
+      - serializedVersion: 3
+        time: 0.8845997
+        value: -0.030502716
+        inSlope: -1.195768
+        outSlope: -1.7130958
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.151321
+        outWeight: 0.42788574
+      - serializedVersion: 3
+        time: 0.914
+        value: -0.167
+        inSlope: -7.828595
+        outSlope: 10.500153
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.103166126
+        outWeight: 0.13044834
+      - serializedVersion: 3
+        time: 0.93874186
+        value: -0.033505492
+        inSlope: 2.344655
+        outSlope: 1.793623
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.26626843
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0.06964275
+        outSlope: 0.06964275
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.44327244
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: close02
+    Desc: "\u5173\u95ED\u6309\u94AE-\u6B63\u5E38"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_close
+    During: 0.35
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.40999544
+        value: 1.014164
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7358252
+        value: 1.0047188
+        inSlope: -0.06889484
+        outSlope: -0.06889484
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - Type: toggle
+    Desc: "\u9875\u7B7E"
+    Scale: {x: 0.94, y: 0.9, z: 1}
+    Offset: {x: 0, y: 0, z: 0}
+    RotateZ: 0
+    Sound: Audio/Dynamic/UISound/UI_btn_toggle
+    During: 0.35
+    CurveScale:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 17.231712
+        outSlope: 17.231712
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.0781201
+      - serializedVersion: 3
+        time: 0.070260644
+        value: 0.8548096
+        inSlope: 5.8525805
+        outSlope: 2.99047
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.17192696
+        outWeight: 0.11983825
+      - serializedVersion: 3
+        time: 0.235
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.765
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9583785
+        value: 0.7876756
+        inSlope: -3.4620245
+        outSlope: -4.0220466
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.08676878
+        outWeight: 0.5601846
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -36.896317
+        outSlope: -36.896317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06630417
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveOffset:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveRotateZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4

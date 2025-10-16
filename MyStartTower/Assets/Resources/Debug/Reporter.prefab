@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1318129266772510403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318129266772510406}
+  - component: {fileID: 1318129266772510405}
+  - component: {fileID: 1318129266772510404}
+  m_Layer: 0
+  m_Name: Reporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318129266772510406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318129266772510403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318129266772510405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318129266772510403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80fa66543a8c58459dfaeaebafaf289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 0
+  UserData: 
+  fps: 0
+  fpsText: 
+  images:
+    clearImage: {fileID: 2800000, guid: 416ed0e70895d064e841f31ac1600f6b, type: 3}
+    collapseImage: {fileID: 2800000, guid: 498410805e658944f91206b170b9f02e, type: 3}
+    clearOnNewSceneImage: {fileID: 2800000, guid: 70a9a608ee5965f48b13d07ed4a26a44, type: 3}
+    showTimeImage: {fileID: 2800000, guid: 846eadea5fba90946b9e9a8dceb10244, type: 3}
+    showSceneImage: {fileID: 2800000, guid: 003043a1fbd4dc54b8983b228ce78d54, type: 3}
+    userImage: {fileID: 2800000, guid: d12af004935fb964186feb615b92b4c2, type: 3}
+    showMemoryImage: {fileID: 2800000, guid: 3509629387548d44991c277ac26ad4f0, type: 3}
+    softwareImage: {fileID: 2800000, guid: efa499b033fc6ff40a67abdd64685c98, type: 3}
+    dateImage: {fileID: 2800000, guid: 974a78a74f5d74b4bbf7c0c71b03a589, type: 3}
+    showFpsImage: {fileID: 2800000, guid: d4c6b4f8f2dccfc49b054269d654bdf0, type: 3}
+    infoImage: {fileID: 2800000, guid: 1c5d664a3797fe74e9a6f3c67f517ae4, type: 3}
+    saveLogsImage: {fileID: 2800000, guid: f9c3ebc85cd27e84dbfd2d24cd3bfd9b, type: 3}
+    searchImage: {fileID: 2800000, guid: 6a9262cdc089d40468dd97d1ba3e50df, type: 3}
+    copyImage: {fileID: 2800000, guid: 713f24c7846a34847a1aeb56dceb9ffd, type: 3}
+    closeImage: {fileID: 2800000, guid: 8072014fc9555eb4ea96f679c6cdf96f, type: 3}
+    buildFromImage: {fileID: 2800000, guid: 1fb29c049c5e00a48ad3c6f0b1431f2c, type: 3}
+    systemInfoImage: {fileID: 2800000, guid: c48e521c4cd875c48b8781678f76e637, type: 3}
+    graphicsInfoImage: {fileID: 2800000, guid: 12886f2052be1994fba58cdde433ed21, type: 3}
+    backImage: {fileID: 2800000, guid: 1941a5141de76a241a38ba9fe05a08d5, type: 3}
+    logImage: {fileID: 2800000, guid: 40c4e1778e03ab24eb8a54ca7f9e2228, type: 3}
+    warningImage: {fileID: 2800000, guid: 4362039500087114f94ebd16430e9034, type: 3}
+    errorImage: {fileID: 2800000, guid: 2653e9433a682fd44b926216d2c5eaf7, type: 3}
+    barImage: {fileID: 2800000, guid: ad2dd1b977bd70f4e9788eb42f878b33, type: 3}
+    button_activeImage: {fileID: 2800000, guid: 42a09ea1fc487594aad2aa7a7908646c, type: 3}
+    even_logImage: {fileID: 2800000, guid: db926a14288cacb42b1a4e2903982515, type: 3}
+    odd_logImage: {fileID: 2800000, guid: e971e6a08170b2145b795e8596839bbb, type: 3}
+    selectedImage: {fileID: 2800000, guid: fb5339ed785a8774fa5c08a0280c57a4, type: 3}
+    reporterScrollerSkin: {fileID: 11400000, guid: b415bdeefefd3ea42b2c30418ce4cbda, type: 2}
+  size: {x: 32, y: 32}
+  maxSize: 20
+  numOfCircleToShow: 1
+  Initialized: 0
+--- !u!114 &1318129266772510404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318129266772510403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cca800e7ad013e42b7f90a54deea590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
