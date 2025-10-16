@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Не удалось обнаружить камеру",
+    "CREATE_IMGFILE_FAILED_MSG":"Ошибка при сохранении изображения",
+    "ISNOT_IMAGE_FILE_MSG":"Это не файл изображения",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Доступ к альбому отклонен",
+    "ASButtonTitleCancel":"Отмена",
+    "ASButtonTitleCamera":"Камера",
+    "ASButtonTitleLibrary":"Альбом",
+    "float_view_close":"Закрыть",
+    "float_alert_tittle1":"Закрыть всплывающее сообщение?\n",
+    "float_alert_tittle2":"(Снова появляется после перезагрузки / новое сообщение)",
+    "float_alert_cancel":"Отмена",
+    "float_alert_ok":"Подтвердить",
+    "upload_img_succeess":"Загрузка завершена!",
+    "upload_img_failed":"Ошибка при получении изображения"
+}

@@ -1,0 +1,11 @@
+/* 
+  NgImagePicker.strings
+  Demo_netease2
+
+  Created by Xiaoxueyuan on 2017/8/31.
+  Copyright © 2017年 game-netease. All rights reserved.
+*/
+"finished" = "完成";
+"allphotos" = "所有照片";
+"photos" = "照片";
+"cancel" = "取消";

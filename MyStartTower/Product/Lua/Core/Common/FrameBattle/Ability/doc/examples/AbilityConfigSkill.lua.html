@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+
+
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/AbilityConfigCard.lua.html">AbilityConfigCard.lua</a></li>
+  <li><strong>AbilityConfigSkill.lua</strong></li>
+  <li><a href="../examples/AbilityConfigState.lua.html">AbilityConfigState.lua</a></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Ability.html">Ability</a></li>
+  <li><a href="../classes/Unit.html">Unit</a></li>
+  <li><a href="../classes/AbilityConfig.html">AbilityConfig</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <h2>AbilityConfigSkill.lua</h2>
+<pre>
+<span class="keyword">local</span> AbilityDataTable = <span class="global">require</span> <span class="string">"Core/Common/FrameBattle/Ability/AbilityDataTable"</span>
+<span class="keyword">local</span> ResAttackEffect = AbilityDataTable.ResAttackEffect
+<span class="keyword">local</span> BattleConst = AbilityDataTable.BattleConst
+<span class="keyword">local</span> SkillData = AbilityDataTable.SkillData
+<span class="keyword">local</span> ResProbConfig = AbilityDataTable.ResProbConfig
+
+<span class="keyword">local</span> AbilityConfigSkill = {}
+
+<span class="keyword">local</span> ChooseFuncTable = {}
+
+ChooseFuncTable[<span class="number">0</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 0：基点
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterSelf</span>()
+<span class="keyword">end</span>
+
+
+<span class="comment">-- 1：基点+基点背后一格
+</span><span class="comment">-- 2：基点+自身左右扇形
+</span><span class="comment">-- 22：基点+基点同一行背后一格
+</span>
+
+ChooseFuncTable[<span class="number">3</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 3：基点+基点周围一格
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterDistance</span>(<span class="number">1</span>)
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">21</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 21：基点+基点周围两格
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterDistance</span>(<span class="number">2</span>)
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">4</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 4：基点当前行
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterDistanceY</span>(<span class="number">0</span>)
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">5</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 5：基点当前及相邻行
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterDistanceY</span>(<span class="number">1</span>)
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">9</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 9：基点当前行最后排
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAnd</span>(baseUnit:<span class="function-name">filterDistanceY</span>(<span class="number">0</span>), baseUnit:<span class="function-name">filterForward</span>()), -<span class="number">1</span>
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">18</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 18：基点当前行前排
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAnd</span>(baseUnit:<span class="function-name">filterDistanceY</span>(<span class="number">0</span>), baseUnit:<span class="function-name">filterForward</span>()), <span class="number">1</span>
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">19</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 19：阵营前排
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterFront</span>()
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">20</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 20：阵营后排
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterBack</span>()
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">25</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 25：阵营最后排
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterBack</span>()
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">7</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 7：阵营全体
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterTrue</span>()
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">10</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 10：阵营全体（不包含召唤物）
+</span>    <span class="keyword">return</span> baseUnit.<span class="function-name">filterMajor</span>()
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">26</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 26：同路中排
+</span><span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">27</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 27：全场中排
+</span><span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">28</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 28：镜像目标
+</span><span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">8</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 8：阵营血量最低
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAttr</span>(<span class="string">'hp'</span>), -<span class="number">1</span>
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">13</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 13：阵营血量百分比最低
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAttr</span>(<span class="string">'hppct'</span>), -<span class="number">1</span>
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">11</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 11：阵营血量最低（不包含召唤物）
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAnd</span>(baseUnit.isMajor, baseUnit:<span class="function-name">filterAttr</span>(<span class="string">'hp'</span>)), -<span class="number">1</span>
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">14</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 14：阵营血量百分比最低（不包含召唤物）
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterAnd</span>(baseUnit.isMajor, baseUnit:<span class="function-name">filterAttr</span>(<span class="string">'hppct'</span>)), -<span class="number">1</span>
+<span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">24</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 24：阵营已退场英雄
+</span><span class="keyword">end</span>
+
+
+ChooseFuncTable[<span class="number">17</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 17：基点自己的所有召唤物
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterMyMinor</span>()
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">16</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 16：基点友方的所有召唤物
+</span>    <span class="keyword">return</span> baseUnit:<span class="function-name">filterMinor</span>()
+<span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">12</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 12：使用记录的技能目标
+</span><span class="keyword">end</span>
+
+ChooseFuncTable[<span class="number">23</span>] = <span class="keyword">function</span> (baseUnit) <span class="comment">-- 23：自身的普攻目标
+</span><span class="keyword">end</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">getBaseUnitAndTargetCamp</span>(self, resEvent, aimUnit)
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> friendCamp = ownerUnit:<span class="function-name">getCamp</span>()
+    <span class="keyword">local</span> enemyCamp = ownerUnit:<span class="function-name">getEnemyCamp</span>()
+    <span class="keyword">local</span> baseUnit = aimUnit
+    <span class="keyword">local</span> camp = enemyCamp
+    <span class="keyword">local</span> targetArea = resEvent.targetArea <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> targetArea == <span class="number">0</span> <span class="keyword">then</span> <span class="comment">-- 0：敌方。同时以目标为基点
+</span>        baseUnit, camp = aimUnit, enemyCamp
+    <span class="keyword">elseif</span> targetArea == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">-- 1：友方。同时以目标为基点
+</span>        baseUnit, camp = aimUnit, friendCamp
+    <span class="keyword">elseif</span> targetArea == <span class="number">2</span> <span class="keyword">then</span> <span class="comment">-- 2：敌方。同时以自身为基点
+</span>        baseUnit, camp = ownerUnit, enemyCamp
+    <span class="keyword">elseif</span> targetArea == <span class="number">3</span> <span class="keyword">then</span> <span class="comment">-- 3：友方。同时以自身为基点
+</span>        baseUnit, camp = ownerUnit, friendCamp
+    <span class="keyword">elseif</span> targetArea == <span class="number">4</span> <span class="keyword">then</span> <span class="comment">-- 4：目标的友方。同时以目标为基点
+</span>        baseUnit, camp = aimUnit, aimUnit:<span class="function-name">getCamp</span>()
+    <span class="keyword">elseif</span> targetArea == <span class="number">5</span> <span class="keyword">then</span> <span class="comment">-- 5：目标的敌方。同时以目标为基点
+</span>        baseUnit, camp = aimUnit, aimUnit:<span class="function-name">getEnemyCamp</span>()
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> baseUnit, camp
+<span class="keyword">end</span>
+
+<span class="comment">-- 这里的目标选择用作"攻击事件生效时候的目标选择"，与"释放技能前判定所选目标是否合法"区分
+</span><span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">getSkillEventTargets</span>(self, resEvent, aimUnit)
+    <span class="keyword">if</span> resEvent.priorUsePreTarget == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">-- 使用上一次的目标
+</span>        <span class="keyword">if</span> self.eventBaseUnit:<span class="function-name">isAlive</span>() <span class="keyword">then</span>
+            <span class="keyword">return</span> self.eventTargetList, self.eventBaseUnit
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> targetChoose = resEvent.targetChoose
+    <span class="keyword">if</span> targetChoose == <span class="number">12</span> <span class="keyword">then</span> <span class="comment">-- 使用记录的技能目标
+</span>        <span class="keyword">return</span> self.eventTargetList, self.eventBaseUnit
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> baseUnit, camp = <span class="function-name">getBaseUnitAndTargetCamp</span>(self, resEvent, aimUnit)
+    <span class="keyword">local</span> targetFunc = ChooseFuncTable[resEvent.targetChoose <span class="keyword">or</span> <span class="number">0</span>]
+    <span class="keyword">if</span> targetFunc == <span class="keyword">nil</span> <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">nil</span>, baseUnit
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> filterChoose, max = <span class="function-name">targetFunc</span>(baseUnit)
+    <span class="keyword">local</span> filterCamp = baseUnit:<span class="function-name">filterCamp</span>(camp)
+    <span class="keyword">local</span> excludeTarget = resEvent.excludeTarget <span class="keyword">and</span> resEvent.excludeTarget &gt; <span class="number">0</span>
+    <span class="keyword">local</span> filterExclude = excludeTarget <span class="keyword">and</span> baseUnit:<span class="function-name">filterNotSelf</span>() <span class="keyword">or</span> baseUnit:<span class="function-name">filterTrue</span>()
+    <span class="keyword">local</span> filterPreCondition = ownerUnit:<span class="function-name">filterCondition</span>(resEvent.eventPreCondition)
+    <span class="keyword">local</span> filter = ownerUnit:<span class="function-name">filterAnd</span>(filterCamp, filterExclude, filterPreCondition, filterChoose)
+    <span class="keyword">local</span> targets
+    <span class="keyword">if</span> max == <span class="keyword">nil</span> <span class="keyword">then</span>
+        targets = ownerUnit:<span class="function-name">searchUnit</span>(filter)
+    <span class="keyword">elseif</span> max &gt; <span class="number">0</span> <span class="keyword">then</span>
+        targets = { ownerUnit:<span class="function-name">maxUnit</span>(filter) }
+    <span class="keyword">else</span>
+        targets = { ownerUnit:<span class="function-name">minUnit</span>(filter) }
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> filterCondition = ownerUnit:<span class="function-name">filterCondition</span>(resEvent.eventCondition)
+    <span class="keyword">local</span> resProb = resEvent.eventProbId <span class="keyword">and</span> ResProbConfig[resEvent.eventProbId]
+    <span class="keyword">local</span> skillLevel = self:<span class="function-name">getSkillLevel</span>()
+    <span class="keyword">local</span> prob = resProb <span class="keyword">and</span> resProb.prob_values[skillLevel]
+    <span class="keyword">local</span> filterProb = prob <span class="keyword">and</span> ownerUnit:<span class="function-name">filterProb</span>(prob) <span class="keyword">or</span> baseUnit:<span class="function-name">filterTrue</span>()
+    <span class="keyword">local</span> postFilter = ownerUnit:<span class="function-name">filterAnd</span>(filterCondition, filterProb)
+    <span class="keyword">local</span> randomRule = resEvent.randomRule <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> randomRule == <span class="number">0</span> <span class="keyword">then</span> <span class="comment">-- 纯随机
+</span>        self:<span class="function-name">randomShuffle</span>(targets)
+    <span class="keyword">elseif</span> randomRule == <span class="number">7</span> <span class="keyword">then</span> <span class="comment">-- 7：血量百分比从低到高的N个目标
+</span>        <span class="global">table</span>.<span class="function-name">sort</span>(targets, <span class="keyword">function</span> (a, b)
+            <span class="keyword">return</span> a:<span class="function-name">getAttr</span>(<span class="string">'hppct'</span>) &gt; b:<span class="function-name">getAttr</span>(<span class="string">'hppct'</span>)
+        <span class="keyword">end</span>)
+    <span class="keyword">elseif</span> randomRule == <span class="number">8</span> <span class="keyword">then</span> <span class="comment">-- 8：血量百分比从高到低的N个目标
+</span>        <span class="global">table</span>.<span class="function-name">sort</span>(targets, <span class="keyword">function</span> (a, b)
+            <span class="keyword">return</span> a:<span class="function-name">getAttr</span>(<span class="string">'hppct'</span>) &lt; b:<span class="function-name">getAttr</span>(<span class="string">'hppct'</span>)
+        <span class="keyword">end</span>)
+    <span class="keyword">elseif</span> randomRule == <span class="number">9</span> <span class="keyword">then</span> <span class="comment">-- 9：攻击从低到高的N个目标
+</span>        <span class="global">table</span>.<span class="function-name">sort</span>(targets, <span class="keyword">function</span> (a, b)
+            <span class="keyword">return</span> a:<span class="function-name">getAttr</span>(<span class="string">'final_atk'</span>) &gt; b:<span class="function-name">getAttr</span>(<span class="string">'final_atk'</span>)
+        <span class="keyword">end</span>)
+    <span class="keyword">elseif</span> randomRule == <span class="number">10</span> <span class="keyword">then</span> <span class="comment">-- 10：攻击从高到低的N个目标
+</span>        <span class="global">table</span>.<span class="function-name">sort</span>(targets, <span class="keyword">function</span> (a, b)
+            <span class="keyword">return</span> a:<span class="function-name">getAttr</span>(<span class="string">'final_atk'</span>) &lt; b:<span class="function-name">getAttr</span>(<span class="string">'final_atk'</span>)
+        <span class="keyword">end</span>)
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> targetList = {}
+    <span class="keyword">local</span> randomTargetNumber = resEvent.randomTargetNumber <span class="keyword">or</span> #targets
+    <span class="keyword">if</span> randomTargetNumber &gt; #targets <span class="keyword">then</span>
+        randomTargetNumber = #targets
+    <span class="keyword">end</span>
+    <span class="keyword">for</span> i = <span class="number">1</span>, randomTargetNumber <span class="keyword">do</span>
+        <span class="keyword">local</span> unit = targets[i]
+        <span class="keyword">if</span> <span class="function-name">postFilter</span>(unit) <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(targetList, unit)
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resEvent.recordSkillTargets <span class="keyword">and</span> resEvent.recordSkillTargets &gt; <span class="number">0</span> <span class="keyword">then</span>
+        self.eventTargetList, self.eventBaseUnit = targetList, baseUnit
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> targetList, baseUnit
+<span class="keyword">end</span>
+
+<span class="keyword">local</span> BOX_TYPE_PHYSICS = <span class="number">0</span>      <span class="comment">--0物理
+</span><span class="keyword">local</span> BOX_TYPE_HEAL = <span class="number">3</span>         <span class="comment">--3治疗
+</span><span class="keyword">local</span> BOX_TYPE_SHIELD = <span class="number">4</span>       <span class="comment">--4护盾
+</span><span class="keyword">local</span> BOX_TYPE_HP_REMOVE = <span class="number">5</span>    <span class="comment">--5生命移除
+</span>
+<span class="comment">-- 初始攻击结果计算
+</span><span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">calcAttackDamage</span>(ownerUnit, targetUnit, resAttackEffect)
+    <span class="keyword">local</span> attack = ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'atk'</span>)
+    <span class="keyword">if</span> resAttackEffect.use_hero_atk <span class="keyword">and</span> ownerUnit:<span class="function-name">hasAttr</span>(<span class="string">'heroAtk'</span>) <span class="keyword">then</span>
+        attack = ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'heroAtk'</span>) <span class="comment">--宠物用的，取英雄平均攻击力
+</span>    <span class="keyword">end</span>
+    <span class="keyword">local</span> damageAmount = (resAttackEffect.dmg_percent <span class="keyword">or</span> <span class="number">0</span>) * attack * <span class="number">0.0001</span> + (resAttackEffect.dmg_value <span class="keyword">or</span> <span class="number">0</span>)
+    <span class="keyword">local</span> cap = resAttackEffect.percent_limit <span class="keyword">and</span> attack * resAttackEffect.percent_limit / <span class="number">10000</span> <span class="keyword">or</span> <span class="keyword">nil</span>
+    <span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">addDamage</span>(paramName, attrValue)
+        <span class="keyword">local</span> percent = resAttackEffect[paramName]
+        <span class="keyword">if</span> percent <span class="keyword">then</span>
+            <span class="keyword">local</span> value = attrValue * percent / <span class="number">10000</span>
+            <span class="keyword">if</span> cap <span class="keyword">and</span> value &gt; cap <span class="keyword">then</span>
+                value = cap
+            <span class="keyword">end</span>
+            damageAmount = damageAmount + value
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> selfHp, selfMhp = ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'hp'</span>), ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'final_mhp'</span>)
+    <span class="keyword">local</span> targetHp, targetMhp = targetUnit:<span class="function-name">getAttr</span>(<span class="string">'hp'</span>), targetUnit:<span class="function-name">getAttr</span>(<span class="string">'final_mhp'</span>)
+    <span class="function-name">addDamage</span>( <span class="string">'self_hp_percent'</span>, selfHp)
+    <span class="function-name">addDamage</span>( <span class="string">'self_mhp_percent'</span>, selfMhp)
+    <span class="function-name">addDamage</span>(<span class="string">'extra_hp_lost'</span>, selfMhp - selfHp)
+    <span class="function-name">addDamage</span>(<span class="string">'taret_hp_lost'</span>, targetMhp - targetHp)
+    <span class="function-name">addDamage</span>(<span class="string">'hp_percent'</span>, targetHp)
+    <span class="function-name">addDamage</span>(<span class="string">'mhp_percent'</span>, targetMhp)
+    <span class="function-name">addDamage</span>( <span class="string">'self_shield_percent'</span>, ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'shield'</span>)) <span class="comment">--FIXME 护盾属性
+</span>    <span class="function-name">addDamage</span>( <span class="string">'target_shield_percent'</span>, targetUnit:<span class="function-name">getAttr</span>(<span class="string">'shield'</span>)) <span class="comment">--FIXME 护盾属性
+</span>    <span class="keyword">local</span> selfLayer = resAttackEffect.filter_attack_state <span class="keyword">and</span> ownerUnit:<span class="function-name">getStateLayer</span>(resAttackEffect.filter_attack_state, ownerUnit) <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> targetLayer = resAttackEffect.filter_target_state <span class="keyword">and</span> targetUnit:<span class="function-name">getStateLayer</span>(resAttackEffect.filter_target_state, ownerUnit) <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> resAttackEffect.filter_attacker_state <span class="keyword">and</span> resAttackEffect.filter_target_dmg <span class="keyword">then</span>
+        damageAmount = damageAmount + resAttackEffect.filter_target_dmg * attack * selfLayer / <span class="number">10000</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resAttackEffect.filter_target_state <span class="keyword">and</span> resAttackEffect.filter_target_dmg <span class="keyword">then</span>
+        damageAmount = damageAmount + resAttackEffect.filter_target_dmg * attack * targetLayer / <span class="number">10000</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resAttackEffect.target_debuff_dmg <span class="keyword">then</span>
+        <span class="keyword">local</span> count = targetUnit:<span class="function-name">countAbilityWithTag</span>(<span class="string">'debuff'</span>)
+        damageAmount = damageAmount + resAttackEffect.target_debuff_dmg * attack * count / <span class="number">10000</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resAttackEffect.state_extra_rate <span class="keyword">then</span>
+        <span class="keyword">if</span> selfLayer &gt; <span class="number">0</span> <span class="keyword">or</span> targetLayer &gt; <span class="number">0</span> <span class="keyword">then</span>
+           damageAmount = damageAmount * (<span class="number">10000</span> + resAttackEffect.state_extra_rate) / <span class="number">10000</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resAttackEffect.dis_percent <span class="keyword">then</span>
+        <span class="keyword">local</span> distance = ownerUnit:<span class="function-name">getDistance</span>(targetUnit)
+        damageAmount = damageAmount * (<span class="number">10000</span> + distance * resAttackEffect.dis_percent) / <span class="number">10000</span>
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> damageAmount
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onCheckSkillAim</span>()
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> skillTarget = self.resSkill.skillTarget <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> skillTarget == <span class="number">0</span> <span class="keyword">then</span> <span class="comment">-- 0：普攻目标（面前的目标）
+</span>        <span class="keyword">return</span> ownerUnit:<span class="function-name">findNormalTarget</span>()
+    <span class="keyword">elseif</span> skillTarget == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">-- 1：自身
+</span>        <span class="keyword">return</span> ownerUnit
+    <span class="keyword">elseif</span> skillTarget == <span class="number">2</span> <span class="keyword">then</span> <span class="comment">-- 2：普攻目标的当前行的最后排敌方
+</span>    <span class="keyword">elseif</span> skillTarget == <span class="number">3</span> <span class="keyword">then</span> <span class="comment">-- 3：血量最少的友方
+</span>        <span class="keyword">local</span> filter = ownerUnit:<span class="function-name">filterAnd</span>(ownerUnit:<span class="function-name">filterFriend</span>(), ownerUnit:<span class="function-name">filterAttr</span>(<span class="string">'hp'</span>))
+        <span class="keyword">return</span> ownerUnit:<span class="function-name">minUnit</span>(filter)
+    <span class="keyword">elseif</span> skillTarget == <span class="number">4</span> <span class="keyword">then</span> <span class="comment">-- 4：血量最少的敌方
+</span>        <span class="keyword">local</span> filter = ownerUnit:<span class="function-name">filterAnd</span>(ownerUnit:<span class="function-name">filterEnemy</span>(), ownerUnit:<span class="function-name">filterAttr</span>(<span class="string">'hp'</span>))
+        <span class="keyword">return</span> ownerUnit:<span class="function-name">maxUnit</span>(filter)
+    <span class="keyword">elseif</span> skillTarget == <span class="number">5</span> <span class="keyword">then</span> <span class="comment">-- 5：穿过大体型的普攻目标
+</span>    <span class="keyword">elseif</span> skillTarget == <span class="number">6</span> <span class="keyword">then</span> <span class="comment">-- 6：被集火目标
+</span>        <span class="keyword">return</span> ownerUnit:<span class="function-name">findAimedTarget</span>()
+    <span class="keyword">else</span> <span class="comment">-- 0：普攻目标（面前的目标）
+</span>        <span class="keyword">return</span> ownerUnit:<span class="function-name">findNormalTarget</span>()
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillParams</span>()
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> cardInfo = self.cardInfo
+    <span class="keyword">local</span> cardType = cardInfo.cardType
+    <span class="keyword">if</span> cardType <span class="keyword">then</span>
+        <span class="keyword">local</span> skillCd = cardInfo.skillCd <span class="comment">--计算下次冷却时间
+</span>        <span class="keyword">local</span> cdr = ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'final_skill_cdr_'</span>..cardType)
+        <span class="keyword">local</span> cd = skillCd * (<span class="number">10000</span> - cdr) / <span class="number">10000</span>
+        <span class="keyword">if</span> cardInfo.useSpeedUp <span class="keyword">then</span>
+            <span class="keyword">local</span> speedUp = <span class="number">10000</span> + ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'final_attack_speed_up'</span>)
+            <span class="keyword">if</span> speedUp &gt; <span class="number">0</span> <span class="keyword">then</span>
+                cd = cd * <span class="number">10000</span> / speedUp
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+        cardInfo.nextCd = cd
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> self.skillId, cardInfo.cardId, cardType
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillBehavior</span>()
+    <span class="keyword">local</span> cardInfo = self.cardInfo
+    <span class="keyword">local</span> resSkill = self.resSkill
+    <span class="keyword">local</span> attackTime = cardInfo.useSpeedUp <span class="keyword">and</span> cardInfo.nextCd
+    <span class="keyword">return</span> resSkill.bhEvent, attackTime
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillDisplay</span>()
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> resSkill = self.resSkill
+    <span class="keyword">local</span> hero = ownerUnit:<span class="function-name">isHero</span>()
+    <span class="keyword">local</span> player = ownerUnit:<span class="function-name">getCamp</span>() == <span class="number">1</span>
+    <span class="comment">--己方英雄：Timeline/视频/CutIn+动作
+</span>    <span class="comment">--敌方英雄：TimeLine+动作
+</span>    <span class="comment">--敌方怪物：Timeline
+</span>    <span class="comment">--优先：Timeline&gt;视频&gt;CutIn
+</span>    <span class="keyword">local</span> actTime = hero <span class="keyword">and</span> resSkill.actTime <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> timelineTime = resSkill.timelineTime <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> videoTime = player <span class="keyword">and</span> hero <span class="keyword">and</span> timelineTime &lt;= <span class="number">0</span> <span class="keyword">and</span> ownerUnit:<span class="function-name">isLongSkill</span>() <span class="keyword">and</span> resSkill.videoActTime <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> cutinTime = player <span class="keyword">and</span> hero <span class="keyword">and</span> timelineTime &lt;= <span class="number">0</span> <span class="keyword">and</span> videoTime &lt;= <span class="number">0</span> <span class="keyword">and</span> resSkill.shortVideoActTime <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> showType = (timelineTime &gt; <span class="number">0</span> <span class="keyword">and</span> <span class="number">1</span>) <span class="keyword">or</span> (videoTime &gt; <span class="number">0</span> <span class="keyword">and</span> <span class="number">2</span>) <span class="keyword">or</span> (cutinTime &gt; <span class="number">0</span> <span class="keyword">and</span> <span class="number">3</span>) <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> videoCue = showType == <span class="number">2</span> <span class="keyword">and</span> resSkill.videoActCue <span class="keyword">or</span> <span class="keyword">nil</span>
+    <span class="keyword">local</span> showTime = timelineTime + videoTime + cutinTime
+    <span class="keyword">local</span> pauseTime = showTime + actTime
+    <span class="keyword">return</span> pauseTime / <span class="number">30</span>, showTime / <span class="number">30</span>, showType, videoCue
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillPredict</span>(aimUnit)
+    <span class="keyword">local</span> resSkill = self.resSkill
+    <span class="keyword">local</span> resEvent = resSkill.atkEvents[resSkill.hideEvent]
+    <span class="keyword">return</span> resEvent <span class="keyword">and</span> <span class="function-name">getSkillEventTargets</span>(self, resEvent, aimUnit)
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillAtk</span>(eventId, aimUnit)
+    <span class="keyword">local</span> resEvent = self.resSkill.atkEvents[eventId]
+    <span class="keyword">if</span> <span class="keyword">not</span> resEvent <span class="keyword">then</span>
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> targetList = <span class="function-name">getSkillEventTargets</span>(self, resEvent, aimUnit)
+    <span class="keyword">if</span> resEvent.atkCue <span class="keyword">then</span>
+        <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+        self:<span class="function-name">playCue</span>(ownerUnit, resEvent.atkCue.cueList)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resEvent.baseCue <span class="keyword">then</span>
+        <span class="keyword">local</span> baseUnit, camp = <span class="function-name">getBaseUnitAndTargetCamp</span>(self, resEvent, aimUnit)
+        self:<span class="function-name">playCue</span>(baseUnit, resEvent.baseCue.cueList)
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> targetList
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onSelfSkillAtk</span>(eventId, aimUnit)
+    <span class="keyword">local</span> resEvent = self.resSkill.atkEvents[eventId]
+    <span class="keyword">local</span> subEventSkill = resEvent <span class="keyword">and</span> resEvent.subEventSkill <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> subEventSkill &gt; <span class="number">0</span> <span class="keyword">then</span>
+        <span class="keyword">local</span> subEventId = resEvent.subEventId <span class="keyword">or</span> <span class="number">0</span>
+        <span class="keyword">if</span> subEventId &gt; <span class="number">0</span> <span class="keyword">then</span>
+            <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+            <span class="keyword">local</span> cardInfo = self.cardInfo
+            self:<span class="function-name">triggerSkillEvent</span>(ownerUnit, aimUnit, subEventSkill, subEventId, self:<span class="function-name">getSkillLevel</span>())
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onPrepareSkillHit</span>(eventId, aimUnit, targetUnit)
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> resEvent = self.resSkill.atkEvents[eventId]
+    <span class="keyword">local</span> flyBaseUnit = resEvent.baseToTarget == <span class="number">1</span> <span class="keyword">and</span> aimUnit <span class="keyword">or</span> ownerUnit
+    <span class="keyword">local</span> flyTime = (resEvent.delay <span class="keyword">or</span> <span class="number">0</span>) + flyBaseUnit:<span class="function-name">getDistance</span>(targetUnit) * (resEvent.unitDelay <span class="keyword">or</span> <span class="number">0</span>)
+    <span class="keyword">local</span> flyCueId = resEvent.flyCueId <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">if</span> flyCueId &gt; <span class="number">0</span> <span class="keyword">then</span>
+        self:<span class="function-name">playCue</span>(targetUnit, flyCueId, flyBaseUnit, flyTime)
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> flyTime
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigSkill:<span class="function-name">onSelfSkillHit</span>(eventId, aimUnit, targetUnit)
+    <span class="keyword">local</span> resEvent = self.resSkill.atkEvents[eventId]
+    <span class="keyword">if</span> resEvent.rebornMhp <span class="keyword">then</span>
+        self:<span class="function-name">reborn</span>(targetUnit, resEvent.rebornMhp, resEvent.rebornMana <span class="keyword">or</span> <span class="number">0</span>)
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> hited = resEvent.cantBeDodged <span class="keyword">or</span> ownerUnit:<span class="function-name">isFriend</span>(targetUnit) <span class="keyword">or</span> self:<span class="function-name">checkHitChance</span>(targetUnit, self.cardInfo.cardType, resEvent.disablePassive)
+    <span class="keyword">if</span> <span class="keyword">not</span> hited <span class="keyword">then</span>
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resEvent.hitCue <span class="keyword">then</span>
+        self:<span class="function-name">playCue</span>(targetUnit, resEvent.hitCue.cueList)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resEvent.hitedAnim <span class="keyword">then</span>
+        self:<span class="function-name">playHitAnim</span>(targetUnit, resEvent.hitedAnim)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resEvent.hitedOffset <span class="keyword">then</span>
+        self:<span class="function-name">playHitOffset</span>(targetUnit, resEvent.hitedOffset)
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> skillLevel = self:<span class="function-name">getSkillLevel</span>()
+    <span class="comment">-- 位移
+</span>    <span class="keyword">local</span> movingFlash = resEvent.movingFlash
+    <span class="keyword">if</span> movingFlash <span class="keyword">and</span> movingFlash &gt; <span class="number">0</span> <span class="keyword">then</span>
+        self:<span class="function-name">attackMovingFlash</span>(targetUnit, movingFlash)
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> movingSwap = resEvent.movingSwap
+    <span class="keyword">if</span> movingSwap <span class="keyword">and</span> movingSwap &gt; <span class="number">0</span> <span class="keyword">then</span>
+        self:<span class="function-name">attackMovingSwap</span>(targetUnit)
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> movingBackDistance = resEvent.movingBackDistance
+    <span class="keyword">if</span> movingBackDistance <span class="keyword">and</span> movingBackDistance &gt; <span class="number">0</span> <span class="keyword">then</span>
+        <span class="keyword">local</span> movingBackSpeed = resEvent.movingBackSpeed
+        self:<span class="function-name">attackMovingBack</span>(targetUnit, movingBackDistance, movingBackSpeed)
+    <span class="keyword">end</span>
+    <span class="comment">-- 控制
+</span>    <span class="keyword">local</span> stunOperation = resEvent.stunOperation <span class="comment">-- 0 添加 1 消除 2 取消
+</span>    <span class="keyword">if</span> stunOperation == <span class="number">0</span> <span class="keyword">or</span> stunOperation == <span class="keyword">nil</span> <span class="keyword">then</span>
+        <span class="keyword">local</span> skipImmunityControl = resEvent.skipImmunityControl == <span class="number">1</span>
+        <span class="keyword">local</span> stunTime = resEvent.stunTime
+        <span class="keyword">if</span> stunTime <span class="keyword">and</span> stunTime &gt; <span class="number">0</span> <span class="keyword">then</span>
+            self:<span class="function-name">attackControl</span>(targetUnit, <span class="string">'stun'</span>, stunTime, skipImmunityControl)
+        <span class="keyword">end</span>
+        <span class="keyword">local</span> controlTime = resEvent.controlTime
+        <span class="keyword">if</span> controlTime <span class="keyword">and</span> controlTime &gt; <span class="number">0</span> <span class="keyword">then</span>
+            <span class="keyword">local</span> controlAniName = resEvent.controlAniName
+            self:<span class="function-name">attackControl</span>(targetUnit, controlAniName, controlTime, skipImmunityControl)
+        <span class="keyword">end</span>
+    <span class="keyword">elseif</span> stunOperation == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">--取消
+</span>        <span class="keyword">local</span> controlAniName = resEvent.controlAniName
+        self:<span class="function-name">attackControlDel</span>(targetUnit, controlAniName)
+    <span class="keyword">elseif</span> stunOperation == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">--延长
+</span>        <span class="keyword">local</span> controlAniName = resEvent.controlAniName
+        <span class="keyword">local</span> controlTime = resEvent.controlTime <span class="keyword">or</span> resEvent.stunTime
+        <span class="keyword">if</span> controlTime <span class="keyword">and</span> controlTime &gt; <span class="number">0</span> <span class="keyword">then</span>
+            self:<span class="function-name">attackControlExtend</span>(targetUnit, controlAniName, controlTime)
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="comment">-- 状态
+</span>    <span class="keyword">local</span> state = resEvent.state
+    <span class="keyword">if</span> state <span class="keyword">then</span>
+        <span class="keyword">local</span> stateOpt = state.stateOperation <span class="keyword">or</span> <span class="number">0</span>  <span class="comment">-- 状态操作 0 添加 1 消除 2 延长 3 转移基点状态
+</span>        <span class="keyword">local</span> duration = state.duration
+        duration = duration <span class="keyword">and</span> (duration &gt; <span class="number">0</span> <span class="keyword">or</span> duration == BattleConst.STATE_DURATION_UNLIMIT) <span class="keyword">and</span> duration <span class="keyword">or</span> <span class="number">0</span>
+        <span class="keyword">if</span> stateOpt == <span class="number">0</span> <span class="keyword">then</span> <span class="comment">-- 0 添加
+</span>            <span class="keyword">local</span> stateId = state.stateId <span class="keyword">or</span> <span class="number">0</span>
+            <span class="keyword">if</span> stateId &gt; <span class="number">0</span> <span class="keyword">then</span>
+                self:<span class="function-name">incStateLayer</span>(targetUnit, stateId, skillLevel, <span class="number">1</span>, duration)
+            <span class="keyword">end</span>
+        <span class="keyword">elseif</span> stateOpt == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">-- 1 消除
+</span>            <span class="keyword">local</span> selectType = state.chooseStateType <span class="keyword">or</span> <span class="number">0</span>
+            <span class="keyword">local</span> selectMode = state.chooseStateMode <span class="keyword">or</span> <span class="number">0</span>
+            <span class="keyword">local</span> randomCount = state.chooseRandomNum
+            <span class="keyword">local</span> selectIds = state.chooseStateIds
+            <span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">filterType</span>(ability)
+                <span class="keyword">return</span> selectType == <span class="number">0</span> <span class="keyword">or</span> (selectType == <span class="number">1</span> <span class="keyword">and</span> ability:<span class="function-name">hasStateTag</span>(<span class="string">'buff'</span>)) <span class="keyword">or</span> (selectType == <span class="number">2</span> <span class="keyword">and</span> ability:<span class="function-name">hasStateTag</span>(<span class="string">'debuff'</span>))
+            <span class="keyword">end</span>
+            <span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">filterId</span>(ability)
+                <span class="keyword">for</span> _, id <span class="keyword">in</span> <span class="global">ipairs</span>(selectIds) <span class="keyword">do</span>
+                    <span class="keyword">if</span> ability.stateId == id <span class="keyword">then</span>
+                        <span class="keyword">return</span> <span class="keyword">true</span>
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+                <span class="keyword">return</span> <span class="keyword">false</span>
+            <span class="keyword">end</span>
+            <span class="keyword">local</span> stateList
+            <span class="keyword">if</span> selectMode == <span class="number">0</span> <span class="keyword">then</span> <span class="comment">-- 0 随机
+</span>                stateList = targetUnit:<span class="function-name">randomListAbility</span>(filterType, randomCount)
+                targetUnit:<span class="function-name">addOutput</span>(BattleConst.MATRIX_EVENT_ENTITY_SOMETHING, { BattleConst.ENTITY_SOMETHING_DEL_STATE })
+            <span class="keyword">elseif</span> selectMode == <span class="number">1</span> <span class="keyword">then</span> <span class="comment">-- 1 全部
+</span>                stateList = targetUnit:<span class="function-name">searchAbility</span>(filterType)
+                targetUnit:<span class="function-name">addOutput</span>(BattleConst.MATRIX_EVENT_ENTITY_SOMETHING, { BattleConst.ENTITY_SOMETHING_DEL_STATE })
+            <span class="keyword">elseif</span> selectMode == <span class="number">2</span> <span class="keyword">then</span> <span class="comment">-- 2 指定ID
+</span>                stateList = targetUnit:<span class="function-name">searchAbility</span>(filterId)
+            <span class="keyword">end</span>
+            <span class="keyword">for</span> _, ability <span class="keyword">in</span> <span class="global">ipairs</span>(stateList) <span class="keyword">do</span>
+                self:<span class="function-name">delAbility</span>(targetUnit, ability)
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="comment">-- 能量变化
+</span>    <span class="keyword">local</span> addMana = resEvent.addManaNumber <span class="keyword">or</span> <span class="number">0</span>
+    <span class="keyword">local</span> notShow = resEvent.manaNotShow == <span class="number">1</span>
+    self:<span class="function-name">attackChangeMana</span>(targetUnit, addMana, notShow)
+    <span class="comment">-- 召唤
+</span>    <span class="keyword">local</span> summonMonsters = resEvent.summonMonsters
+    <span class="keyword">if</span> summonMonsters <span class="keyword">then</span>
+        <span class="keyword">local</span> attrFromUnit = resEvent.summonAttr <span class="keyword">and</span> targetUnit <span class="keyword">or</span> <span class="keyword">nil</span>
+        <span class="keyword">for</span> match <span class="keyword">in</span> <span class="global">string</span>.<span class="function-name">gmatch</span>(summonMonsters, <span class="string">"[^,]+"</span>) <span class="keyword">do</span>
+            <span class="keyword">local</span> monsterId = <span class="global">tonumber</span>(match)
+            <span class="keyword">local</span> summonLineChoose = resEvent.summonLineChoose <span class="keyword">or</span> <span class="number">0</span>
+            <span class="keyword">local</span> refUnit = summonLineChoose &gt;= <span class="number">10</span> <span class="keyword">and</span> targetUnit <span class="keyword">or</span> self:<span class="function-name">getOwnerUnit</span>()
+            <span class="keyword">local</span> chooseLine = summonLineChoose % <span class="number">10</span>
+            <span class="keyword">local</span> diffY = <span class="number">0</span>
+            <span class="keyword">if</span> chooseLine == <span class="number">1</span> <span class="keyword">then</span>
+                diffY = <span class="number">1</span>
+            <span class="keyword">elseif</span> chooseLine == <span class="number">2</span> <span class="keyword">then</span>
+                diffY = <span class="number">2</span>
+            <span class="keyword">elseif</span> chooseLine == <span class="number">3</span> <span class="keyword">then</span>
+                diffY = -<span class="number">1</span>
+            <span class="keyword">elseif</span> chooseLine == <span class="number">4</span> <span class="keyword">then</span>
+                diffY = -<span class="number">2</span>
+            <span class="keyword">end</span>
+            <span class="keyword">local</span> grid = refUnit:<span class="function-name">findEmptyGridByLine</span>(diffY)
+            <span class="keyword">if</span> grid <span class="keyword">then</span>
+                self:<span class="function-name">summonMonster</span>(grid, monsterId, attrFromUnit)
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="comment">-- 天气
+</span>    <span class="keyword">local</span> weatherFlag = resEvent.weatherFlag
+    <span class="keyword">if</span> weatherFlag <span class="keyword">then</span>
+        self:<span class="function-name">changeWeather</span>(weatherFlag, resEvent.weatherTime)
+    <span class="keyword">end</span>
+    <span class="comment">-- 伤害
+</span>    <span class="keyword">local</span> boxId = resEvent.boxId
+    <span class="keyword">if</span> boxId <span class="keyword">then</span>
+        <span class="keyword">local</span> skillType = self.cardInfo <span class="keyword">and</span> self.cardInfo.cardType <span class="keyword">or</span> self.Enum.SkillType.BeiDong
+        <span class="keyword">local</span> effectData = ResAttackEffect[boxId]
+        <span class="keyword">local</span> resAttackEffect = effectData <span class="keyword">and</span> effectData[skillLevel]
+        <span class="keyword">if</span> <span class="keyword">not</span> resAttackEffect <span class="keyword">then</span>
+            <span class="keyword">return</span>
+        <span class="keyword">end</span>
+        <span class="keyword">local</span> boxType = resAttackEffect.dmg_type <span class="keyword">or</span> BOX_TYPE_PHYSICS
+        <span class="keyword">local</span> elemType = resAttackEffect.elem_type
+        <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+        <span class="keyword">local</span> damageBase = <span class="function-name">calcAttackDamage</span>(ownerUnit, targetUnit, resAttackEffect) <span class="comment">--第一步  根据攻击力等计算基础数值
+</span>        <span class="keyword">local</span> critDmgAdd = resAttackEffect.cri_dmg_add <span class="keyword">or</span> <span class="number">0</span>
+        <span class="keyword">if</span> boxType == BOX_TYPE_PHYSICS <span class="keyword">then</span>      <span class="comment">--0物理
+</span>            self:<span class="function-name">attackDamage</span>(targetUnit, damageBase, skillType, elemType, resEvent.disablePassive, critDmgAdd)
+        <span class="keyword">elseif</span> boxType == BOX_TYPE_HP_REMOVE <span class="keyword">then</span>    <span class="comment">--5生命移除
+</span>            self:<span class="function-name">attackLoss</span>(targetUnit, damageBase, skillType, resEvent.disablePassive)
+        <span class="keyword">elseif</span> boxType == BOX_TYPE_HEAL <span class="keyword">then</span>    <span class="comment">--3治疗
+</span>            self:<span class="function-name">attackHeal</span>(targetUnit, damageBase, skillType, resEvent.disablePassive)
+        <span class="keyword">elseif</span> boxType == BOX_TYPE_SHIELD <span class="keyword">then</span>    <span class="comment">--4护盾
+</span>            self:<span class="function-name">attackShield</span>(targetUnit, damageBase, skillType, resAttackEffect.shield_time, resEvent.disablePassive)
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+
+<span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">newAbilityConfigSkill</span>(skillId)
+    <span class="keyword">return</span> <span class="keyword">function</span> (ability)
+        <span class="keyword">local</span> resSkill = SkillData[skillId]
+        ability:<span class="function-name">getLogger</span>():<span class="function-name">trace</span>(<span class="string">'SkillData'</span>, skillId, resSkill)
+        ability.skillId = skillId
+        ability.resSkill = resSkill
+        ability:<span class="function-name">registerTriggerTable</span>(AbilityConfigSkill)
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">return</span> newAbilityConfigSkill</pre>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

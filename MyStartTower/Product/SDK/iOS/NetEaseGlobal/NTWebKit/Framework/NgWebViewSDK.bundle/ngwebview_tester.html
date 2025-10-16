@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>ngwebview</title>
+  </head>
+  
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px;
+  flex-basis: 40%;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #ddd;
+}
+</style>
+
+<script>
+function s_nativeCallback(respJSONString) {
+    var myTextarea = document.getElementById("responseTextarea");
+    myTextarea.value = respJSONString;
+}
+    
+function invokeEvent(action) {
+  if (action === 'go_forward') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"goForward"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'go_back') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"goBack"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'reload') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"refresh"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'close_web') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"close"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'hidden_web') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "execute_extend_func",
+          reqData : {"methodId":"NGWebViewControl", "action":"hidden"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'show_nav_bar') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"show"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'hide_nav_bar') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "navigation_bar_func",
+        reqData : {"action":"hide"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'close_web2') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "closeWebView",
+        reqData : {},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'open_browser') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "openBrowser",
+          reqData : {"webURL":"https://www.baidu.com"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'save_image') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "saveWebImage",
+        reqData : {"imageURL":"https://img2.baidu.com/it/u=1255562991,2204379723&fm=253&fmt=auto&app=138&f=JPEG?w=875&h=500"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'check_system_permission') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "check_system_permission",
+        reqData : {"types":"camera,photo"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'toast_notification') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "toast_notification",
+        reqData : {"message":"梦幻西游需要相册权限以分享社区","button_titles":"取消,未知, 确认"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'copy_to_pastboard') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "copyToPasteboard",
+        reqData : {"copyText":"it's bedtime"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'rotate') {
+      window.UniSDKJSBridge.postMsgToNative({
+        methodId : "rotateScreen",
+        reqData : {"orientation":"portrait"},
+        callback : {
+          nativeCallback : s_nativeCallback
+        }
+      });
+  }
+  else if (action === 'post_notification') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "ngwebview_notify_native",
+          reqData : {"uid":"huangfeihong",
+                     "data":"test_data",
+                     "notification_name":"NT_NOTIFICATION_EXTEND"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'execute_extend_func_hasAppInstalled') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "execute_extend_func",
+          reqData : {"methodId":"hasAppInstalled", "urlScheme":"sinaweibo", "channel":"ngwebview"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'execute_extend_func_gameContextInfo') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "execute_extend_func",
+          reqData : {"methodId":"gameContextInfo", "callback_mode":"web"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'print_js_log') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "debug_js_log",
+          reqData : {"test_js_info":"go to bed"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'requestCookiesAPI_0') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "requestCookiesAPI",
+          reqData : {"URLString":"https://bt.hi.163.com/qnm/activity/login?skey=test&roleid=780801003&activity_name=b", "method":"get"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'requestCookiesAPI_1') {
+      window.UniSDKJSBridge.postMsgToNative({
+          methodId : "requestCookiesAPI",
+          reqData : {"URLString":"https://ssl.hi.163.com/file_mg/public/share/common_activity_treeterminal/qnm/qyfhguild2023/web/score", "method":"get"},
+          callback : {
+            nativeCallback : s_nativeCallback
+          }
+      });
+  }
+  else if (action === 'sendSimpleRequest') {
+      // 创建XMLHttpRequest对象
+      var xhr = new XMLHttpRequest();
+      // 设置请求地址和请求方法
+      xhr.open("GET", "https://www.baidu.com");
+      // 设置响应回调函数
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+        }
+      };
+      // 发送请求
+      xhr.send();
+  }
+}
+</script>
+
+<ul>
+    <li onclick="invokeEvent('toast_notification')">弹窗</li>
+    <li onclick="invokeEvent('check_system_permission')">获取权限</li>
+    <li onclick="invokeEvent('close_web2')">关闭web</li>
+  <li onclick="invokeEvent('hidden_web')">隐藏web</li>
+  <li onclick="invokeEvent('open_browser')">打开浏览器</li>
+  <li onclick="invokeEvent('save_image')">保存网络图片</li>
+  <li onclick="invokeEvent('copy_to_pastboard')">复制文本到粘贴板</li>
+  <li onclick="invokeEvent('rotate')">旋转方向</li>
+  <li onclick="invokeEvent('post_notification')">通知原生层</li>
+  <li onclick="invokeEvent('print_js_log')">前端日志输出</li>
+  <li onclick="invokeEvent('requestCookiesAPI')">请求cookie接口</li>
+  <li onclick="invokeEvent('requestCookiesAPI_0')">发起xhr请求0</li>
+  <li onclick="invokeEvent('requestCookiesAPI_1')">发起xhr请求1</li>
+  <li onclick="invokeEvent('execute_extend_func_hasAppInstalled')">扩展接口-判断微博App是否安装</li>
+  <li onclick="invokeEvent('execute_extend_func_gameContextInfo')">扩展接口-获取游戏上下文信息</li>
+  
+  
+  <li onclick="invokeEvent('go_forward')">导航栏-前进</li>
+  <li onclick="invokeEvent('go_back')">导航栏-后退</li>
+  <li onclick="invokeEvent('reload')">导航栏-刷新</li>
+  <li onclick="invokeEvent('close_web')">导航栏-关闭</li>
+  <li onclick="invokeEvent('show_nav_bar')">显示导航栏</li>
+  <li onclick="invokeEvent('hide_nav_bar')">隐藏导航栏</li>
+</ul>
+
+<h2> 调用相册 </h2>
+<div class="take_photo">
+    方式1<input type="file" accept="image/*" :capture="('camera' as any)" @change="onFilesChange" ref="fileInput" multiple/>
+</div>
+<div class="take_photo">
+    方式2<input type="file" accept="image/*" name="upload_h5" @change="onFilesChange" ref="fileInput" multiple/>
+</div>
+<div class="take_photo">
+    方式3<input type="file" accept="image/*"  multiple/>
+</div>
+<div class="take_photo">
+    方式4<input type="file" accept="image/*" capture="camera" multiple/>
+</div>
+<div class="take_photo">
+    方式5<input type="file" accept="image/*" capture="environment" multiple/>
+</div>
+<div class="take_photo">
+    <input type="file" />
+</div>
+
+<h2> 回调 </h2>
+<div class="box">
+    <style>
+      textarea {
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+    <textarea id="responseTextarea">回调结果</textarea>
+</div>
+
+
+<h2> 其他 </h2>
+<div class="other_case">
+    <a href="https://h5.ds.163.com/v1/628602f107bb0900516abe3d">
+      <button class="testButton">内部跳转</button><br/>
+    </a>
+</div>
+
+</html>

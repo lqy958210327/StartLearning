@@ -9,13 +9,13 @@ public class TowerBase : MonoBehaviour
     private float lastFireTime;
     // ... 其他塔的属性
 
-    public TowerBase(float attackRange, float fireRate, GameObject bulletPrefab)
+    public TowerBase()
     {
         // 注意：在Unity中，你不应该这样定义构造函数！
         // 这只是为了说明如何初始化属性。在Unity中，你应该在Start或Awake中做这些。
-        AttackRange = attackRange;
-        FireRate = fireRate;
-        BulletPrefab = bulletPrefab;
+        // AttackRange = attackRange;
+        // FireRate = fireRate;
+        // BulletPrefab = bulletPrefab;
     }
 
     protected virtual void Awake()
@@ -27,13 +27,11 @@ public class TowerBase : MonoBehaviour
     {
         // 初始化攻击范围和射速
         // 这些值也可以直接在Unity编辑器中设置
-        // AttackRange = 10f; // 示例值
-        // FireRate = 1f; // 示例值，每秒射击次数
+        AttackRange = 10f; // 示例值
+        FireRate = 1f; // 示例值，每秒射击次数
         lastFireTime = -FireRate; // 确保第一帧可以射击
 
         // 初始化攻击范围和射速（这些值也可以在Unity编辑器中直接设置）
-        AttackRange = GetComponent<SomeComponent>()?.attackRange ?? 10f; // 示例值，或者从某个组件获取
-        FireRate = GetComponent<SomeComponent>()?.fireRate ?? 1f; // 示例值，或者从某个组件获取
         // ... 可能还有其他初始化代码 ...
     }
 
@@ -43,7 +41,7 @@ public class TowerBase : MonoBehaviour
         {
             // 射击逻辑，这里假设有一个目标位置targetPosition
             // 在实际游戏中，你需要获取或指定一个目标
-            Vector3 targetPosition = GetTargetPosition(); // 这是一个假设的方法，你需要实现它
+            Vector3 targetPosition = new Vector3(0f, 0f, 0f); //GetTargetPosition(); // 这是一个假设的方法，你需要实现它
             Attack(targetPosition);
             lastFireTime = Time.time;
         }

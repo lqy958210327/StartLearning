@@ -1,0 +1,28 @@
+/* 
+  QRCode.strings
+  Demo_netease2
+
+  Created by game-netease on 2017/6/28.
+  Copyright © 2017年 game-netease. All rights reserved.
+*/
+
+"scanning" = "Scanning";
+"scanning_en" = "Scanning";
+"scanning_zh-Hans" = "扫一扫";
+
+"album" = "Album";
+"album_en" = "Album";
+"album_zh-Hans" = "相册";
+
+
+"tipsForWindow" = "Window focus on QRCode";
+"tipsForWindow_en" = "Window focus on QRCode";
+"tipsForWindow_zh-Hans" = "将取景框对准二维码扫描";
+
+"torchNormal" = "Torch normal";
+"torchNormal_en" = "Torch normal";
+"torchNormal_zh-Hans" = "打开手电筒";
+
+"torchSelected" = "Torch selected";
+"torchSelected_en" = "Torch selected";
+"torchSelected_zh-Hans" = "关闭手电筒";

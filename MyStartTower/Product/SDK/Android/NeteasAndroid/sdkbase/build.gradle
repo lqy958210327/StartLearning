@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.project.oc'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 22
+        targetSdk 34
+
+        ndk {
+            // 设置支持的SO库架构，根据项目实际需求设置
+            abiFilters  'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.fragment:fragment:1.3.0'
+    implementation 'com.google.android.material:material:1.5.0'
+    api files('libs\\common_libproject.jar')
+    api files('libs\\modulebase_1.3.1.jar')
+    api files('libs\\ngDownload.jar')
+    api files('libs\\ngPharos_2.8.0.jar')
+    api files('libs\\ntunisdk_okhttp_3.12.12.jar')
+    api files('libs\\ntunisdk_okio_1.15.0.jar')
+    api files('libs\\ntunisdkbase.jar')
+    api files('libs\\step2.jar')
+    api files('libs\\ach.jar')
+    api files('libs\\applicationlifecycle-1.0.2.jar')
+    api files('libs\\clientlog-1.1.0.jar')
+    api files('libs\\deviceinfo_1.4.4.jar')
+    api files('libs\\sharedokhttp-3.12.12.jar')
+    api files('libs\\unilogger-1.0.0.jar')
+    api files('libs\\EnvSdk_jdk_jar_4.2.3_147801_16cd984_release.jar')
+    compileOnly files("libs/unity/classes.jar")
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

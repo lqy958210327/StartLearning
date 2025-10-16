@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"繫統找不到攝像頭",
+    "CREATE_IMGFILE_FAILED_MSG":"保存圖片文件失敗",
+    "ISNOT_IMAGE_FILE_MSG":"選擇內容不是圖片",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"不允許訪問相冊",
+    "ASButtonTitleCancel":"取消",
+    "ASButtonTitleCamera":"相機拍照",
+    "ASButtonTitleLibrary":"手機相冊",
+    "upload_img_succeess":"上載完成！",
+    "upload_img_failed":"獲取圖片失敗"
+}

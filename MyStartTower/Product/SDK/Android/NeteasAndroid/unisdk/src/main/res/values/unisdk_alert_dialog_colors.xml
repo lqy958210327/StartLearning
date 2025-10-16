@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="unisdk__transparent">#00000000</color>
+
+    <color name="unisdk__font_h15">#FB4F4F</color>
+    <color name="unisdk__font_h15_pressed">#E34646</color>
+    <color name="unisdk__font_h16">#FFFFFF</color>
+
+    <color name="unisdk__anti_addiction_font_13">#4A4948</color>
+    <color name="unisdk__anti_addiction_font_15">#494847</color>
+</resources>

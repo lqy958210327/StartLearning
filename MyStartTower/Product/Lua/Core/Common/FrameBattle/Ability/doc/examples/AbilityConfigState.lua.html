@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+
+
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/AbilityConfigCard.lua.html">AbilityConfigCard.lua</a></li>
+  <li><a href="../examples/AbilityConfigSkill.lua.html">AbilityConfigSkill.lua</a></li>
+  <li><strong>AbilityConfigState.lua</strong></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Ability.html">Ability</a></li>
+  <li><a href="../classes/Unit.html">Unit</a></li>
+  <li><a href="../classes/AbilityConfig.html">AbilityConfig</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <h2>AbilityConfigState.lua</h2>
+<pre>
+<span class="keyword">local</span> AbilityDataTable = <span class="global">require</span> <span class="string">"Core/Common/FrameBattle/Ability/AbilityDataTable"</span>
+<span class="keyword">local</span> ResStateData = AbilityDataTable.ResStateData
+<span class="keyword">local</span> ResAttrConfig = AbilityDataTable.ResAttrConfig
+
+<span class="keyword">local</span> SORTED_ATTR_LIST = {}
+<span class="keyword">for</span> attrName, _ <span class="keyword">in</span> <span class="global">pairs</span>(ResAttrConfig) <span class="keyword">do</span>
+    <span class="global">table</span>.<span class="function-name">insert</span>(SORTED_ATTR_LIST, attrName)
+<span class="keyword">end</span>
+<span class="global">table</span>.<span class="function-name">sort</span>(SORTED_ATTR_LIST)
+
+
+
+
+<span class="keyword">local</span> AbilityConfigState = {}
+<span class="keyword">function</span> AbilityConfigState:<span class="function-name">onCheckDettachDead</span>()
+    <span class="keyword">return</span> <span class="keyword">true</span>
+<span class="keyword">end</span>
+
+<span class="comment">---@param self Ability
+</span><span class="comment">---@return boolean
+</span><span class="keyword">function</span> AbilityConfigState.<span class="function-name">onCheckAttach</span>(self)
+    <span class="keyword">local</span> level = self:<span class="function-name">getSkillLevel</span>()
+    <span class="keyword">local</span> stateConfig = self.stateConfig
+    <span class="keyword">local</span> stateConfigLevel = stateConfig[level] <span class="keyword">or</span> stateConfig[#stateConfig]
+    <span class="keyword">if</span> <span class="keyword">not</span> stateConfigLevel <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">true</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> resStateLevel = stateConfigLevel.resStateLevel
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">if</span> resStateLevel.conditionName <span class="keyword">then</span>
+        <span class="keyword">local</span> attr = ownerUnit:<span class="function-name">getAttr</span>(resStateLevel.conditionName)
+        <span class="keyword">if</span> attr ~= resStateLevel.conditionValue <span class="keyword">then</span>
+            <span class="keyword">return</span> <span class="keyword">true</span>
+        <span class="keyword">end</span>
+        <span class="keyword">local</span> hasEqual = <span class="keyword">false</span>
+        <span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span>(resStateLevel.multiConditionValue) <span class="keyword">do</span>
+            <span class="keyword">if</span> attr == value <span class="keyword">then</span>
+                hasEqual = <span class="keyword">true</span>
+                <span class="keyword">break</span>
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> hasEqual <span class="keyword">then</span>
+            <span class="keyword">return</span> <span class="keyword">true</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> ownerUnit:<span class="function-name">isImmuneAny</span>(stateConfigLevel.checkImmune)
+<span class="keyword">end</span>
+
+<span class="comment">---@param self Ability
+</span><span class="comment">---@param layer number
+</span><span class="comment">---@return number
+</span><span class="keyword">function</span> AbilityConfigState.<span class="function-name">onCheckIncStackLayer</span>(self, layer)
+    <span class="keyword">local</span> level = self:<span class="function-name">getSkillLevel</span>()
+    <span class="keyword">local</span> stateConfig = self.stateConfig
+    <span class="keyword">local</span> stateConfigLevel = stateConfig[level] <span class="keyword">or</span> stateConfig[#stateConfig]
+    <span class="keyword">if</span> <span class="keyword">not</span> stateConfigLevel <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">if</span> ownerUnit:<span class="function-name">isImmuneAny</span>(stateConfigLevel.checkImmune) <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> maxLayer = stateConfigLevel.maxLayer
+    <span class="keyword">local</span> nowLayer = self:<span class="function-name">getStackLayer</span>()
+    <span class="keyword">if</span> nowLayer + layer &gt; maxLayer <span class="keyword">then</span>
+        <span class="keyword">return</span> maxLayer - nowLayer
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> layer
+<span class="keyword">end</span>
+
+<span class="comment">---@param self Ability
+</span><span class="comment">---@param layer integer
+</span><span class="comment">---@param oldLayer integer
+</span><span class="keyword">function</span> AbilityConfigState.<span class="function-name">onSelfStackLayerChange</span>(self, layer, oldLayer)
+    <span class="keyword">local</span> level = self:<span class="function-name">getSkillLevel</span>()
+    <span class="keyword">local</span> stateConfig = self.stateConfig
+    <span class="keyword">local</span> stateConfigLevel = stateConfig[level] <span class="keyword">or</span> stateConfig[#stateConfig]
+    <span class="keyword">if</span> <span class="keyword">not</span> stateConfigLevel <span class="keyword">then</span>
+        <span class="keyword">return</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> resStateLevel = stateConfigLevel.resStateLevel
+    <span class="keyword">local</span> detach = layer &lt;= <span class="number">0</span>
+    <span class="keyword">local</span> layerUp = layer &gt; oldLayer
+    <span class="comment">--处理独占状态
+</span>    <span class="keyword">if</span> resStateLevel.exclusiveTag <span class="keyword">then</span>
+        <span class="keyword">if</span> resStateLevel.exclusiveTag == <span class="string">"1"</span> <span class="keyword">then</span>
+            <span class="keyword">if</span> detach <span class="keyword">then</span>
+                self:<span class="function-name">unsetExclusiveAbility</span>(<span class="string">'beTaunted'</span>)
+            <span class="keyword">elseif</span> self:<span class="function-name">setExclusiveAbility</span>(<span class="string">'beTaunted'</span>) <span class="keyword">then</span>
+                self:<span class="function-name">beTaunted</span>()
+            <span class="keyword">end</span>
+        <span class="keyword">elseif</span> resStateLevel.exclusiveTag == <span class="string">"2"</span> <span class="keyword">then</span>
+            <span class="keyword">if</span> detach <span class="keyword">then</span>
+                self:<span class="function-name">unsetExclusiveAbility</span>(<span class="string">'beAimed'</span>)
+            <span class="keyword">elseif</span> self:<span class="function-name">setExclusiveAbility</span>(<span class="string">'beAimed'</span>) <span class="keyword">then</span>
+                self:<span class="function-name">beAimed</span>()
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    self:<span class="function-name">setTagList</span>(stateConfigLevel.tagList)
+    <span class="keyword">if</span> resStateLevel.state_group <span class="keyword">then</span>
+        self:<span class="function-name">addStateGroupList</span>(resStateLevel.state_group)
+    <span class="keyword">end</span>
+    <span class="comment">--处理属性
+</span>    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> disableShowNum = resStateLevel.disableShowNum <span class="keyword">and</span> resStateLevel.disableShowNum &gt; <span class="number">0</span> <span class="keyword">or</span> <span class="keyword">not</span> layerUp
+    <span class="keyword">for</span> _, attrName <span class="keyword">in</span> <span class="global">ipairs</span>(SORTED_ATTR_LIST) <span class="keyword">do</span>
+        <span class="keyword">if</span> resStateLevel[attrName] <span class="keyword">then</span>
+            <span class="keyword">local</span> propValues = resStateLevel[attrName]
+            <span class="keyword">local</span> attrValue
+            <span class="keyword">if</span> layer &lt;= <span class="number">0</span> <span class="keyword">then</span>
+                attrValue = <span class="keyword">nil</span>
+            <span class="keyword">elseif</span> <span class="global">type</span>(propValues) == <span class="string">"number"</span> <span class="keyword">then</span>
+                attrValue = propValues
+            <span class="keyword">elseif</span> <span class="global">type</span>(propValues) == <span class="string">"string"</span> <span class="keyword">then</span>
+                attrValue = <span class="global">tonumber</span>(propValues)
+            <span class="keyword">else</span>
+                <span class="keyword">local</span> prop = propValues[layer] <span class="keyword">or</span> propValues[<span class="number">1</span>]
+                <span class="keyword">if</span> <span class="global">type</span>(prop) == <span class="string">"number"</span> <span class="keyword">then</span>
+                    attrValue = prop
+                <span class="keyword">else</span>
+                    <span class="keyword">if</span> prop[<span class="number">1</span>] == <span class="number">1</span> <span class="keyword">then</span>
+                        <span class="keyword">local</span> baseValue = <span class="global">tonumber</span>(prop[<span class="number">2</span>]) <span class="keyword">or</span> <span class="number">0</span>
+                        <span class="keyword">local</span> rateValue = <span class="global">tonumber</span>(prop[<span class="number">3</span>]) <span class="keyword">or</span> <span class="number">0</span>
+                        <span class="keyword">local</span> propName = prop[<span class="number">4</span>]
+                        <span class="keyword">local</span> target = ownerUnit
+                        <span class="keyword">if</span> prop[<span class="number">5</span>] == <span class="string">'1'</span> <span class="keyword">then</span> <span class="comment">-- 为2时选取攻击者身上的属性
+</span>                            target = self:<span class="function-name">getSourceUnit</span>()
+                        <span class="keyword">end</span>
+                        <span class="keyword">local</span> value = target:<span class="function-name">getAttr</span>(propName) <span class="comment">-- TODO level, camp, elem
+</span>                        attrValue = (baseValue + rateValue * value) * (layer <span class="keyword">or</span> <span class="number">0</span>)
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+            self:<span class="function-name">setAttrBuff</span>(attrName, attrValue, disableShowNum)
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resStateLevel.passiveSkill <span class="keyword">then</span>
+        <span class="keyword">local</span> nowPassiveId = self.nowPassiveId
+        <span class="keyword">if</span> nowPassiveId <span class="keyword">and</span> nowPassiveId ~= resStateLevel.passiveSkill <span class="keyword">then</span>
+            <span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">matchPassiveId</span>(ability)
+                <span class="keyword">return</span> ability.passiveId == nowPassiveId
+            <span class="keyword">end</span>
+            self:<span class="function-name">findDelAbility</span>(ownerUnit, matchPassiveId)
+            self.nowPassiveId = resStateLevel.passiveSkill
+            self:<span class="function-name">addAbility</span>(ownerUnit, <span class="string">'passive'</span>, resStateLevel.passiveSkill)
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> stateConfigLevel.dotList <span class="keyword">then</span>
+        <span class="keyword">for</span> _, dot <span class="keyword">in</span> <span class="global">ipairs</span>(stateConfigLevel.dotList) <span class="keyword">do</span>
+            <span class="keyword">if</span> layer &lt;= <span class="number">0</span> <span class="keyword">then</span>
+                self:<span class="function-name">removeTimer</span>(dot)
+            <span class="keyword">else</span>
+                <span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">timer</span>()
+                    self:<span class="function-name">triggerSkillEvent</span>(self:<span class="function-name">getSourceUnit</span>(), ownerUnit, dot.skillId, dot.eventId, self:<span class="function-name">getSkillLevel</span>())
+                    self:<span class="function-name">createTimer</span>(dot, dot.time, timer)
+                <span class="keyword">end</span>
+                self:<span class="function-name">createTimer</span>(dot, dot.time, timer)
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">makeStateConfig</span>(resState)
+    <span class="keyword">local</span> stateConfig = {}
+    <span class="keyword">for</span> level, resStateLevel <span class="keyword">in</span> <span class="global">ipairs</span>(resState) <span class="keyword">do</span>
+        <span class="keyword">local</span> stateConfigLevel = {}
+        stateConfigLevel.resStateLevel = resStateLevel
+        stateConfigLevel.maxLayer = resStateLevel.state_max_layer <span class="keyword">or</span> <span class="number">1</span>
+        <span class="keyword">local</span> checkImmune = {}
+        <span class="keyword">local</span> tagList = {}
+        <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'state'</span>..resStateLevel.state_id)
+        stateConfigLevel.checkImmune = checkImmune
+        stateConfigLevel.tagList = tagList
+        <span class="keyword">if</span> resStateLevel.state_type == <span class="number">1</span> <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneBuff'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'buff'</span>)
+        <span class="keyword">elseif</span> resStateLevel.state_type == <span class="number">2</span> <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneDebuff'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'debuff'</span>)
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> resStateLevel.replaceTag == <span class="string">"1"</span> <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneTaunt'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'taunt'</span>)
+        <span class="keyword">elseif</span> resStateLevel.replaceTag == <span class="string">"2"</span> <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneAim'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'aim'</span>)
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> resStateLevel.silence <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneSilence'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList, <span class="string">'silence'</span>)
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> resStateLevel.changeCamp <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneChangeCamp'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList,<span class="string">'changeCamp'</span>)
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> resStateLevel.disarm <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneDisarm'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList,<span class="string">'disarm'</span>)
+        <span class="keyword">end</span>
+        <span class="keyword">if</span> resStateLevel.forbidPassive <span class="keyword">then</span>
+            <span class="global">table</span>.<span class="function-name">insert</span>(checkImmune, <span class="string">'immuneForbidPassive'</span>)
+            <span class="global">table</span>.<span class="function-name">insert</span>(tagList,<span class="string">'forbidPassive'</span>)
+        <span class="keyword">end</span>
+        <span class="global">table</span>.<span class="function-name">insert</span>(stateConfig, stateConfigLevel)
+        <span class="keyword">if</span> resStateLevel.dotDamageId <span class="keyword">or</span> resStateLevel.hotDamageId <span class="keyword">then</span>
+            stateConfigLevel.dotList = {}
+            <span class="keyword">if</span> resStateLevel.dotDamageId <span class="keyword">then</span>
+                <span class="keyword">local</span> skillId, eventId = <span class="global">string</span>.<span class="function-name">match</span>(resStateLevel.dotDamageId, <span class="string">'(%d+),(%d+)'</span>)
+                <span class="global">table</span>.<span class="function-name">insert</span>(stateConfigLevel.dotList, {skillId = <span class="global">tonumber</span>(skillId), eventId = <span class="global">tonumber</span>(eventId), time = resStateLevel.dotDamageCircle})
+            <span class="keyword">end</span>
+            <span class="keyword">if</span> resStateLevel.hotDamageId <span class="keyword">then</span>
+                <span class="keyword">local</span> skillId, eventId = <span class="global">string</span>.<span class="function-name">match</span>(resStateLevel.hotDamageId, <span class="string">'(%d+),(%d+)'</span>)
+                <span class="global">table</span>.<span class="function-name">insert</span>(stateConfigLevel.dotList, {skillId = <span class="global">tonumber</span>(skillId), eventId = <span class="global">tonumber</span>(eventId), time = resStateLevel.hotDamageCircle})
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> stateConfig
+<span class="keyword">end</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">newAbilityConfigState</span>(stateId)
+    <span class="keyword">local</span> resState = ResStateData[stateId]
+    <span class="keyword">return</span> <span class="keyword">function</span> (ability)
+        ability.stateId = stateId
+        ability.resState = resState
+        ability.stateConfig = <span class="function-name">makeStateConfig</span>(resState)
+        ability:<span class="function-name">registerTriggerTable</span>(AbilityConfigState)
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">return</span> newAbilityConfigState</pre>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,58 @@
+<resources>
+    
+    <style name="UniAlertDialog" />
+
+    <style name="UniAlertDialog.Window"></style>
+
+    <style name="UniAlertDialog.Window.02">
+        <item name="android:layout_width">@dimen/unisdk__window_inner_02_width</item>
+        <item name="android:layout_height">@dimen/unisdk__window_inner_02_height</item>
+        <item name="android:background">@drawable/unisdk_alert_dialog__img_bg</item>
+    </style>
+
+    <style name="UniAlertDialog.Window.02.Dialog">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@null</item>
+    </style>
+    
+    <style name="UniAlertDialog_AlertDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="UniAlertDialog.FontTheme" />
+
+    <style name="UniAlertDialog.FontTheme.H15" parent="@style/UniAlertDialog.FontTheme">
+        <item name="android:textSize">@dimen/unisdk__font_h15</item>
+        <item name="android:textColor">@color/unisdk_alert_dialog__selector_font_h15</item>
+    </style>
+
+    <style name="UniAlertDialog.FontTheme.H16" parent="@style/UniAlertDialog.FontTheme">
+        <item name="android:textSize">@dimen/unisdk__font_h16</item>
+        <item name="android:textColor">@color/unisdk__font_h16</item>
+    </style>
+
+    <style name="UniAlertDialog.Shadow"></style>
+
+    <style name="UniAlertDialog.Shadow.02">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/unisdk__shadow_btn_02_landscape_height
+        </item>
+    </style>
+
+
+    <style name="UniAlertDialog.AntiAddiction" />
+
+    <style name="UniAlertDialog.AntiAddiction.FontTheme" parent="UniAlertDialog.AntiAddiction" />
+
+    <style name="UniAlertDialog.AntiAddiction.FontTheme.H13" parent="@style/UniAlertDialog.AntiAddiction.FontTheme">
+        <item name="android:textSize">@dimen/unisdk__anti_addiction_font_13</item>
+        <item name="android:textColor">@color/unisdk__anti_addiction_font_13</item>
+    </style>
+
+    <style name="UniAlertDialog.AntiAddiction.FontTheme.H15" parent="@style/UniAlertDialog.AntiAddiction.FontTheme">
+        <item name="android:textSize">@dimen/unisdk__anti_addiction_font_15</item>
+        <item name="android:textColor">@color/unisdk__anti_addiction_font_15</item>
+    </style>
+</resources>

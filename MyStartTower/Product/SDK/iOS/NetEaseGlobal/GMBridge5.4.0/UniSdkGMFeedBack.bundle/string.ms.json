@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Tidak dapat menemukan kamera",
+    "CREATE_IMGFILE_FAILED_MSG":"Gagal menyimpan imej",
+    "ISNOT_IMAGE_FILE_MSG":"Ini bukan fail imej",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Akses kepada Album ditolak",
+    "ASButtonTitleCancel":"Batal",
+    "ASButtonTitleCamera":"Kamera",
+    "ASButtonTitleLibrary":"Album",
+    "upload_img_succeess":"Muat naik selesai!",
+    "upload_img_failed":"Gagal untuk memperoleh imej"
+}

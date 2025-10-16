@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"ไม่พบกล้อง",
+    "CREATE_IMGFILE_FAILED_MSG":"บันทึกภาพล้มเหลว",
+    "ISNOT_IMAGE_FILE_MSG":"นี้ไม่ใช่ไฟล์รูปภาพ",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"ไม่มีสิทธิ์เข้าถึงอัลบั้ม",
+    "ASButtonTitleCancel":"ยกเลิก",
+    "ASButtonTitleCamera":"กล้อง",
+    "ASButtonTitleLibrary":"อัลบั้ม",
+    "upload_img_succeess":"อัปโหลดเสร็จสิ้น",
+    "upload_img_failed":"รับรูปภาพล้มเหลว"
+}

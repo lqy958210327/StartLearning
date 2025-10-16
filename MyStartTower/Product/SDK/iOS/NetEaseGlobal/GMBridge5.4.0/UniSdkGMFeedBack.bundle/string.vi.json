@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Không tìm thấy máy ảnh",
+    "CREATE_IMGFILE_FAILED_MSG":"Không lưu được hình ảnh",
+    "ISNOT_IMAGE_FILE_MSG":"Đây không phải là một tập tin hình ảnh",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Quyền truy cập Album bị từ chối",
+    "ASButtonTitleCancel":"Hủy bỏ",
+    "ASButtonTitleCamera":"Camera",
+    "ASButtonTitleLibrary":"Album",
+    "upload_img_succeess":"Tải lên hoàn tất!",
+    "upload_img_failed":"Không thể thu được hình ảnh"
+}

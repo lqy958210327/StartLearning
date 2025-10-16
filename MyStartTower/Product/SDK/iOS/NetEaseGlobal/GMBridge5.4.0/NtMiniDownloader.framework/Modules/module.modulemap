@@ -1,0 +1,6 @@
+framework module NtMiniDownloader {
+  umbrella header "NtMiniDownloader.h"
+
+  export *
+  module * { export * }
+}

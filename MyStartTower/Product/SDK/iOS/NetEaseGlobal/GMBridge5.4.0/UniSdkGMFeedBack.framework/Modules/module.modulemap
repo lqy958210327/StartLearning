@@ -1,0 +1,6 @@
+framework module UniSdkGMFeedBack {
+  umbrella header "UniSdkGMFeedBack.h"
+
+  export *
+  module * { export * }
+}

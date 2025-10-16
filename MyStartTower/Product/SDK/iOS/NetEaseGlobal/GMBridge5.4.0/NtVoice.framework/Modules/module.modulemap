@@ -1,0 +1,6 @@
+framework module NtVoice {
+  umbrella header "NtVoice.h"
+
+  export *
+  module * { export * }
+}

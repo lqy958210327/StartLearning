@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="unisdk_alert_dialog_tips">提示</string>
+    <string name="unisdk_alert_dialog_info">未成年人消费限制说明</string>
+    <string name="unisdk_alert_dialog_positive">我知道了</string>
+
+</resources>

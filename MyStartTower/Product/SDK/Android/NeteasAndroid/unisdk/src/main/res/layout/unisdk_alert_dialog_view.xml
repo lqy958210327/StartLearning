@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/UniAlertDialog.Window.02.Dialog"
+    android:layout_width="@dimen/unisdk__anti_addiction_dialog_width">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@+id/unisdk__alert_dialog_footer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/unisdk_alert_dialog__img_bg" />
+    
+    <TextView
+        android:id="@+id/unisdk__alert_title"
+        style="@style/UniAlertDialog.AntiAddiction.FontTheme.H15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/unisdk__space_15"
+        android:gravity="center"
+        android:maxLines="1"
+        android:visibility="visible"
+        tools:text="@string/unisdk_alert_dialog_tips" />
+
+    <TextView
+        android:id="@+id/unisdk__alert_message"
+        style="@style/UniAlertDialog.AntiAddiction.FontTheme.H13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unisdk__alert_title"
+        android:layout_marginTop="@dimen/unisdk__space_10"
+        android:layout_marginBottom="@dimen/unisdk__space_15"
+        android:lineSpacingExtra="@dimen/unisdk__space_6"
+        android:maxHeight="@dimen/unisdk__dialog_content_max_height"
+        android:minHeight="@dimen/unisdk__space_53"
+        android:minLines="1"
+        android:paddingLeft="@dimen/unisdk__space_15"
+        android:paddingRight="@dimen/unisdk__space_15"
+        android:scrollbars="none" />
+
+    <LinearLayout
+        android:id="@+id/unisdk__alert_dialog_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unisdk__alert_message"
+        android:background="@color/unisdk__transparent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/unisdk__space_15"
+        android:paddingRight="@dimen/unisdk__space_15">
+
+        <Button
+            android:id="@+id/unisdk__alert_negative"
+            style="@style/UniAlertDialog.FontTheme.H15"
+            android:layout_width="@dimen/unisdk__btn_02_width"
+            android:layout_height="@dimen/unisdk__btn_02_height"
+            android:layout_marginLeft="@dimen/unisdk__space_5"
+            android:layout_marginRight="@dimen/unisdk__space_5"
+            android:background="@drawable/unisdk_alert_dialog__negative_btn"
+            android:gravity="center"
+            android:padding="0dp" />
+
+        <View
+            android:id="@+id/unisdk__alert_btn_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/unisdk__btn_02_height"
+            android:layout_weight="1" />
+
+        <!--<com.netease.mpay.widget.shadow.ShadowLayoutType01 style="@style/NeteaseMpay.Shadow.02">-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/unisdk__shadow_btn_02_landscape_height">
+
+            <Button
+                android:id="@+id/unisdk__alert_positive"
+                style="@style/UniAlertDialog.FontTheme.H16"
+                android:layout_width="@dimen/unisdk__btn_02_width"
+                android:layout_height="@dimen/unisdk__btn_02_height"
+                android:background="@drawable/unisdk_alert_dialog__positive_btn"
+                android:gravity="center"
+                android:padding="0dp" />
+        </LinearLayout>
+        <!--</com.netease.mpay.widget.shadow.ShadowLayoutType01>-->
+    </LinearLayout>
+
+    <View
+        android:id="@+id/unisdk__alert_dialog_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/unisdk__space_9"
+        android:layout_below="@id/unisdk__alert_dialog_selector"
+        android:visibility="invisible" />
+</RelativeLayout>

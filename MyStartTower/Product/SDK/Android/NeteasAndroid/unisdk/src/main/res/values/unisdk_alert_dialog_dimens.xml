@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="unisdk__space_5">5dp</dimen>
+    <dimen name="unisdk__space_6">6dp</dimen>
+    <dimen name="unisdk__space_9">9dp</dimen>
+    <dimen name="unisdk__space_10">10dp</dimen>
+    <dimen name="unisdk__space_15">15dp</dimen>
+    <dimen name="unisdk__space_20">20dp</dimen>
+    <dimen name="unisdk__space_53">53dp</dimen>
+
+    <dimen name="unisdk__dialog_content_max_height">200dp</dimen>
+
+    <dimen name="unisdk__font_h15">15dp</dimen>
+    <dimen name="unisdk__font_h16">15dp</dimen>
+
+    <dimen name="unisdk__btn_02_width">115dp</dimen>
+    <dimen name="unisdk__btn_02_height">35dp</dimen>
+
+    <dimen name="unisdk__shadow_btn_02_landscape_height">41dp</dimen>
+
+    <dimen name="unisdk__window_inner_02_width">280dp</dimen>
+    <dimen name="unisdk__window_inner_02_height">150dp</dimen>
+
+
+    <dimen name="unisdk__anti_addiction_dialog_width">300dp</dimen>
+
+    <dimen name="unisdk__anti_addiction_font_13">13dp</dimen>
+    <dimen name="unisdk__anti_addiction_font_15">15dp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Cannot find the camera",
+    "CREATE_IMGFILE_FAILED_MSG":"Failed to save the image",
+    "ISNOT_IMAGE_FILE_MSG":"This is not an image file",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Access to Album denied",
+    "ASButtonTitleCancel":"Cancel",
+    "ASButtonTitleCamera":"Camera",
+    "ASButtonTitleLibrary":"Album",
+    "float_view_close":"Close",
+    "float_alert_tittle1":"Close the bubble?\n",
+    "float_alert_tittle2":"(Reappears after reboot / new message)",
+    "float_alert_cancel":"Cancel",
+    "float_alert_ok":"Confirm",
+    "upload_img_succeess":"Upload complete!",
+    "upload_img_failed":"Failed to acquire the image"
+}

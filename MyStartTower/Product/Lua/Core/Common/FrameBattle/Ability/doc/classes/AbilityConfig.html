@@ -1,0 +1,1191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Ability.html">Ability</a></li>
+  <li><a href="../classes/Unit.html">Unit</a></li>
+  <li><strong>AbilityConfig</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/AbilityConfigCard.lua.html">AbilityConfigCard.lua</a></li>
+  <li><a href="../examples/AbilityConfigSkill.lua.html">AbilityConfigSkill.lua</a></li>
+  <li><a href="../examples/AbilityConfigState.lua.html">AbilityConfigState.lua</a></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>AbilityConfig</code></h1>
+<p>
+</p>
+<p><ul>
+<li>这里列出的是可以在技能配置脚本中使用的回调函数。</li>
+<li>函数中self指Ability实例 （注意不是AbilityConfig本身）。</li>
+<li>在实现回调函数中，可以设置Ability或Unit的变量，但变量名不要使用下划线开头。</li>
+<li>为便于记忆，回调函数命名规律：</li>
+<li>onCheck指执行某些流程的前置检查，需要返回约定的值来启动相关功能。</li>
+<li>onPrepare指开始执行某个流程，需要返回约定的参数以在主流程中使用。</li>
+<li>onSelf指仅与本能力有关的触发器回调。</li>
+<li>onOwner指仅与本单位有关的触发器回调。</li>
+<li>onGlobal指全局广播的触发器回调。</li>
+</ul>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckAttach">abilityconfig:onCheckAttach ()</a></td>
+	<td class="summary">能力挂载检查（能力创建时调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfAttach">abilityconfig:onSelfAttach ()</a></td>
+	<td class="summary">Ability实例挂载</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckDettachDead">abilityconfig:onCheckDettachDead ()</a></td>
+	<td class="summary">能力卸载检查（单位死亡时调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfDettach">abilityconfig:onSelfDettach (fromUnit)</a></td>
+	<td class="summary">Ability实例卸载</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckCardUse">abilityconfig:onCheckCardUse ()</a></td>
+	<td class="summary">卡牌使用条件检查（施放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckCardUseSkill">abilityconfig:onCheckCardUseSkill ()</a></td>
+	<td class="summary">卡牌使用选择技能</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfCardUse">abilityconfig:onSelfCardUse ()</a></td>
+	<td class="summary">卡牌生效回调（施放成功后触发）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckSkillAim">abilityconfig:onCheckSkillAim ()</a></td>
+	<td class="summary">技能施法目标检查（释放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillParams">abilityconfig:onPrepareSkillParams ()</a></td>
+	<td class="summary">技能参数准备（释放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillBehavior">abilityconfig:onPrepareSkillBehavior ()</a></td>
+	<td class="summary">技能行为准备（释放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillDisplay">abilityconfig:onPrepareSkillDisplay ()</a></td>
+	<td class="summary">技能表现准备（释放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillPredict">abilityconfig:onPrepareSkillPredict (aimUnit)</a></td>
+	<td class="summary">技能预测目标准备（释放前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillAtk">abilityconfig:onPrepareSkillAtk (eventId, aimUnit)</a></td>
+	<td class="summary">技能攻击目标准备（攻击事件触发时调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfSkillAtk">abilityconfig:onSelfSkillAtk (eventId, aimUnit)</a></td>
+	<td class="summary">技能攻击开始回调（命中判定前触发）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onPrepareSkillHit">abilityconfig:onPrepareSkillHit (eventId, aimUnit, hitUnit)</a></td>
+	<td class="summary">技能命中参数准备（实际命中前调用）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfSkillHit">abilityconfig:onSelfSkillHit (eventId, aimUnit, hitUnit)</a></td>
+	<td class="summary">技能实际命中回调（最终伤害计算）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfSkillEnd">abilityconfig:onSelfSkillEnd (finish)</a></td>
+	<td class="summary">技能结束</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerUseSkill">abilityconfig:onOwnerUseSkill (useAbility, useCardId, skillType, targetUnit)</a></td>
+	<td class="summary">卡牌释放通知</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerSkillEnd">abilityconfig:onOwnerSkillEnd (useAbility, useCardId, skillType, targetUnit)</a></td>
+	<td class="summary">卡牌释放结束通知</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onCheckIncStackLayer">abilityconfig:onCheckIncStackLayer (addLayer)</a></td>
+	<td class="summary">状态叠层条件检查</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onSelfStackLayerChange">abilityconfig:onSelfStackLayerChange (layer, oldLayer)</a></td>
+	<td class="summary">状态层数变化回调</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerEnterBattle">abilityconfig:onOwnerEnterBattle ()</a></td>
+	<td class="summary">当本单位进入战斗。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerAttackDamage">abilityconfig:onOwnerAttackDamage (targetUnit, damage, damageType, isCrit, skillType)</a></td>
+	<td class="summary">当本单位造成了伤害</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitDamage">abilityconfig:onOwnerBeHitDamage (attackerUnit, damage, damageType, isCrit, skillType)</a></td>
+	<td class="summary">当本单位受到了伤害</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerAttackCurse">abilityconfig:onOwnerAttackCurse (targetUnit, attrName, damage, skillType)</a></td>
+	<td class="summary">当本单位造成了属性诅咒</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitCurse">abilityconfig:onOwnerBeHitCurse (attackerUnit, attrName, damage, skillType)</a></td>
+	<td class="summary">当本单位受到了属性诅咒</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerHpChange">abilityconfig:onOwnerHpChange (hp, hppct)</a></td>
+	<td class="summary">当本单位血量变化</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerShieldChange">abilityconfig:onOwnerShieldChange (shield, max_shield)</a></td>
+	<td class="summary">当本单位护盾变化</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerStateLayerChange">abilityconfig:onOwnerStateLayerChange (state)</a></td>
+	<td class="summary">当本单位状态层数变化。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerAttackMiss">abilityconfig:onOwnerAttackMiss (targetUnit)</a></td>
+	<td class="summary">当本单位的攻击被闪避</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitMiss">abilityconfig:onOwnerBeHitMiss (attackerUnit)</a></td>
+	<td class="summary">当本单位闪避了攻击</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerAttackControl">abilityconfig:onOwnerAttackControl (targetUnit, controlType)</a></td>
+	<td class="summary">当本单位攻击造成了控制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitControl">abilityconfig:onOwnerBeHitControl (attackerUnit, controlType)</a></td>
+	<td class="summary">当本单位被击受到了控制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitControlEnd">abilityconfig:onOwnerBeHitControlEnd (controlType)</a></td>
+	<td class="summary">当本单位被控制结束</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerAttackKill">abilityconfig:onOwnerAttackKill (targetUnit, skillType)</a></td>
+	<td class="summary">当本单位攻击造成了击杀</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onOwnerBeHitDie">abilityconfig:onOwnerBeHitDie (attackerUnit, skillType)</a></td>
+	<td class="summary">当本单位被击杀</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onGlobalKill">abilityconfig:onGlobalKill (attackerUnit, targetUnit)</a></td>
+	<td class="summary">战场有单位死亡</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#abilityconfig:onGlobalAced">abilityconfig:onGlobalAced (deadUnit)</a></td>
+	<td class="summary">战斗波次结束（玩家团灭或清掉一波怪物）</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "abilityconfig:onCheckAttach"></a>
+    <strong>abilityconfig:onCheckAttach ()</strong>
+    </dt>
+    <dd>
+    能力挂载检查（能力创建时调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean true=免疫挂载，false/nil=允许挂载
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfAttach"></a>
+    <strong>abilityconfig:onSelfAttach ()</strong>
+    </dt>
+    <dd>
+    Ability实例挂载
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onCheckDettachDead"></a>
+    <strong>abilityconfig:onCheckDettachDead ()</strong>
+    </dt>
+    <dd>
+    能力卸载检查（单位死亡时调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean true=需要卸载，false/nil=不卸载
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfDettach"></a>
+    <strong>abilityconfig:onSelfDettach (fromUnit)</strong>
+    </dt>
+    <dd>
+    Ability实例卸载
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fromUnit</span>
+         Unit 驱散行为的发起者
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onCheckCardUse"></a>
+    <strong>abilityconfig:onCheckCardUse ()</strong>
+    </dt>
+    <dd>
+    卡牌使用条件检查（施放前调用）
+ 1. 检查施法条件（如沉默状态、法力值等）
+ 2. 返回nil表示不满足使用条件
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean use true表示可以使用
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onCheckCardUseSkill"></a>
+    <strong>abilityconfig:onCheckCardUseSkill ()</strong>
+    </dt>
+    <dd>
+    卡牌使用选择技能
+ 1. 通过返回技能实例和优先级参与卡牌选择
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        Ability skill 返回要使用的技能实例</li>
+        <li>
+        integer priority 使用优先级（数值越大越优先）</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfCardUse"></a>
+    <strong>abilityconfig:onSelfCardUse ()</strong>
+    </dt>
+    <dd>
+    卡牌生效回调（施放成功后触发）
+ 1. 设置技能冷却时间（调用setCooldown）
+ 2. 消耗卡牌资源（法力值等）
+ 3. 触发卡牌使用后的状态变化
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onCheckSkillAim"></a>
+    <strong>abilityconfig:onCheckSkillAim ()</strong>
+    </dt>
+    <dd>
+    技能施法目标检查（释放前调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 返回技能施法目标单位，nil表示没有可用目标
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillParams"></a>
+    <strong>abilityconfig:onPrepareSkillParams ()</strong>
+    </dt>
+    <dd>
+    技能参数准备（释放前调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        skillId integer 技能ID</li>
+        <li>
+        cardId integer 卡牌ID</li>
+        <li>
+        skillType integer 技能类型</li>
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillBehavior"></a>
+    <strong>abilityconfig:onPrepareSkillBehavior ()</strong>
+    </dt>
+    <dd>
+    技能行为准备（释放前调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        bhEvent table 技能动作数据</li>
+        <li>
+        attackTime number|nil 攻击动作时长（普攻专用）</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillDisplay"></a>
+    <strong>abilityconfig:onPrepareSkillDisplay ()</strong>
+    </dt>
+    <dd>
+    技能表现准备（释放前调用）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        pauseTime number 动作前暂停时间（单位：秒）</li>
+        <li>
+        videoTime number 技能表现时长（单位：秒）</li>
+        <li>
+        videoCue table 表现特效配置</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillPredict"></a>
+    <strong>abilityconfig:onPrepareSkillPredict (aimUnit)</strong>
+    </dt>
+    <dd>
+    技能预测目标准备（释放前调用）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">aimUnit</span>
+         Unit 技能施法目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 需要显示预测范围/效果的目标单位列表
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillAtk"></a>
+    <strong>abilityconfig:onPrepareSkillAtk (eventId, aimUnit)</strong>
+    </dt>
+    <dd>
+    技能攻击目标准备（攻击事件触发时调用）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventId</span>
+         integer 攻击阶段ID（用于区分多段攻击）
+        </li>
+        <li><span class="parameter">aimUnit</span>
+         Unit 技能施法目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 本次攻击实际生效的目标单位列表
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfSkillAtk"></a>
+    <strong>abilityconfig:onSelfSkillAtk (eventId, aimUnit)</strong>
+    </dt>
+    <dd>
+    技能攻击开始回调（命中判定前触发）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventId</span>
+         integer 攻击阶段ID
+        </li>
+        <li><span class="parameter">aimUnit</span>
+         Unit 技能施法目标单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onPrepareSkillHit"></a>
+    <strong>abilityconfig:onPrepareSkillHit (eventId, aimUnit, hitUnit)</strong>
+    </dt>
+    <dd>
+    技能命中参数准备（实际命中前调用）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventId</span>
+         integer 攻击阶段ID
+        </li>
+        <li><span class="parameter">aimUnit</span>
+         Unit 技能施法目标单位
+        </li>
+        <li><span class="parameter">hitUnit</span>
+         Unit 即将被命中的目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number 飞行时间（单位：秒，用于伤害延迟计算）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfSkillHit"></a>
+    <strong>abilityconfig:onSelfSkillHit (eventId, aimUnit, hitUnit)</strong>
+    </dt>
+    <dd>
+    <p>技能实际命中回调（最终伤害计算） </p>
+
+<ul>
+<li>在此回调中：</li>
+</ul>
+
+
+<ol>
+<li>通过checkHitChance执行命中判定</li>
+<li>应用伤害/治疗等战斗效果</li>
+<li>触发受击表现（见checkHitChance参数）</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventId</span>
+         integer 攻击阶段ID
+        </li>
+        <li><span class="parameter">aimUnit</span>
+         Unit 技能施法目标单位
+        </li>
+        <li><span class="parameter">hitUnit</span>
+         Unit 被命中的目标单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfSkillEnd"></a>
+    <strong>abilityconfig:onSelfSkillEnd (finish)</strong>
+    </dt>
+    <dd>
+    技能结束
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">finish</span>
+         boolean 是否正常结束，true=完成，false=打断
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerUseSkill"></a>
+    <strong>abilityconfig:onOwnerUseSkill (useAbility, useCardId, skillType, targetUnit)</strong>
+    </dt>
+    <dd>
+    卡牌释放通知
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">useAbility</span>
+         Ability 使用的能力对象
+        </li>
+        <li><span class="parameter">useCardId</span>
+         integer 使用的卡牌ID
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">targetUnit</span>
+         Unit 施法目标单位
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerSkillEnd"></a>
+    <strong>abilityconfig:onOwnerSkillEnd (useAbility, useCardId, skillType, targetUnit)</strong>
+    </dt>
+    <dd>
+    卡牌释放结束通知
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">useAbility</span>
+         Ability 使用的能力对象
+        </li>
+        <li><span class="parameter">useCardId</span>
+         integer 使用的卡牌ID
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">targetUnit</span>
+         Unit 施法目标单位
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onCheckIncStackLayer"></a>
+    <strong>abilityconfig:onCheckIncStackLayer (addLayer)</strong>
+    </dt>
+    <dd>
+    <p>状态叠层条件检查 </p>
+
+<ul>
+<li>返回nil表示没任何效果（被免疫）</li>
+<li>onCheckIncStackLayer返回值小于参数addLayer时，替换最老的若干层临时层数</li>
+<li>因此，当有临时层数时，返回0和返回nil含义是不同的</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addLayer</span>
+         integer 请求叠加层数
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         integer|nil 实际允许叠加层数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onSelfStackLayerChange"></a>
+    <strong>abilityconfig:onSelfStackLayerChange (layer, oldLayer)</strong>
+    </dt>
+    <dd>
+    状态层数变化回调
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         integer 新层数
+        </li>
+        <li><span class="parameter">oldLayer</span>
+         integer 旧层数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerEnterBattle"></a>
+    <strong>abilityconfig:onOwnerEnterBattle ()</strong>
+    </dt>
+    <dd>
+    当本单位进入战斗。
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerAttackDamage"></a>
+    <strong>abilityconfig:onOwnerAttackDamage (targetUnit, damage, damageType, isCrit, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位造成了伤害
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被攻击的目标单位
+        </li>
+        <li><span class="parameter">damage</span>
+         integer 造成的实际伤害值
+        </li>
+        <li><span class="parameter">damageType</span>
+         string 伤害类型 (&lsquo;hurtHp&rsquo;,&lsquo;healHp&rsquo;,&lsquo;hurtShield&rsquo;,&lsquo;healShield&rsquo;)
+        </li>
+        <li><span class="parameter">isCrit</span>
+         boolean 是否产生暴击
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitDamage"></a>
+    <strong>abilityconfig:onOwnerBeHitDamage (attackerUnit, damage, damageType, isCrit, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位受到了伤害
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+        <li><span class="parameter">damage</span>
+         integer 承受的实际伤害值
+        </li>
+        <li><span class="parameter">damageType</span>
+         string 伤害类型 (&lsquo;hurtHp&rsquo;,&lsquo;healHp&rsquo;,&lsquo;hurtShield&rsquo;,&lsquo;healShield&rsquo;)
+        </li>
+        <li><span class="parameter">isCrit</span>
+         boolean 是否被暴击
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerAttackCurse"></a>
+    <strong>abilityconfig:onOwnerAttackCurse (targetUnit, attrName, damage, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位造成了属性诅咒
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被攻击的目标单位
+        </li>
+        <li><span class="parameter">attrName</span>
+         string 属性名
+        </li>
+        <li><span class="parameter">damage</span>
+         integer 造成的实际伤害值
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitCurse"></a>
+    <strong>abilityconfig:onOwnerBeHitCurse (attackerUnit, attrName, damage, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位受到了属性诅咒
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+        <li><span class="parameter">attrName</span>
+         string 属性名
+        </li>
+        <li><span class="parameter">damage</span>
+         integer 造成的实际伤害值
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerHpChange"></a>
+    <strong>abilityconfig:onOwnerHpChange (hp, hppct)</strong>
+    </dt>
+    <dd>
+    当本单位血量变化
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">hp</span>
+         integer 当前HP值
+        </li>
+        <li><span class="parameter">hppct</span>
+         integer 当前HP比例，万分比
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerShieldChange"></a>
+    <strong>abilityconfig:onOwnerShieldChange (shield, max_shield)</strong>
+    </dt>
+    <dd>
+    当本单位护盾变化 </p>
+
+<p>shield=0时，max_shield=0是护盾事件结束或被驱散，max_shield>0是护盾被打破
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">shield</span>
+         integer 当前护盾值
+        </li>
+        <li><span class="parameter">max_shield</span>
+         integer 最大护盾值
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerStateLayerChange"></a>
+    <strong>abilityconfig:onOwnerStateLayerChange (state)</strong>
+    </dt>
+    <dd>
+    当本单位状态层数变化。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">state</span>
+         Ability 发生变化的状态对象
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerAttackMiss"></a>
+    <strong>abilityconfig:onOwnerAttackMiss (targetUnit)</strong>
+    </dt>
+    <dd>
+    当本单位的攻击被闪避
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 闪避了本次攻击的目标单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitMiss"></a>
+    <strong>abilityconfig:onOwnerBeHitMiss (attackerUnit)</strong>
+    </dt>
+    <dd>
+    当本单位闪避了攻击
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerAttackControl"></a>
+    <strong>abilityconfig:onOwnerAttackControl (targetUnit, controlType)</strong>
+    </dt>
+    <dd>
+    当本单位攻击造成了控制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被控制了的目标单位
+        </li>
+        <li><span class="parameter">controlType</span>
+         string 控制类型
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitControl"></a>
+    <strong>abilityconfig:onOwnerBeHitControl (attackerUnit, controlType)</strong>
+    </dt>
+    <dd>
+    当本单位被击受到了控制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+        <li><span class="parameter">controlType</span>
+         string 控制类型
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitControlEnd"></a>
+    <strong>abilityconfig:onOwnerBeHitControlEnd (controlType)</strong>
+    </dt>
+    <dd>
+    当本单位被控制结束
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">controlType</span>
+         string 控制类型
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerAttackKill"></a>
+    <strong>abilityconfig:onOwnerAttackKill (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位攻击造成了击杀
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被击杀了的目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onOwnerBeHitDie"></a>
+    <strong>abilityconfig:onOwnerBeHitDie (attackerUnit, skillType)</strong>
+    </dt>
+    <dd>
+    当本单位被击杀
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onGlobalKill"></a>
+    <strong>abilityconfig:onGlobalKill (attackerUnit, targetUnit)</strong>
+    </dt>
+    <dd>
+    战场有单位死亡
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attackerUnit</span>
+         Unit 发起攻击的来源单位
+        </li>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被击杀了的目标单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "abilityconfig:onGlobalAced"></a>
+    <strong>abilityconfig:onGlobalAced (deadUnit)</strong>
+    </dt>
+    <dd>
+    战斗波次结束（玩家团灭或清掉一波怪物）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">deadUnit</span>
+         Unit 最后一个死掉的单位（败者方）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

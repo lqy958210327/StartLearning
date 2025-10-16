@@ -1,0 +1,3614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><strong>Ability</strong></li>
+  <li><a href="../classes/Unit.html">Unit</a></li>
+  <li><a href="../classes/AbilityConfig.html">AbilityConfig</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/AbilityConfigCard.lua.html">AbilityConfigCard.lua</a></li>
+  <li><a href="../examples/AbilityConfigSkill.lua.html">AbilityConfigSkill.lua</a></li>
+  <li><a href="../examples/AbilityConfigState.lua.html">AbilityConfigState.lua</a></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Ability</code></h1>
+<p>
+</p>
+<p>单位的一项能力，可以是主动技能或被动技能</p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ability.Enum">ability.Enum</a></td>
+	<td class="summary">
+</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ability:getConfig">ability:getConfig ()</a></td>
+	<td class="summary">获取能力配置信息</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getSkillLevel">ability:getSkillLevel ()</a></td>
+	<td class="summary">取技能等级</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getOwnerUnit">ability:getOwnerUnit ()</a></td>
+	<td class="summary">取所在单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getFromAbility">ability:getFromAbility ()</a></td>
+	<td class="summary">取直接来源能力（父能力）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getFromUnit">ability:getFromUnit ()</a></td>
+	<td class="summary">取直接来源单位（施加者单位）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getSourceAbility">ability:getSourceAbility ()</a></td>
+	<td class="summary">取最初来源能力（根源能力）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getSourceUnit">ability:getSourceUnit ()</a></td>
+	<td class="summary">取最初来源单位（根源单位）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getOwnerUsingSkillInfo">ability:getOwnerUsingSkillInfo ()</a></td>
+	<td class="summary">取所在单位正在使用的主动技能信息</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getOwnerAimUnit">ability:getOwnerAimUnit ()</a></td>
+	<td class="summary">取所在单位正在使用的主动技能的瞄准目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:registerTriggerTable">ability:registerTriggerTable (triggerTable)</a></td>
+	<td class="summary">注册各种触发器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getTriggerTable">ability:getTriggerTable (index)</a></td>
+	<td class="summary">获取触发函数表。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:inquiryTrigger">ability:inquiryTrigger (triggerName)</a></td>
+	<td class="summary">获取事件处理函数。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:inquiryGroupTrigger">ability:inquiryGroupTrigger (triggerGroup, triggerName, groupId)</a></td>
+	<td class="summary">获取事件处理函数。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addMetatableIndexExtension">ability:addMetatableIndexExtension (index)</a></td>
+	<td class="summary">扩展方法
+ &ndash; 仅限系统内部使用。在配置脚本中，推荐用触发回调函数处理业务逻辑。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getStackLayer">ability:getStackLayer ()</a></td>
+	<td class="summary">获取当前堆叠层数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getPermanentLayer">ability:getPermanentLayer ()</a></td>
+	<td class="summary">获取永久生效的固定层数（无时间限制的层数）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getTemporaryLayer">ability:getTemporaryLayer ()</a></td>
+	<td class="summary">获取时限生效的临时层数（有时间限制的层数）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:incStackLayer">ability:incStackLayer (addLayer, time)</a></td>
+	<td class="summary">增加堆叠层数（支持定时衰减）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:decStackLayer">ability:decStackLayer (layer)</a></td>
+	<td class="summary">减少堆叠层数（立即生效）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setStackLayer">ability:setStackLayer (layer, time)</a></td>
+	<td class="summary">设置堆叠层数。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addStateGroup">ability:addStateGroup (group)</a></td>
+	<td class="summary">添加状态组到能力对象</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:hasStateGroup">ability:hasStateGroup (group)</a></td>
+	<td class="summary">检查能力对象是否拥有指定状态组</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:removeStateGroup">ability:removeStateGroup (group)</a></td>
+	<td class="summary">从能力对象中移除指定状态组</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createTimer">ability:createTimer (timerId, timeout, func)</a></td>
+	<td class="summary">注册定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:extendTimer">ability:extendTimer (timerId, timeout)</a></td>
+	<td class="summary">延长定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createRepeatingTimer">ability:createRepeatingTimer (timerId, timeout, func)</a></td>
+	<td class="summary">注册循环定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createRepeatingSkillTimer">ability:createRepeatingSkillTimer (timerId, timeout, func)</a></td>
+	<td class="summary">注册循环技能定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:removeTimer">ability:removeTimer (timerId)</a></td>
+	<td class="summary">取消定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createSkillTimer">ability:createSkillTimer (timerId, timeout, func)</a></td>
+	<td class="summary">注册技能定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:removeSkillTimer">ability:removeSkillTimer (timerId)</a></td>
+	<td class="summary">取消技能定时器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:skillPauseFrame">ability:skillPauseFrame (pauseFrame)</a></td>
+	<td class="summary">技能暂停。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:tick">ability:tick (frameNumber, realFrameNumber)</a></td>
+	<td class="summary">每帧检查定时器。
+ &ndash; 仅限系统内部使用。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setCooldown">ability:setCooldown (cooldownId)</a></td>
+	<td class="summary">设置冷却时间</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:unsetCooldown">ability:unsetCooldown (cooldownId)</a></td>
+	<td class="summary">清除冷却</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getCooldown">ability:getCooldown (cooldownId, time)</a></td>
+	<td class="summary">判断冷却时间</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkCooldown">ability:checkCooldown (cooldownId, time)</a></td>
+	<td class="summary">检查冷却时间</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addCountUntil">ability:addCountUntil (countId, addValue, untilValue)</a></td>
+	<td class="summary">累加计数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:clearCount">ability:clearCount (countId)</a></td>
+	<td class="summary">清除计数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addSubAbility">ability:addSubAbility (ability)</a></td>
+	<td class="summary">增加子能力</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getRandomGenerator">ability:getRandomGenerator ()</a></td>
+	<td class="summary">获取战场随机数生成器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getRandomInt">ability:getRandomInt (max)</a></td>
+	<td class="summary">生成区间随机整数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getRandomChoice">ability:getRandomChoice (list)</a></td>
+	<td class="summary">从列表中随机选择一个元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getRandomProb">ability:getRandomProb (prob)</a></td>
+	<td class="summary">概率判定（万分比）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:randomShuffle">ability:randomShuffle (list)</a></td>
+	<td class="summary">随机打乱列表顺序（Fisher-Yates算法）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addAbility">ability:addAbility (targetUnit, configType, configName, skillLevel, fromUnit)</a></td>
+	<td class="summary">给目标单位添加新能力</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:delAbility">ability:delAbility (targetUnit, ability, fromUnit)</a></td>
+	<td class="summary">移除目标单位的一项能力</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:findDelAbility">ability:findDelAbility (targetUnit, filter, fromUnit)</a></td>
+	<td class="summary">查找并移除目标单位符合条件的能力</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:detach">ability:detach (fromAbility, fromUnit)</a></td>
+	<td class="summary">从所属单位移除当前能力（级联移除所有子能力）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setExclusiveAbility">ability:setExclusiveAbility (exclusiveTag)</a></td>
+	<td class="summary">设置为指定标签的独占能力（同标签能力只能存在一个）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:unsetExclusiveAbility">ability:unsetExclusiveAbility (exclusiveTag)</a></td>
+	<td class="summary">解除当前能力的独占状态</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:isExclusive">ability:isExclusive (exclusiveTag)</a></td>
+	<td class="summary">判断是否是当前独占能力</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setTagList">ability:setTagList (tagList)</a></td>
+	<td class="summary">设置状态标签列表</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getTagList">ability:getTagList ()</a></td>
+	<td class="summary">获取当前状态标签列表</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:hasTag">ability:hasTag (tag)</a></td>
+	<td class="summary">判断是否包含指定标签</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:incStateLayer">ability:incStateLayer (targetUnit, stateId, skillLevel, layer, time)</a></td>
+	<td class="summary">增加来源绑定的状态层数（仅合并同来源状态）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:incUniqueStateLayer">ability:incUniqueStateLayer (targetUnit, stateId, skillLevel, layer, time)</a></td>
+	<td class="summary">增加唯一状态层数（合并不同来源状态）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:decStateLayer">ability:decStateLayer (targetUnit, stateId, layer)</a></td>
+	<td class="summary">减少来源绑定的状态层数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:decUniqueStateLayer">ability:decUniqueStateLayer (targetUnit, stateId, layer)</a></td>
+	<td class="summary">减少唯一状态层数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setStateLayer">ability:setStateLayer (targetUnit, stateId, skillLevel, layer, time)</a></td>
+	<td class="summary">设置来源绑定的状态层数（精确控制同来源状态）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setUniqueStateLayer">ability:setUniqueStateLayer (targetUnit, stateId, skillLevel, layer, time)</a></td>
+	<td class="summary">设置全局状态层数（跨来源合并）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:beTaunted">ability:beTaunted ()</a></td>
+	<td class="summary">被嘲讽</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:beAimed">ability:beAimed ()</a></td>
+	<td class="summary">被集火</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addAttr">ability:addAttr (attrName, addValue)</a></td>
+	<td class="summary">累加属性值（直接修改基础属性）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setAttr">ability:setAttr (attrName, value)</a></td>
+	<td class="summary">设置属性绝对值（直接覆盖基础属性）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:setAttrBuff">ability:setAttrBuff (attrName, value, disableShowNum)</a></td>
+	<td class="summary">设置属性增强值（替换式修改）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:unsetAttrBuff">ability:unsetAttrBuff (attrName)</a></td>
+	<td class="summary">取消指定属性的增强值</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:clearAttrBuff">ability:clearAttrBuff ()</a></td>
+	<td class="summary">清除所有属性增强.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:getAttrBuff">ability:getAttrBuff (attrName)</a></td>
+	<td class="summary">取属性增强值</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:loadOnce">ability:loadOnce (triggerCd, cardUseCd)</a></td>
+	<td class="summary">触发一次本技能的卡牌使用</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkShootOnce">ability:checkShootOnce ()</a></td>
+	<td class="summary">检查单次触发技能的使用许可</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkShootInput">ability:checkShootInput ()</a></td>
+	<td class="summary">检查主动技能是否允许使用</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:clearShootInput">ability:clearShootInput ()</a></td>
+	<td class="summary"><p>主动技能施放完成</p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li></li>
+</ol>
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:playCue">ability:playCue (targetUnit, cueList, startUnit, flyTime)</a></td>
+	<td class="summary">播放技能特效指令</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:playHitAnim">ability:playHitAnim (targetUnit, hitedAnim)</a></td>
+	<td class="summary">触发受击单位的表现动画</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:playHitOffset">ability:playHitOffset (targetUnit, offsetPath)</a></td>
+	<td class="summary">设置受击单位的位置偏移</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkHitChance">ability:checkHitChance (targetUnit, skillType, disablePassive)</a></td>
+	<td class="summary">计算命中判定</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackMiss">ability:attackMiss (targetUnit, skillType, disablePassive)</a></td>
+	<td class="summary">攻击结果是被闪避</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackImmune">ability:attackImmune (targetUnit, skillType, disablePassive)</a></td>
+	<td class="summary">攻击结果是被免疫</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackMovingFlash">ability:attackMovingFlash (targetUnit, movingFlash, near)</a></td>
+	<td class="summary">技能移动效果：向目标单位闪现</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackMovingSwap">ability:attackMovingSwap (targetUnit)</a></td>
+	<td class="summary">与目标换位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackMovingBack">ability:attackMovingBack (targetUnit, movingBackDistance, movingBackSpeed)</a></td>
+	<td class="summary">击退目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackControl">ability:attackControl (targetUnit, controlType, controlTime, skipImmunityControl)</a></td>
+	<td class="summary">造成控制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackControlDel">ability:attackControlDel (targetUnit, controlType)</a></td>
+	<td class="summary">解除控制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackControlExtend">ability:attackControlExtend (targetUnit, controlType, controlTime)</a></td>
+	<td class="summary">延长控制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackChangeMana">ability:attackChangeMana (targetUnit, addMana, notShow)</a></td>
+	<td class="summary">造成对方能量变化</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:changeMana">ability:changeMana (changeValue, notShow)</a></td>
+	<td class="summary">自身能量变化</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkDamageImmune">ability:checkDamageImmune (targetUnit, immuneType)</a></td>
+	<td class="summary">检查伤害是否被免疫</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackShield">ability:attackShield (targetUnit, base, skillType, shieldTime, disablePassive)</a></td>
+	<td class="summary">给目标单位施加护盾</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackHeal">ability:attackHeal (targetUnit, base, skillType, disablePassive)</a></td>
+	<td class="summary">对目标单位执行治疗行为</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackLoss">ability:attackLoss (targetUnit, base, skillType, disablePassive)</a></td>
+	<td class="summary">对目标单位造成真实伤害</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackDamage">ability:attackDamage (targetUnit, damageBase, skillType, elemType, disablePassive, critDmgAdd, defPercent)</a></td>
+	<td class="summary">计算并应用物理伤害</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:attackCurse">ability:attackCurse (targetUnit, attrName, damageBase, skillType)</a></td>
+	<td class="summary">对目标单位施加诅咒攻击并造成属性伤害</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:summonMonster">ability:summonMonster (grid, monsterId, attrFromUnit)</a></td>
+	<td class="summary">在指定网格位置召唤怪物单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:changeWeather">ability:changeWeather (weatherFlag, weatherTime)</a></td>
+	<td class="summary">改变天气。别用，没实现。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:reborn">ability:reborn (targetUnit, hppct, mana)</a></td>
+	<td class="summary">复活</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:makeTrap">ability:makeTrap (stateId, skillId, eventId, shot)</a></td>
+	<td class="summary">创建陷阱实例</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:makeTrapById">ability:makeTrapById (trapId)</a></td>
+	<td class="summary">通过配置表ID创建标准化陷阱</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createTrapById">ability:createTrapById (grid, trapId)</a></td>
+	<td class="summary">在指定网格创建标准化陷阱</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:createTrap">ability:createTrap (grid, trap)</a></td>
+	<td class="summary">在指定网格部署陷阱</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:removeTrap">ability:removeTrap (trap)</a></td>
+	<td class="summary">移除已部署的陷阱</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:sendMessage">ability:sendMessage (toAbility, message, ...)</a></td>
+	<td class="summary">给Ability发送自定义消息</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:sendUnitMessage">ability:sendUnitMessage (toUnit, message, ...)</a></td>
+	<td class="summary">给Unit发送自定义消息</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:sendGlobalMessage">ability:sendGlobalMessage (message, ...)</a></td>
+	<td class="summary">给全体发送自定义消息</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:addOutput">ability:addOutput (outputType, args)</a></td>
+	<td class="summary">输出信息到表现层</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:triggerSkillEvent">ability:triggerSkillEvent (fromUnit, targetUnit, skillId, eventId, eventLevel)</a></td>
+	<td class="summary">触发技能事件
+ 不推荐。直接配具体效果就行。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:triggerPassiveCard">ability:triggerPassiveCard (cardId, cardLevel, triggerCd, cardUseCd, targetUnit)</a></td>
+	<td class="summary">触发卡牌技能
+ 该技能会在下一帧优先使用</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkCondition">ability:checkCondition (conditionArgs, targetUnit)</a></td>
+	<td class="summary">检查条件。
+ 不推荐：直接判断具体条件就行。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ability:checkRandomControl">ability:checkRandomControl (probId, prabLevel, targetUnit, probSourceType, probSourceKey)</a></td>
+	<td class="summary">检查随机触发。
+ 不推荐：直接调用随机数就行。</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "ability.Enum"></a>
+    <strong>ability.Enum</strong>
+    </dt>
+    <dd>
+
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#">Enum</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "ability:getConfig"></a>
+    <strong>ability:getConfig ()</strong>
+    </dt>
+    <dd>
+    获取能力配置信息
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        string configType 配置类型</li>
+        <li>
+        string configName 配置名称</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getSkillLevel"></a>
+    <strong>ability:getSkillLevel ()</strong>
+    </dt>
+    <dd>
+    取技能等级
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getOwnerUnit"></a>
+    <strong>ability:getOwnerUnit ()</strong>
+    </dt>
+    <dd>
+    取所在单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit @返回能力所属的宿主单位实例
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getFromAbility"></a>
+    <strong>ability:getFromAbility ()</strong>
+    </dt>
+    <dd>
+    取直接来源能力（父能力）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability|nil @返回直接创建此能力的父能力。若没有父能力则返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getFromUnit"></a>
+    <strong>ability:getFromUnit ()</strong>
+    </dt>
+    <dd>
+    取直接来源单位（施加者单位）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil @返回直接施加此能力的单位。如果是自身创建的能力则返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getSourceAbility"></a>
+    <strong>ability:getSourceAbility ()</strong>
+    </dt>
+    <dd>
+    取最初来源能力（根源能力）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability @返回最初创建此能力的根源能力。当能力被多次传递时，始终指向最原始的创建能力
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">能力A创建能力B，B创建能力C，则C的sourceAbility是A</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:getSourceUnit"></a>
+    <strong>ability:getSourceUnit ()</strong>
+    </dt>
+    <dd>
+    取最初来源单位（根源单位）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit @返回最初施加能力的根源单位。当能力被多次传递时，追踪到最原始的施加者
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">单位A施加给B，B再施加给C，则C能力的sourceUnit仍是A</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:getOwnerUsingSkillInfo"></a>
+    <strong>ability:getOwnerUsingSkillInfo ()</strong>
+    </dt>
+    <dd>
+    取所在单位正在使用的主动技能信息
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability|nil 技能的信息，包含（skillId,cardId,cardType)字段，如果当前没在放技能返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getOwnerAimUnit"></a>
+    <strong>ability:getOwnerAimUnit ()</strong>
+    </dt>
+    <dd>
+    取所在单位正在使用的主动技能的瞄准目标
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 技能目标的Unit对象，如果当前没在放技能返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:registerTriggerTable"></a>
+    <strong>ability:registerTriggerTable (triggerTable)</strong>
+    </dt>
+    <dd>
+    注册各种触发器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">triggerTable</span>
+         table 触发函数表
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getTriggerTable"></a>
+    <strong>ability:getTriggerTable (index)</strong>
+    </dt>
+    <dd>
+    获取触发函数表。
+ &ndash; 注意：不要修改底层触发函数表
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         number 触发函数表的索引，当前函数表是1，底层函数表是2
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 指定的触发函数表
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:inquiryTrigger"></a>
+    <strong>ability:inquiryTrigger (triggerName)</strong>
+    </dt>
+    <dd>
+    获取事件处理函数。
+ &ndash; 仅限系统内部使用。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">triggerName</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:getTriggerTable">getTriggerTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:inquiryGroupTrigger"></a>
+    <strong>ability:inquiryGroupTrigger (triggerGroup, triggerName, groupId)</strong>
+    </dt>
+    <dd>
+    获取事件处理函数。
+ &ndash; 仅限系统内部使用。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">triggerGroup</span>
+
+
+        </li>
+        <li><span class="parameter">triggerName</span>
+
+
+        </li>
+        <li><span class="parameter">groupId</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:getTriggerTable">getTriggerTable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:addMetatableIndexExtension"></a>
+    <strong>ability:addMetatableIndexExtension (index)</strong>
+    </dt>
+    <dd>
+    扩展方法
+ &ndash; 仅限系统内部使用。在配置脚本中，推荐用触发回调函数处理业务逻辑。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getStackLayer"></a>
+    <strong>ability:getStackLayer ()</strong>
+    </dt>
+    <dd>
+    获取当前堆叠层数
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 当前生效的总层数（默认返回0）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getPermanentLayer"></a>
+    <strong>ability:getPermanentLayer ()</strong>
+    </dt>
+    <dd>
+    获取永久生效的固定层数（无时间限制的层数）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 固定层数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getTemporaryLayer"></a>
+    <strong>ability:getTemporaryLayer ()</strong>
+    </dt>
+    <dd>
+    获取时限生效的临时层数（有时间限制的层数）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 临时层数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:incStackLayer"></a>
+    <strong>ability:incStackLayer (addLayer, time)</strong>
+    </dt>
+    <dd>
+    <p>增加堆叠层数（支持定时衰减） </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>实际增加层数可能被'onCheckIncStackLayer'回调修改</li>
+<li>临时层数会创建计时器，到期自动移除对应层数</li>
+<li>设置time=0会创建瞬时计时器，在当前帧或下一帧自动移除</li>
+<li>onCheckIncStackLayer返回值小于参数addLayer时，替换最老的若干层临时层数</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addLayer</span>
+         integer 要增加的层数（必须>0）
+        </li>
+        <li><span class="parameter">time</span>
+         number|nil 持续时间（秒），nil表示永久层数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:decStackLayer"></a>
+    <strong>ability:decStackLayer (layer)</strong>
+    </dt>
+    <dd>
+    减少堆叠层数（立即生效）
+ &ndash; 优先扣除永久层数，剩余部分从最后添加的临时层开始扣除
+ 临时层数扣减时会取消对应定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         integer 要移除的层数（默认1）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setStackLayer"></a>
+    <strong>ability:setStackLayer (layer, time)</strong>
+    </dt>
+    <dd>
+    设置堆叠层数。
+ &ndash; 根据当前层数与目标层数之差增加或减少堆叠层数
+ 实际增加层数可能被'onCheckIncStackLayer'回调修改，因此最终结果可能不是目标层数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         integer 目标的层数
+        </li>
+        <li><span class="parameter">time</span>
+         number|nil 如果目标层数比当前层数高，设置持续时间，nil表示永久
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/Ability.html#ability:incStackLayer">incStackLayer</a></li>
+         <li><a href="../classes/Ability.html#ability:decStackLayer">decStackLayer</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:addStateGroup"></a>
+    <strong>ability:addStateGroup (group)</strong>
+    </dt>
+    <dd>
+    添加状态组到能力对象
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group</span>
+         integer 要添加的状态组标识
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:hasStateGroup"></a>
+    <strong>ability:hasStateGroup (group)</strong>
+    </dt>
+    <dd>
+    检查能力对象是否拥有指定状态组
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group</span>
+         integer 要检查的状态组标识
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 如果拥有状态组则返回true，否则返回false
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:removeStateGroup"></a>
+    <strong>ability:removeStateGroup (group)</strong>
+    </dt>
+    <dd>
+    从能力对象中移除指定状态组
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group</span>
+         integer 要移除的状态组标识
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createTimer"></a>
+    <strong>ability:createTimer (timerId, timeout, func)</strong>
+    </dt>
+    <dd>
+    注册定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编
+        </li>
+        <li><span class="parameter">timeout</span>
+         float 时间，秒
+        </li>
+        <li><span class="parameter">func</span>
+         function 到时间要执行的函数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:extendTimer"></a>
+    <strong>ability:extendTimer (timerId, timeout)</strong>
+    </dt>
+    <dd>
+    延长定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 已注册的定时器ID
+        </li>
+        <li><span class="parameter">timeout</span>
+         float 时间，秒
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createRepeatingTimer"></a>
+    <strong>ability:createRepeatingTimer (timerId, timeout, func)</strong>
+    </dt>
+    <dd>
+    注册循环定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编
+        </li>
+        <li><span class="parameter">timeout</span>
+         float 间隔时间，秒
+        </li>
+        <li><span class="parameter">func</span>
+         function 到时间要执行的函数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createRepeatingSkillTimer"></a>
+    <strong>ability:createRepeatingSkillTimer (timerId, timeout, func)</strong>
+    </dt>
+    <dd>
+    <p>注册循环技能定时器 </p>
+
+<ul>
+<li>与普通定时器的区别是在大招暂停期间攻击方的技能定时器继续走</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编
+        </li>
+        <li><span class="parameter">timeout</span>
+         float 间隔时间，秒
+        </li>
+        <li><span class="parameter">func</span>
+         function 到时间要执行的函数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:removeTimer"></a>
+    <strong>ability:removeTimer (timerId)</strong>
+    </dt>
+    <dd>
+    取消定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createSkillTimer"></a>
+    <strong>ability:createSkillTimer (timerId, timeout, func)</strong>
+    </dt>
+    <dd>
+    <p>注册技能定时器 </p>
+
+<ul>
+<li>与普通定时器的区别是在大招暂停期间攻击方的技能定时器继续走</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编
+        </li>
+        <li><span class="parameter">timeout</span>
+         float 时间，秒
+        </li>
+        <li><span class="parameter">func</span>
+         function 到时间要执行的函数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:removeSkillTimer"></a>
+    <strong>ability:removeSkillTimer (timerId)</strong>
+    </dt>
+    <dd>
+    取消技能定时器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">timerId</span>
+         notnil 随便编，与setSkillTimer对应
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:skillPauseFrame"></a>
+    <strong>ability:skillPauseFrame (pauseFrame)</strong>
+    </dt>
+    <dd>
+    技能暂停。
+ &ndash; 仅限系统内部使用，播放大招期间非攻击者的技能定时器暂停。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pauseFrame</span>
+         number 暂停的逻辑帧数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:tick"></a>
+    <strong>ability:tick (frameNumber, realFrameNumber)</strong>
+    </dt>
+    <dd>
+    每帧检查定时器。
+ &ndash; 仅限系统内部使用。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">frameNumber</span>
+
+
+        </li>
+        <li><span class="parameter">realFrameNumber</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setCooldown"></a>
+    <strong>ability:setCooldown (cooldownId)</strong>
+    </dt>
+    <dd>
+    设置冷却时间
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cooldownId</span>
+         any 随便编
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:unsetCooldown"></a>
+    <strong>ability:unsetCooldown (cooldownId)</strong>
+    </dt>
+    <dd>
+    清除冷却
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cooldownId</span>
+         any 与设置冷却时间的cooldownId对应
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:setCooldown">setCooldown</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:getCooldown"></a>
+    <strong>ability:getCooldown (cooldownId, time)</strong>
+    </dt>
+    <dd>
+    判断冷却时间
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cooldownId</span>
+         any 与设置冷却时间的cooldownId对应
+        </li>
+        <li><span class="parameter">time</span>
+         number 冷却时间
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 成功返回true
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:setCooldown">setCooldown</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkCooldown"></a>
+    <strong>ability:checkCooldown (cooldownId, time)</strong>
+    </dt>
+    <dd>
+    检查冷却时间
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cooldownId</span>
+         any 与设置冷却时间的cooldownId对应
+        </li>
+        <li><span class="parameter">time</span>
+         number 冷却时间
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 成功返回true，并记录本次发生时间
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:addCountUntil"></a>
+    <strong>ability:addCountUntil (countId, addValue, untilValue)</strong>
+    </dt>
+    <dd>
+    累加计数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">countId</span>
+         any 随便编
+        </li>
+        <li><span class="parameter">addValue</span>
+         number 计数增加值
+        </li>
+        <li><span class="parameter">untilValue</span>
+         number 计数目标值
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 计数达到则返回true，并清空计数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:clearCount"></a>
+    <strong>ability:clearCount (countId)</strong>
+    </dt>
+    <dd>
+    清除计数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">countId</span>
+         any 与addCountUntil对应
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:addCountUntil">addCountUntil</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:addSubAbility"></a>
+    <strong>ability:addSubAbility (ability)</strong>
+    </dt>
+    <dd>
+    增加子能力
+ &ndash; 当本能力结束时子能力也结束
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ability</span>
+         Ability 子能力对象
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getRandomGenerator"></a>
+    <strong>ability:getRandomGenerator ()</strong>
+    </dt>
+    <dd>
+    获取战场随机数生成器
+ &ndash; 不建议在配置层直接使用，应通过封装好的随机方法操作
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        RandomGenerator 随机数生成器对象
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getRandomInt"></a>
+    <strong>ability:getRandomInt (max)</strong>
+    </dt>
+    <dd>
+    生成区间随机整数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">max</span>
+         integer 最大值（包含）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 随机数范围 [1, max]
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getRandomChoice"></a>
+    <strong>ability:getRandomChoice (list)</strong>
+    </dt>
+    <dd>
+    从列表中随机选择一个元素
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+         table 候选列表
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any 随机选择的元素，如果列表为空，则返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:getRandomProb"></a>
+    <strong>ability:getRandomProb (prob)</strong>
+    </dt>
+    <dd>
+    概率判定（万分比）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">prob</span>
+         integer 概率值，范围 [0,10000]，例如：输入3000表示30%概率
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否命中
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:randomShuffle"></a>
+    <strong>ability:randomShuffle (list)</strong>
+    </dt>
+    <dd>
+    随机打乱列表顺序（Fisher-Yates算法）
+ &ndash; 注意：会直接修改传入的列表
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+         table 需要打乱的可变列表
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 原列表引用（已原地修改）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:addAbility"></a>
+    <strong>ability:addAbility (targetUnit, configType, configName, skillLevel, fromUnit)</strong>
+    </dt>
+    <dd>
+    <p>给目标单位添加新能力 </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>创建新能力对象，继承当前能力的来源信息</li>
+<li>触发能力附加前的检查（onCheckAttach 回调）</li>
+<li>触发能力附加成功事件（onSelfAttach 回调）</li>
+<li>当目标单位已存在相同配置的能力时，会创建新的独立能力实例</li>
+<li>若需要合并层数，应使用 <a href="../classes/Ability.html#ability:incStateLayer">incStateLayer</a> 系列方法</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">configType</span>
+         string 能力配置类型（"skill"/&ldquo;state&rdquo;/&ldquo;card"等，必填）
+        </li>
+        <li><span class="parameter">configName</span>
+         integer|string 能力配置名称（对应配置表中的ID，必填）
+        </li>
+        <li><span class="parameter">skillLevel</span>
+         integer|nil 能力等级（用于技能等级计算，可选，默认继承父能力等级）
+        </li>
+        <li><span class="parameter">fromUnit</span>
+         Unit|nil 施加者单位（可选，nil表示使用当前能力的施加者单位）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         Ability|nil 成功返回新创建的能力对象，失败返回nil
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> fireSkill = ability:<span class="function-name">addAbility</span>(target, <span class="string">"skill"</span>, <span class="string">"fire_blast"</span>, <span class="number">3</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:delAbility"></a>
+    <strong>ability:delAbility (targetUnit, ability, fromUnit)</strong>
+    </dt>
+    <dd>
+    移除目标单位的一项能力
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit     目标单位
+        </li>
+        <li><span class="parameter">ability</span>
+         Ability     被移除的能力
+        </li>
+        <li><span class="parameter">fromUnit</span>
+         Unit|nil   施加者单位（nil时使用当前能力施加者）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:findDelAbility"></a>
+    <strong>ability:findDelAbility (targetUnit, filter, fromUnit)</strong>
+    </dt>
+    <dd>
+    查找并移除目标单位符合条件的能力
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit      目标单位
+        </li>
+        <li><span class="parameter">filter</span>
+         function     能力过滤器（可通过AbilityFilter工具类创建）
+        </li>
+        <li><span class="parameter">fromUnit</span>
+         Unit|nil    施加者单位（nil时使用当前能力施加者）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:detach"></a>
+    <strong>ability:detach (fromAbility, fromUnit)</strong>
+    </dt>
+    <dd>
+    <p>从所属单位移除当前能力（级联移除所有子能力） </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>递归移除通过addSubAbility添加的所有子能力</li>
+<li>触发onDettach生命周期事件</li>
+<li>从单位abilityGroup中移除自身
+注意：这是能力移除的标准方法，直接操作abilityGroup可能造成状态不一致</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fromAbility</span>
+         Ability  触发移除的根源能力（用于事件溯源）
+        </li>
+        <li><span class="parameter">fromUnit</span>
+         Unit        触发移除的施加单位
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setExclusiveAbility"></a>
+    <strong>ability:setExclusiveAbility (exclusiveTag)</strong>
+    </dt>
+    <dd>
+    <p>设置为指定标签的独占能力（同标签能力只能存在一个） </p>
+
+<ul>
+<li>新旧能力替换时会触发旧能力的onSelfDettach事件</li>
+<li>同个标签多次调用安全，不会重复触发事件</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">exclusiveTag</span>
+         string   独占类型标识
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         boolean              是否发生能力替换（true=替换旧能力，false=已是当前能力不变）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:unsetExclusiveAbility"></a>
+    <strong>ability:unsetExclusiveAbility (exclusiveTag)</strong>
+    </dt>
+    <dd>
+    <p>解除当前能力的独占状态 </p>
+
+<ul>
+<li>状态自然结束时会自动调用</li>
+<li>主动替换能力时应优先使用setExclusiveAbility</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">exclusiveTag</span>
+         string   需要解除的独占标签（必须与set时一致）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         boolean              是否成功解除（true=解除成功，false=非当前独占能力）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:isExclusive"></a>
+    <strong>ability:isExclusive (exclusiveTag)</strong>
+    </dt>
+    <dd>
+    判断是否是当前独占能力
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">exclusiveTag</span>
+         string   需要解除的独占标签（必须与set时一致）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setTagList"></a>
+    <strong>ability:setTagList (tagList)</strong>
+    </dt>
+    <dd>
+    设置状态标签列表
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tagList</span>
+         string[]       标签数组（如{&ldquo;Buff&rdquo;,&ldquo;Debuff&rdquo;}）
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">标记为增益状态：
+ability:<span class="function-name">setTagList</span>({<span class="string">"Buff"</span>, <span class="string">"AtkBoost"</span>})</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:getTagList"></a>
+    <strong>ability:getTagList ()</strong>
+    </dt>
+    <dd>
+    获取当前状态标签列表
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string[]|nil          返回标签数组（修改影响原始数据）
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">if</span> ability:<span class="function-name">getTagList</span>() <span class="keyword">and</span> <span class="global">table</span>.<span class="function-name">contains</span>(ability:<span class="function-name">getTagList</span>(), <span class="string">"Control"</span>) <span class="keyword">then</span>
+    <span class="global">print</span>(<span class="string">"这是一个控制类状态"</span>)
+<span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:hasTag"></a>
+    <strong>ability:hasTag (tag)</strong>
+    </dt>
+    <dd>
+    判断是否包含指定标签
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tag</span>
+         string             要检查的标签（区分大小写）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean               存在返回true
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">检查是否为眩晕状态：
+<span class="keyword">if</span> ability:<span class="function-name">hasTag</span>(<span class="string">"Stun"</span>) <span class="keyword">then</span>
+    target:<span class="function-name">beStunned</span>()
+<span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:incStateLayer"></a>
+    <strong>ability:incStateLayer (targetUnit, stateId, skillLevel, layer, time)</strong>
+    </dt>
+    <dd>
+    <p>增加来源绑定的状态层数（仅合并同来源状态） </p>
+
+<ul>
+<li>不存在时创建新状态，存在时调用incStackLayer叠加</li>
+<li>用于中毒、灼烧等多来源可叠加状态</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID（对应ResStateData.id）
+        </li>
+        <li><span class="parameter">skillLevel</span>
+         integer  技能等级
+        </li>
+        <li><span class="parameter">layer</span>
+         integer       叠加层数
+        </li>
+        <li><span class="parameter">time</span>
+         number|nil 持续时间（秒），nil表示永久层数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:incUniqueStateLayer"></a>
+    <strong>ability:incUniqueStateLayer (targetUnit, stateId, skillLevel, layer, time)</strong>
+    </dt>
+    <dd>
+    <p>增加唯一状态层数（合并不同来源状态） </p>
+
+<ul>
+<li>用于全局唯一的状态管理（如眩晕、沉默等控制状态）</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID（对应ResStateData.id）
+        </li>
+        <li><span class="parameter">skillLevel</span>
+         integer  技能等级
+        </li>
+        <li><span class="parameter">layer</span>
+         integer       叠加层数
+        </li>
+        <li><span class="parameter">time</span>
+         number|nil 持续时间（秒），nil表示永久层数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:decStateLayer"></a>
+    <strong>ability:decStateLayer (targetUnit, stateId, layer)</strong>
+    </dt>
+    <dd>
+    <p>减少来源绑定的状态层数 </p>
+
+<ul>
+<li>层数减至0时自动触发状态移除</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID
+        </li>
+        <li><span class="parameter">layer</span>
+         integer       减少层数
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:decUniqueStateLayer"></a>
+    <strong>ability:decUniqueStateLayer (targetUnit, stateId, layer)</strong>
+    </dt>
+    <dd>
+    减少唯一状态层数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID
+        </li>
+        <li><span class="parameter">layer</span>
+         integer       减少层数（默认1层）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setStateLayer"></a>
+    <strong>ability:setStateLayer (targetUnit, stateId, skillLevel, layer, time)</strong>
+    </dt>
+    <dd>
+    <p>设置来源绑定的状态层数（精确控制同来源状态） </p>
+
+<ul>
+<li>仅操作当前能力来源创建的状态实例</li>
+<li>适用于需要精确控制特定来源状态层数的场景</li>
+<li>与incStateLayer的区别在于直接设置而非增减</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID（对应ResStateData.id）
+        </li>
+        <li><span class="parameter">skillLevel</span>
+         integer  技能等级（影响基础数值）
+        </li>
+        <li><span class="parameter">layer</span>
+         integer|nil   目标层数（nil=保持当前，0=清除状态）
+        </li>
+        <li><span class="parameter">time</span>
+         integer|nil    新持续时间（帧数，nil=保持原有时长）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setUniqueStateLayer"></a>
+    <strong>ability:setUniqueStateLayer (targetUnit, stateId, skillLevel, layer, time)</strong>
+    </dt>
+    <dd>
+    <p>设置全局状态层数（跨来源合并） </p>
+
+<ul>
+<li>操作所有来源的同ID状态实例</li>
+<li>适用于需要跨来源统一管理状态的场景</li>
+<li>如果存在多个状态实例（如不是用<a href="../classes/Ability.html#ability:incUniqueStateLayer">incUniqueStateLayer</a>创建的），实际会修改最早创建的状态实例</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要附加能力的目标单位（必填）
+        </li>
+        <li><span class="parameter">stateId</span>
+         integer     状态配置ID（对应ResStateData.id）
+        </li>
+        <li><span class="parameter">skillLevel</span>
+         integer  技能等级（影响基础数值）
+        </li>
+        <li><span class="parameter">layer</span>
+         integer|nil   目标层数（nil=保持当前，0=清除状态）
+        </li>
+        <li><span class="parameter">time</span>
+         integer|nil    新持续时间（帧数，nil=保持原有时长）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:beTaunted"></a>
+    <strong>ability:beTaunted ()</strong>
+    </dt>
+    <dd>
+    被嘲讽
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:beAimed"></a>
+    <strong>ability:beAimed ()</strong>
+    </dt>
+    <dd>
+    被集火
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:addAttr"></a>
+    <strong>ability:addAttr (attrName, addValue)</strong>
+    </dt>
+    <dd>
+    累加属性值（直接修改基础属性）
+ &ndash;
+ 1. 直接修改单位的基础属性值（非增强值）
+ 2. 多次调用会累加效果
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称（对应ResAttrData.id）
+        </li>
+        <li><span class="parameter">addValue</span>
+         number 属性增加值（可为负数）
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">增加<span class="number">50</span>点攻击力：
+ability:<span class="function-name">addAttr</span>(<span class="string">'atk'</span>, <span class="number">50</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:setAttr"></a>
+    <strong>ability:setAttr (attrName, value)</strong>
+    </dt>
+    <dd>
+    <p>设置属性绝对值（直接覆盖基础属性） </p>
+
+<ul>
+<li>会完全覆盖当前基础属性值</li>
+<li>适用于需要精确控制属性值的场景</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称
+        </li>
+        <li><span class="parameter">value</span>
+         number 要设置的属性值
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:setAttrBuff"></a>
+    <strong>ability:setAttrBuff (attrName, value, disableShowNum)</strong>
+    </dt>
+    <dd>
+    <p>设置属性增强值（替换式修改） </p>
+
+<ul>
+<li>与addAttr的区别：此处修改的是属性增强值（buff/debuff）</li>
+<li>多次调用会覆盖之前的增强值</li>
+<li>当此能力移除时自动撤销属性增强</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称
+        </li>
+        <li><span class="parameter">value</span>
+         number|nil 增强值（nil表示清除增强）
+        </li>
+        <li><span class="parameter">disableShowNum</span>
+         boolean 是否隐藏状态显示
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">设置攻击力增强+<span class="number">1000</span>（显示状态图标）：
+ability:<span class="function-name">setAttrBuff</span>(<span class="string">'atk'</span>, <span class="number">1000</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:unsetAttrBuff"></a>
+    <strong>ability:unsetAttrBuff (attrName)</strong>
+    </dt>
+    <dd>
+    <p>取消指定属性的增强值 </p>
+
+<ul>
+<li>会自动计算属性差值并还原</li>
+<li>会触发状态显示更新（如果原属性需要显示）</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 要取消的属性名称
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:setAttrBuff">setAttrBuff</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">清除攻击力增强：
+ability:<span class="function-name">unsetAttrBuff</span>(<span class="string">'atk'</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:clearAttrBuff"></a>
+    <strong>ability:clearAttrBuff ()</strong>
+    </dt>
+    <dd>
+    <p>清除所有属性增强. </p>
+
+<ul>
+<li>功能说明：
+
+<ol>
+<li>按照属性名字母顺序逐个清除</li>
+<li>在能力被移除时自动调用</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:setAttrBuff">setAttrBuff</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:getAttrBuff"></a>
+    <strong>ability:getAttrBuff (attrName)</strong>
+    </dt>
+    <dd>
+    取属性增强值
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:loadOnce"></a>
+    <strong>ability:loadOnce (triggerCd, cardUseCd)</strong>
+    </dt>
+    <dd>
+    触发一次本技能的卡牌使用
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">triggerCd</span>
+
+
+        </li>
+        <li><span class="parameter">cardUseCd</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkShootOnce"></a>
+    <strong>ability:checkShootOnce ()</strong>
+    </dt>
+    <dd>
+    <p>检查单次触发技能的使用许可 </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>用于标记触发型技能已使用（如被动触发的追击技能）</li>
+<li>使用技能后应清除内部标记，确保单次触发只生效一次</li>
+</ol>
+
+
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+         table|nil 返回触发技能冷却参数，空表示当前不可使用
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkShootInput"></a>
+    <strong>ability:checkShootInput ()</strong>
+    </dt>
+    <dd>
+    <p>检查主动技能是否允许使用 </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>返回true表示技能可用，false表示不可用</li>
+</ol>
+
+
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+         boolean 是否允许释放该技能
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:clearShootInput"></a>
+    <strong>ability:clearShootInput ()</strong>
+    </dt>
+    <dd>
+    <p>主动技能施放完成</p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>清除手动施放标记</li>
+</ol>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:playCue"></a>
+    <strong>ability:playCue (targetUnit, cueList, startUnit, flyTime)</strong>
+    </dt>
+    <dd>
+    <p>播放技能特效指令 </p>
+
+<ul>
+<li>功能说明：</li>
+</ul>
+
+
+<ol>
+<li>用于触发技能前摇/飞行/命中阶段的完整特效链</li>
+<li>特效路径会自动计算（起始单位到目标单位的向量方向）</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 特效目标单位
+        </li>
+        <li><span class="parameter">cueList</span>
+         integer[] 特效配置ID列表（对应ResCue表）
+        </li>
+        <li><span class="parameter">startUnit</span>
+         Unit|nil 特效起始单位（nil表示从施法者位置发出）
+        </li>
+        <li><span class="parameter">flyTime</span>
+         number|nil 特效飞行时间（秒），0表示立即生效，nil表示不是子弹类特效
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">播放火球术飞行特效（从施法者到目标，飞行时间<span class="number">1.5</span>秒）：
+ability:<span class="function-name">playCue</span>(target, {<span class="number">666</span>}, caster, <span class="number">1.5</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:playHitAnim"></a>
+    <strong>ability:playHitAnim (targetUnit, hitedAnim)</strong>
+    </dt>
+    <dd>
+    触发受击单位的表现动画
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击单位
+        </li>
+        <li><span class="parameter">hitedAnim</span>
+         string 受击动画ID（对应动作状态机配置）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:playHitOffset"></a>
+    <strong>ability:playHitOffset (targetUnit, offsetPath)</strong>
+    </dt>
+    <dd>
+    设置受击单位的位置偏移
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击单位
+        </li>
+        <li><span class="parameter">offsetPath</span>
+         string 偏移路径配置ID（对应ResOffsetPath表）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkHitChance"></a>
+    <strong>ability:checkHitChance (targetUnit, skillType, disablePassive)</strong>
+    </dt>
+    <dd>
+    <p>计算命中判定 </p>
+
+<ul>
+<li>检查目标免疫状态</li>
+<li>计算命中率公式：最终命中率 = 攻击方命中率 &ndash; 目标闪避率</li>
+<li>未命中时触发attackMiss回调</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         number 技能类型（0=普通，1=技能，2=触发）
+        </li>
+        <li><span class="parameter">disablePassive</span>
+         boolean 是否禁用被动技能触发（true=不触发被动）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         boolean 是否命中（true=命中，false=未命中）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackMiss"></a>
+    <strong>ability:attackMiss (targetUnit, skillType, disablePassive)</strong>
+    </dt>
+    <dd>
+    攻击结果是被闪避
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">skillType</span>
+
+
+        </li>
+        <li><span class="parameter">disablePassive</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackImmune"></a>
+    <strong>ability:attackImmune (targetUnit, skillType, disablePassive)</strong>
+    </dt>
+    <dd>
+    攻击结果是被免疫
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">skillType</span>
+
+
+        </li>
+        <li><span class="parameter">disablePassive</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackMovingFlash"></a>
+    <strong>ability:attackMovingFlash (targetUnit, movingFlash, near)</strong>
+    </dt>
+    <dd>
+    技能移动效果：向目标单位闪现
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位对象
+        </li>
+        <li><span class="parameter">movingFlash</span>
+         integer 移动过程经过几个逻辑帧
+        </li>
+        <li><span class="parameter">near</span>
+         boolean true表示移动到目标周围的空位中的距离起点最近的位置，即闪现到敌人面前。false或nil表示移动到最远位置，即敌人身后。
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackMovingSwap"></a>
+    <strong>ability:attackMovingSwap (targetUnit)</strong>
+    </dt>
+    <dd>
+    与目标换位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位对象
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackMovingBack"></a>
+    <strong>ability:attackMovingBack (targetUnit, movingBackDistance, movingBackSpeed)</strong>
+    </dt>
+    <dd>
+    击退目标
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位对象
+        </li>
+        <li><span class="parameter">movingBackDistance</span>
+         number 击退距离
+        </li>
+        <li><span class="parameter">movingBackSpeed</span>
+         number 击退速度
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackControl"></a>
+    <strong>ability:attackControl (targetUnit, controlType, controlTime, skipImmunityControl)</strong>
+    </dt>
+    <dd>
+    造成控制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">controlType</span>
+
+
+        </li>
+        <li><span class="parameter">controlTime</span>
+
+
+        </li>
+        <li><span class="parameter">skipImmunityControl</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackControlDel"></a>
+    <strong>ability:attackControlDel (targetUnit, controlType)</strong>
+    </dt>
+    <dd>
+    解除控制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">controlType</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackControlExtend"></a>
+    <strong>ability:attackControlExtend (targetUnit, controlType, controlTime)</strong>
+    </dt>
+    <dd>
+    延长控制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">controlType</span>
+
+
+        </li>
+        <li><span class="parameter">controlTime</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackChangeMana"></a>
+    <strong>ability:attackChangeMana (targetUnit, addMana, notShow)</strong>
+    </dt>
+    <dd>
+    造成对方能量变化
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">addMana</span>
+
+
+        </li>
+        <li><span class="parameter">notShow</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:changeMana"></a>
+    <strong>ability:changeMana (changeValue, notShow)</strong>
+    </dt>
+    <dd>
+    自身能量变化
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">changeValue</span>
+
+
+        </li>
+        <li><span class="parameter">notShow</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkDamageImmune"></a>
+    <strong>ability:checkDamageImmune (targetUnit, immuneType)</strong>
+    </dt>
+    <dd>
+    检查伤害是否被免疫
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">immuneType</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackShield"></a>
+    <strong>ability:attackShield (targetUnit, base, skillType, shieldTime, disablePassive)</strong>
+    </dt>
+    <dd>
+    给目标单位施加护盾 </p>
+
+<p> 功能说明：
+ 1. 计算护盾系数：攻击方护盾效果加成 <em> 目标护盾增强系数
+ 2. 调用底层接口应用护盾值
+ 3. 护盾值 = 基础值 </em> 系数
+ 注意事项：
+ &ndash; 护盾值会自动叠加
+ &ndash; 护盾持续时间使用游戏逻辑帧计算，不同来源的护盾独立计算
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 要施加护盾的目标单位
+        </li>
+        <li><span class="parameter">base</span>
+         number 护盾基础值（受技能等级和配置影响）
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">shieldTime</span>
+         number 护盾持续时间（秒），nil表示永久
+        </li>
+        <li><span class="parameter">disablePassive</span>
+         boolean 是否禁用被动技能触发
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">给目标施加持续<span class="number">5</span>秒的<span class="number">1000</span>点护盾（大招技能）：
+ability:<span class="function-name">attackShield</span>(target, <span class="number">1000</span>, ability.Enum.SkillType.DaZhao, <span class="number">5</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:attackHeal"></a>
+    <strong>ability:attackHeal (targetUnit, base, skillType, disablePassive)</strong>
+    </dt>
+    <dd>
+    对目标单位执行治疗行为 </p>
+
+<p> 实现逻辑：
+ 1. 检查目标治疗免疫状态
+ 2. 计算最终治疗量 = 基础值 <em> (治疗系数 = 施法者治疗效果 </em> 目标治疗增强)
+ 3. 调用底层治疗应用逻辑（会触发血量变化事件和被动技能）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被治疗的目标单位
+        </li>
+        <li><span class="parameter">base</span>
+         number 基础治疗值（受技能等级和配置影响）
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">disablePassive</span>
+         boolean 是否禁用被动技能触发
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackLoss"></a>
+    <strong>ability:attackLoss (targetUnit, base, skillType, disablePassive)</strong>
+    </dt>
+    <dd>
+    对目标单位造成真实伤害 </p>
+
+<p> 实现流程：
+ 1. 基础校验：目标存活且伤害值有效
+ 2. 伤害计算：基础值 × 伤害系数（含施法者强化/目标抗性）
+ 3. 应用伤害：调用底层接口处理护盾吸收和实际扣血
+ 注意事项：
+ &ndash; 固定伤害不受暴击、格挡、连接、吸血、反弹等常规战斗机制影响
+ &ndash; 会触发被动技能（除非 disablePassive = true）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">base</span>
+         number 基础伤害值（受技能等级和配置影响）
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">disablePassive</span>
+         boolean 是否禁用被动技能触发
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#SkillType">Enum.SkillType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ability:attackDamage"></a>
+    <strong>ability:attackDamage (targetUnit, damageBase, skillType, elemType, disablePassive, critDmgAdd, defPercent)</strong>
+    </dt>
+    <dd>
+    <p>计算并应用物理伤害 </p>
+
+<ol>
+<li>检查目标物理伤害免疫</li>
+<li>计算实际伤害因子（含暴击、抗性、等级压制等）</li>
+<li>处理伤害分摊、护盾吸收、吸血、反弹等连锁效果</li>
+<li>触发伤害相关事件回调</li>
+</ol>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">damageBase</span>
+         number 基础伤害值（经过技能等级加成的初始值，必须≥0）
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型
+        </li>
+        <li><span class="parameter">elemType</span>
+         integer 元素类型
+        </li>
+        <li><span class="parameter">disablePassive</span>
+         boolean|nil 是否禁用被动技能触发（true=跳过被动回调）
+        </li>
+        <li><span class="parameter">critDmgAdd</span>
+         number 暴击伤害加成（万分比，例如1000表示+10%暴击伤害）
+        </li>
+        <li><span class="parameter">defPercent</span>
+         number|nil 目标防御系数（万分比，nil表示100%，例如1000表示只代入10%目标防御）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         integer|nil damangeAmount 经过计算后的伤害值（注意可能大于目标实际扣减的HP值），被免疫返回空。
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../modules/Enum.html#SkillType">Enum.SkillType</a></li>
+         <li><a href="../modules/Enum.html#ElemType">Enum.ElemType</a></li>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">对敌人造成基础<span class="number">1000</span>点火系物理伤害，<span class="number">10</span>%暴击加成，作为大招技能：
+ability:<span class="function-name">attackDamage</span>(enemyUnit, <span class="number">1000</span>, <span class="number">1000</span>, ability.Enum.SkillType.DaZhao, ability.Enum.ElemType.Fire)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:attackCurse"></a>
+    <strong>ability:attackCurse (targetUnit, attrName, damageBase, skillType)</strong>
+    </dt>
+    <dd>
+    对目标单位施加诅咒攻击并造成属性伤害 </p>
+
+<p> 注意事项：
+ 1. 伤害计算：基础值 × 伤害系数（含施法者强化/目标抗性）
+ 2. 对hp和mhp的诅咒至少保留1点生命值，不会导致目标死亡
+ 3. 对hp的诅咒不可被护盾吸收
+ 4. 不受暴击、格挡、连接、吸血、反弹等常规战斗机制影响
+ 5. 诅咒伤害不是state，不可撤销、不可驱散、没有状态图标
+ 6. 触发onOwnerAttackCurse和onOwnerBeHitCurse事件
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位对象，必须为有效且存活的单位
+        </li>
+        <li><span class="parameter">attrName</span>
+         string 受影响的属性名称（如"hp"、"mana"等）
+        </li>
+        <li><span class="parameter">damageBase</span>
+         number 基础伤害值，必须为正数
+        </li>
+        <li><span class="parameter">skillType</span>
+         number 技能类型，用于计算伤害系数
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 实际施加的诅咒伤害值（0表示无效攻击）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:summonMonster"></a>
+    <strong>ability:summonMonster (grid, monsterId, attrFromUnit)</strong>
+    </dt>
+    <dd>
+    在指定网格位置召唤怪物单位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">grid</span>
+         table 召唤位置的网格对象，需包含坐标信息
+        </li>
+        <li><span class="parameter">monsterId</span>
+         number 怪物资源ID，用于指定召唤的怪物类型
+        </li>
+        <li><span class="parameter">attrFromUnit</span>
+         table|nil 可选参数，指定属性继承来源单位，若提供则新怪物会继承该单位的部分属性
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit 新创建的怪物单位对象
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:changeWeather"></a>
+    <strong>ability:changeWeather (weatherFlag, weatherTime)</strong>
+    </dt>
+    <dd>
+    改变天气。别用，没实现。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">weatherFlag</span>
+
+
+        </li>
+        <li><span class="parameter">weatherTime</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:reborn"></a>
+    <strong>ability:reborn (targetUnit, hppct, mana)</strong>
+    </dt>
+    <dd>
+    复活
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">hppct</span>
+
+
+        </li>
+        <li><span class="parameter">mana</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:makeTrap"></a>
+    <strong>ability:makeTrap (stateId, skillId, eventId, shot)</strong>
+    </dt>
+    <dd>
+    创建陷阱实例
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">stateId</span>
+         integer|nil 关联的状态ID（触发时施加状态）
+        </li>
+        <li><span class="parameter">skillId</span>
+         integer|nil 关联的技能ID（触发时调用技能）
+        </li>
+        <li><span class="parameter">eventId</span>
+         integer|nil 关联的技能事件ID
+        </li>
+        <li><span class="parameter">shot</span>
+         integer|nil 可触发次数（nil表示无限次）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 陷阱对象，包含触发逻辑和配置参数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:makeTrapById"></a>
+    <strong>ability:makeTrapById (trapId)</strong>
+    </dt>
+    <dd>
+    通过配置表ID创建标准化陷阱
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">trapId</span>
+         integer 陷阱配置ID（对应ResBattleTrap表）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table|nil 返回陷阱对象，配置不存在时返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createTrapById"></a>
+    <strong>ability:createTrapById (grid, trapId)</strong>
+    </dt>
+    <dd>
+    在指定网格创建标准化陷阱
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">grid</span>
+         Grid 目标网格（来自GridGraph）
+        </li>
+        <li><span class="parameter">trapId</span>
+         integer 陷阱配置ID
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table|nil 成功返回陷阱对象，失败返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:createTrap"></a>
+    <strong>ability:createTrap (grid, trap)</strong>
+    </dt>
+    <dd>
+    在指定网格部署陷阱
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">grid</span>
+         Grid 目标网格（来自GridGraph）
+        </li>
+        <li><span class="parameter">trap</span>
+         table 陷阱对象
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table|nil 已部署的陷阱对象，重复部署返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:removeTrap"></a>
+    <strong>ability:removeTrap (trap)</strong>
+    </dt>
+    <dd>
+    移除已部署的陷阱
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">trap</span>
+         table 要移除的陷阱对象
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:sendMessage"></a>
+    <strong>ability:sendMessage (toAbility, message, ...)</strong>
+    </dt>
+    <dd>
+    给Ability发送自定义消息
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">toAbility</span>
+         Ability 要接收消息的目标能力对象
+        </li>
+        <li><span class="parameter">message</span>
+         string 消息标识符（用于区分不同消息类型）
+        </li>
+        <li><span class="parameter">...</span>
+         any 附加的消息参数（可变参数）
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">发送治疗消息：
+ability:<span class="function-name">sendMessage</span>(targetAbility, <span class="string">"HEAL"</span>, <span class="number">500</span>, <span class="string">"红药水"</span>)
+
+接收方处理：
+<span class="keyword">function</span> Ability:<span class="function-name">onMessage</span>(fromAbility, msgType, ...)
+    <span class="keyword">if</span> msgType == <span class="string">"HEAL"</span> <span class="keyword">then</span>
+        <span class="keyword">local</span> amount, source = ...
+        self:<span class="function-name">healHp</span>(self:<span class="function-name">getOwnerUnit</span>(), amount)
+    <span class="keyword">end</span>
+<span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ability:sendUnitMessage"></a>
+    <strong>ability:sendUnitMessage (toUnit, message, ...)</strong>
+    </dt>
+    <dd>
+    给Unit发送自定义消息
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">toUnit</span>
+         Unit 要接收消息的目标
+        </li>
+        <li><span class="parameter">message</span>
+         string 消息标识符（用于区分不同消息类型）
+        </li>
+        <li><span class="parameter">...</span>
+         any 附加的消息参数（可变参数）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:sendGlobalMessage"></a>
+    <strong>ability:sendGlobalMessage (message, ...)</strong>
+    </dt>
+    <dd>
+    给全体发送自定义消息
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+         string 消息标识符（用于区分不同消息类型）
+        </li>
+        <li><span class="parameter">...</span>
+         any 附加的消息参数（可变参数）
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:addOutput"></a>
+    <strong>ability:addOutput (outputType, args)</strong>
+    </dt>
+    <dd>
+    输出信息到表现层
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">outputType</span>
+
+
+        </li>
+        <li><span class="parameter">args</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:triggerSkillEvent"></a>
+    <strong>ability:triggerSkillEvent (fromUnit, targetUnit, skillId, eventId, eventLevel)</strong>
+    </dt>
+    <dd>
+    触发技能事件
+ 不推荐。直接配具体效果就行。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">fromUnit</span>
+
+
+        </li>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">skillId</span>
+
+
+        </li>
+        <li><span class="parameter">eventId</span>
+
+
+        </li>
+        <li><span class="parameter">eventLevel</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:triggerPassiveCard"></a>
+    <strong>ability:triggerPassiveCard (cardId, cardLevel, triggerCd, cardUseCd, targetUnit)</strong>
+    </dt>
+    <dd>
+    触发卡牌技能
+ 该技能会在下一帧优先使用
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cardId</span>
+
+
+        </li>
+        <li><span class="parameter">cardLevel</span>
+
+
+        </li>
+        <li><span class="parameter">triggerCd</span>
+
+
+        </li>
+        <li><span class="parameter">cardUseCd</span>
+
+
+        </li>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkCondition"></a>
+    <strong>ability:checkCondition (conditionArgs, targetUnit)</strong>
+    </dt>
+    <dd>
+    检查条件。
+ 不推荐：直接判断具体条件就行。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">conditionArgs</span>
+
+
+        </li>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ability:checkRandomControl"></a>
+    <strong>ability:checkRandomControl (probId, prabLevel, targetUnit, probSourceType, probSourceKey)</strong>
+    </dt>
+    <dd>
+    检查随机触发。
+ 不推荐：直接调用随机数就行。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">probId</span>
+
+
+        </li>
+        <li><span class="parameter">prabLevel</span>
+
+
+        </li>
+        <li><span class="parameter">targetUnit</span>
+
+
+        </li>
+        <li><span class="parameter">probSourceType</span>
+
+
+        </li>
+        <li><span class="parameter">probSourceKey</span>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否触发
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Ability.html#ability:getRandomProb">getRandomProb</a>
+    </ul>
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

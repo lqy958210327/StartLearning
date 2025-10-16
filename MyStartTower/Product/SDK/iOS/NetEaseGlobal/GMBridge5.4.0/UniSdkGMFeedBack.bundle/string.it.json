@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Impossibile trovare la fotocamera",
+    "CREATE_IMGFILE_FAILED_MSG":"Salvataggio immagine non riuscita",
+    "ISNOT_IMAGE_FILE_MSG":"Questa non è un’immagine",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Accesso ad Album negato",
+    "ASButtonTitleCancel":"Annulla",
+    "ASButtonTitleCamera":"Fotocamera",
+    "ASButtonTitleLibrary":"Album",
+    "upload_img_succeess":"Caricamento completato!",
+    "upload_img_failed":"Acquisizione immagine non riuscita"
+}

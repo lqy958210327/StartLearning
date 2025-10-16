@@ -1,0 +1,11 @@
+/* Profile creation dialog body text */
+"profile_creation_dialog_body" = "Use it to sign in to games, claim earned rewards, and more.";
+
+/* Profile creation dialog cancel button text */
+"profile_creation_dialog_cancel_button" = "Cancel";
+
+/* Profile creation dialog ok button text */
+"profile_creation_dialog_ok_button" = "Continue";
+
+/* Profile creation dialog title text */
+"profile_creation_dialog_title" = "Create a Google Play Games profile";

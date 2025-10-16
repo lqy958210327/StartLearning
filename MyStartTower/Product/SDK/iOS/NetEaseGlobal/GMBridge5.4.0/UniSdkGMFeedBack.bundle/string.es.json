@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"No se puede encontrar la cámara.",
+    "CREATE_IMGFILE_FAILED_MSG":"No se ha podido guardar la imagen.",
+    "ISNOT_IMAGE_FILE_MSG":"Esto no es un archivo de imagen.",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Acceso al álbum denegado.",
+    "ASButtonTitleCancel":"Cancelar",
+    "ASButtonTitleCamera":"Cámara",
+    "ASButtonTitleLibrary":"Álbum",
+    "float_view_close":"Cerrar",
+    "float_alert_tittle1":"¿Cerrar el bocadillo?\n",
+    "float_alert_tittle2":"(Reaparece después de reiniciar o cuando hay un mensaje nuevo)",
+    "float_alert_cancel":"Cancelar",
+    "float_alert_ok":"Confirmar",
+    "upload_img_succeess":"¡Carga completada!",
+    "upload_img_failed":"No se ha podido obtener la imagen."
+}

@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Impossible de trouver la caméra",
+    "CREATE_IMGFILE_FAILED_MSG":"Échec d'enregistrement de l'image",
+    "ISNOT_IMAGE_FILE_MSG":"Ceci n'est pas un fichier image.",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Accès à l'Album refusé",
+    "ASButtonTitleCancel":"Annuler",
+    "ASButtonTitleCamera":"Caméra",
+    "ASButtonTitleLibrary":"Album",
+    "float_view_close":"Fermer",
+    "float_alert_tittle1":"Fermer la bulle ?\n",
+    "float_alert_tittle2":"(Visible après réinit./nv. msg)",
+    "float_alert_cancel":"Annuler",
+    "float_alert_ok":"Confirmer",
+    "upload_img_succeess":"Chargement terminé !",
+    "upload_img_failed":"Échec d'acquisition de l'image"
+}

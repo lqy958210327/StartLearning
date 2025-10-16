@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+
+
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><strong>AbilityConfigCard.lua</strong></li>
+  <li><a href="../examples/AbilityConfigSkill.lua.html">AbilityConfigSkill.lua</a></li>
+  <li><a href="../examples/AbilityConfigState.lua.html">AbilityConfigState.lua</a></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Ability.html">Ability</a></li>
+  <li><a href="../classes/Unit.html">Unit</a></li>
+  <li><a href="../classes/AbilityConfig.html">AbilityConfig</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+    <h2>AbilityConfigCard.lua</h2>
+<pre>
+<span class="keyword">local</span> AbilityDataTable = <span class="global">require</span> <span class="string">"Core/Common/FrameBattle/Ability/AbilityDataTable"</span>
+<span class="keyword">local</span> ResSkillConfig = AbilityDataTable.ResSkillConfig
+
+<span class="keyword">local</span> AbilityConfigCard = {}
+
+<span class="keyword">function</span> AbilityConfigCard:<span class="function-name">onSelfAttach</span>()
+    <span class="keyword">local</span> resSkillConfig = self.resSkillConfig
+    <span class="keyword">local</span> skillLevel = self:<span class="function-name">getSkillLevel</span>()
+    <span class="keyword">local</span> resCard = resSkillConfig[skillLevel]
+    self.resCard = resCard
+    self.cardInfo = { skillList = {}, cardId = resCard.id, cardType = resCard.skill_type,
+        skillCd = resCard.skill_cd, nextCd = resCard.init_cd, useSpeedUp = resCard.use_speedup==<span class="number">1</span> }
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">for</span> _, skillId <span class="keyword">in</span> <span class="global">ipairs</span>(resCard.skill_ids) <span class="keyword">do</span>
+        <span class="keyword">local</span> skill = self:<span class="function-name">addAbility</span>(ownerUnit, <span class="string">'skill'</span>, skillId, skillLevel)
+        skill.cardInfo = self.cardInfo
+        <span class="global">table</span>.<span class="function-name">insert</span>(self.cardInfo.skillList, skill)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resCard.skill_passive <span class="keyword">then</span>
+        self:<span class="function-name">addAbility</span>(ownerUnit, <span class="string">'passive'</span>, resCard.skill_passive, skillLevel)
+    <span class="keyword">end</span>
+    self:<span class="function-name">setCooldown</span>(self.cardInfo) <span class="comment">-- 初始CD
+</span><span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigCard:<span class="function-name">onCheckCardUse</span>()
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> cardInfo = self.cardInfo
+    <span class="keyword">local</span> resCard = self.resCard
+    <span class="keyword">local</span> cardType = cardInfo.cardType
+    <span class="keyword">if</span> cardType == self.Enum.SkillType.PuGong <span class="keyword">then</span>
+        <span class="keyword">if</span> ownerUnit:<span class="function-name">hasAttr</span>(<span class="string">'disarm'</span>) <span class="keyword">then</span>
+            <span class="keyword">return</span> <span class="keyword">nil</span>
+        <span class="keyword">end</span>
+    <span class="keyword">elseif</span> cardType == self.Enum.SkillType.DaZhao <span class="keyword">then</span>
+        <span class="keyword">if</span> ownerUnit:<span class="function-name">hasAttr</span>(<span class="string">'silence'</span>) <span class="keyword">then</span>
+            <span class="keyword">return</span> <span class="keyword">nil</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resCard.mana_cost <span class="keyword">and</span> ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'mana'</span>) &lt; resCard.mana_cost <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">nil</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> shoot = resCard.timer_shoot == <span class="number">1</span>
+        <span class="keyword">or</span> (resCard.input_shoot == <span class="number">1</span> <span class="keyword">and</span> self:<span class="function-name">checkShootInput</span>())
+        <span class="keyword">or</span> (resCard.trigger_shoot == <span class="number">1</span> <span class="keyword">and</span> self:<span class="function-name">checkShootOnce</span>())
+    <span class="keyword">if</span> <span class="keyword">not</span> shoot <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">nil</span>
+    <span class="keyword">end</span>
+    <span class="keyword">local</span> cd = cardInfo.nextCd
+    <span class="keyword">if</span> cd <span class="keyword">and</span> <span class="keyword">not</span> self:<span class="function-name">getCooldown</span>(cardInfo, cd) <span class="keyword">then</span>
+        <span class="keyword">return</span> <span class="keyword">nil</span>
+    <span class="keyword">end</span>
+    <span class="keyword">return</span> <span class="keyword">true</span>
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigCard:<span class="function-name">onCheckCardUseSkill</span>()
+    <span class="keyword">local</span> cardInfo = self.cardInfo
+    <span class="keyword">local</span> useSkill = self:<span class="function-name">getRandomChoice</span>(cardInfo.skillList)
+    <span class="keyword">local</span> priority = self.resCard.skill_priority <span class="keyword">or</span> <span class="number">1</span> <span class="comment">--cardInfo.cardType and (cardInfo.cardType + 1) * 1000 or 10000
+</span>    <span class="keyword">return</span> useSkill, priority
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> AbilityConfigCard:<span class="function-name">onSelfCardUse</span>()
+    <span class="keyword">local</span> ownerUnit = self:<span class="function-name">getOwnerUnit</span>()
+    <span class="keyword">local</span> cardInfo = self.cardInfo
+    self.skillInput = <span class="keyword">nil</span>
+    self:<span class="function-name">setCooldown</span>(cardInfo)
+    <span class="keyword">local</span> resCard = self.resCard
+    <span class="keyword">if</span> resCard.mana_cost <span class="keyword">then</span>
+        self:<span class="function-name">addAttr</span>(<span class="string">'mana'</span>, -resCard.mana_cost)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resCard.mana_gen <span class="keyword">then</span>
+        <span class="keyword">local</span> addMana = ownerUnit:<span class="function-name">getAttr</span>(<span class="string">'attack_mana_gen'</span>)
+        self:<span class="function-name">changeMana</span>(resCard.mana_gen + addMana, <span class="keyword">true</span>)
+    <span class="keyword">end</span>
+    <span class="keyword">if</span> resCard.input_shoot == <span class="number">1</span> <span class="keyword">then</span>
+        self:<span class="function-name">clearShootInput</span>()
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+<span class="keyword">local</span> <span class="keyword">function</span> <span class="function-name">newAbilityConfigCard</span>(cardId)
+    <span class="keyword">local</span> resSkillConfig = ResSkillConfig[cardId]
+    <span class="keyword">return</span> <span class="keyword">function</span> (ability)
+        ability.cardId = cardId
+        ability.resSkillConfig = resSkillConfig
+        ability:<span class="function-name">registerTriggerTable</span>(AbilityConfigCard)
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">return</span> newAbilityConfigCard</pre>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

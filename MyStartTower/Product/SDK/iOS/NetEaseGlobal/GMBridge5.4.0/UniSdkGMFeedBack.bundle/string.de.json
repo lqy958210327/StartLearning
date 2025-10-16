@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Kamera kann nicht gefunden werden.",
+    "CREATE_IMGFILE_FAILED_MSG":"Bild konnte nicht gespeichert werden.",
+    "ISNOT_IMAGE_FILE_MSG":"Dies ist keine Bilddatei.",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Zugriff auf das Album nicht gestattet.",
+    "ASButtonTitleCancel":"Abbrechen",
+    "ASButtonTitleCamera":"Kamera",
+    "ASButtonTitleLibrary":"Album",
+    "float_view_close":"Schließen",
+    "float_alert_tittle1":"Sprechblase schließen?\n",
+    "float_alert_tittle2":"(Erscheint wieder nach Neustart / neue Nachricht)",
+    "float_alert_cancel":"Abbrechen",
+    "float_alert_ok":"Bestätigen",
+    "upload_img_succeess":"Upload abgeschlossen!",
+    "upload_img_failed":"Bild konnte nicht gefunden werden."
+}

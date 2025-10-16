@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"카메라를 찾지 못했습니다",
+    "CREATE_IMGFILE_FAILED_MSG":"이미지 저장에 실패했습니다",
+    "ISNOT_IMAGE_FILE_MSG":"이미지 파일이 아닙니다",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"갤러리 접근 권한이 없습니다",
+    "ASButtonTitleCancel":"취소",
+    "ASButtonTitleCamera":"카메라",
+    "ASButtonTitleLibrary":"갤러리",
+    "upload_img_succeess":"업로드 완료!",
+    "upload_img_failed":"이미지를 가져오지 못했습니다"
+}

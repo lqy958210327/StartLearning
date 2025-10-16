@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="export_ef_alert_title">退出游戏</string>
+    <string name="export_ef_alert_message">你想要结束游戏并退出吗？</string>
+    <string name="export_ef_alert_confirm">退出</string>
+    <string name="export_ef_alert_cancel">取消</string>
+</resources>

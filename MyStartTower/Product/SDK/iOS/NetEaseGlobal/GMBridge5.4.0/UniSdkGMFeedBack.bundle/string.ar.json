@@ -1,0 +1,17 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"لا يمكن العثور على الكاميرا",
+    "CREATE_IMGFILE_FAILED_MSG":"فشل حفظ الصورة",
+    "ISNOT_IMAGE_FILE_MSG":"هذا ليس ملف صورة",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"تم رفض الوصول إلى الألبوم",
+    "ASButtonTitleCancel":"إلغاء",
+    "ASButtonTitleCamera":"الكاميرا",
+    "ASButtonTitleLibrary":"الألبوم",
+    "float_view_close":"إغلاق",
+    "float_alert_tittle1":"هل أنت متأكد أنك تريد إغلاق الرسالة العائمة؟",
+    "float_alert_tittle2":"(يظهر مجددًا بعد إعادة التشغيل أو تلقي رسالة جديدة)",
+    "float_alert_cancel":"إلغاء",
+    "float_alert_ok":"تأكيد",
+    "upload_img_succeess":"اكتمل الرفع!",
+    "upload_img_failed":"فشل الحصول على الصورة"
+}
+

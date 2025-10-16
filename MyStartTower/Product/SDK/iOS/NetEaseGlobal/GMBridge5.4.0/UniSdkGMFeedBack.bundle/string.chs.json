@@ -1,0 +1,16 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"系统找不到摄像头",
+    "CREATE_IMGFILE_FAILED_MSG":"保存图片文件失败",
+    "ISNOT_IMAGE_FILE_MSG":"选择内容不是图片",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"不允许访问相册",
+    "ASButtonTitleCancel":"取消",
+    "ASButtonTitleCamera":"相机拍照",
+    "ASButtonTitleLibrary":"手机相册",
+    "float_view_close":"关闭",
+    "float_alert_tittle1":"确定关闭消息悬浮球？\n",
+    "float_alert_tittle2":"(重启游戏或有新消息时重新显示)",
+    "float_alert_cancel":"取消",
+    "float_alert_ok":"确定",
+    "upload_img_succeess":"上传完成！",
+    "upload_img_failed":"获取图片失败"
+}

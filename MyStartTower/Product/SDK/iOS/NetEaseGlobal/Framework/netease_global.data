@@ -1,0 +1,15 @@
+{
+"APPID":"384",
+"APP_CHANNEL":"ma155naxx2gb@app_store",
+"JF_GAMEID":"ma155naxx2gb",
+"DEBUG_LOG":"1",
+"DEBUG_MODE":"0",
+"UNISDK_LOG_STATUS":"1",
+"JF_LOG_KEY":"4ZYOAFT87p31kQurnVJsfe7lgzx2sHL4",
+"UNISDK_JF_GAS3":1,
+"UNISDK_JF_GAS3_WEB":1,
+"UNISDK_JF_GAS3_URL":"https://mgbsdknaeast.matrix.easebar.com/ma155naxx2gb/sdk/",
+"ENABLE_EXLOGIN_APPLE":"1",
+"ENABLE_EXLOGIN_GOOGLE":"1",
+"GOOGLE_CLIENT_ID":"602746732308-8atjk8jc0no685e111p0moh7rd2qr9av.apps.googleusercontent.com"
+}

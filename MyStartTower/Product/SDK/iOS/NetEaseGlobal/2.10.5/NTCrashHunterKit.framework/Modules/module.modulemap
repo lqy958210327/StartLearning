@@ -1,0 +1,6 @@
+framework module NTCrashHunterKit {
+  umbrella header "NTCrashHunterKit.h"
+  export *
+
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"システムがカメラを見つけられません",
+    "CREATE_IMGFILE_FAILED_MSG":"画像ファイルの保存に失敗しました",
+    "ISNOT_IMAGE_FILE_MSG":"選択したコンテンツは写真ではありません",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"フォトアルバムへのアクセスは許可されていません",
+    "ASButtonTitleCancel":"キャンセル",
+    "ASButtonTitleCamera":"カメラ",
+    "ASButtonTitleLibrary":"アルバム",
+    "upload_img_succeess":"アップロードが完了しました！",
+    "upload_img_failed":"画像の取得に失敗しました"
+}

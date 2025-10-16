@@ -1,0 +1,11 @@
+{
+    "CAMERA_NOT_AVAILABLE_MSG":"Câmera não encontrada",
+    "CREATE_IMGFILE_FAILED_MSG":"Falha ao salvar a imagem",
+    "ISNOT_IMAGE_FILE_MSG":"Este arquivo não é uma imagem",
+    "PHOTOLIBRARY_NOT_AVAILABLE_MSG":"Acesso ao Álbum não concedido",
+    "ASButtonTitleCancel":"Cancelar",
+    "ASButtonTitleCamera":"Câmera",
+    "ASButtonTitleLibrary":"Álbum",
+    "upload_img_succeess":"Envio concluído!",
+    "upload_img_failed":"Falha ao receber a imagem"
+}

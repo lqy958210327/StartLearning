@@ -1,0 +1,3444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Ability documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Ability</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Ability.html">Ability</a></li>
+  <li><strong>Unit</strong></li>
+  <li><a href="../classes/AbilityConfig.html">AbilityConfig</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Enum.html">Enum</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/HOWTO.md.html">HOWTO</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="nowrap">
+  <li><a href="../examples/AbilityConfigCard.lua.html">AbilityConfigCard.lua</a></li>
+  <li><a href="../examples/AbilityConfigSkill.lua.html">AbilityConfigSkill.lua</a></li>
+  <li><a href="../examples/AbilityConfigState.lua.html">AbilityConfigState.lua</a></li>
+  <li><a href="../examples/AbilityConfigPassive.lua.html">AbilityConfigPassive.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Unit</code></h1>
+<p>
+</p>
+<p><p> 单位，代表一个英雄或怪物。</p>
+
+<ul>
+<li>单位类的函数用于获取单位信息或战场信息，不对单位做修改。如需对单位产生效果，应使用Ability类，以便追踪来源。</li>
+<li>单位对象与单位ID是一一对应的关系，允许在技能脚本中直接保存单位的引用。</li>
+<li>单位死亡后单位对象不销毁。</li>
+</ul>
+
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getId">AbilityUnit:getId ()</a></td>
+	<td class="summary">获取ID</td>
+	</tr>
+    <tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getUnitCardId">AbilityUnit:getUnitCardId ()</a></td>
+	<td class="summary">获取CardID</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getMasterUnit">AbilityUnit:getMasterUnit ()</a></td>
+	<td class="summary">获取主人单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getCamp">AbilityUnit:getCamp ()</a></td>
+	<td class="summary">获取阵营</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getForward">AbilityUnit:getForward ()</a></td>
+	<td class="summary">获取进攻方向，蓝队向右+1，红队向左-1</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getEnemyCamp">AbilityUnit:getEnemyCamp ()</a></td>
+	<td class="summary">获取敌方阵营常量</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isEnemy">AbilityUnit:isEnemy (otherUnit)</a></td>
+	<td class="summary">是敌方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isFriend">AbilityUnit:isFriend (otherUnit)</a></td>
+	<td class="summary">是友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRace">AbilityUnit:getRace ()</a></td>
+	<td class="summary">种族</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isRaceOvercome">AbilityUnit:isRaceOvercome (targetUnit)</a></td>
+	<td class="summary">种族克制</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isHero">AbilityUnit:isHero ()</a></td>
+	<td class="summary">是英雄</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isMonster">AbilityUnit:isMonster ()</a></td>
+	<td class="summary">是怪物</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRimuruUnit">AbilityUnit:getRimuruUnit ()</a></td>
+	<td class="summary">取本阵营利姆鲁单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isBoss">AbilityUnit:isBoss ()</a></td>
+	<td class="summary">是Boss怪</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isMajor">AbilityUnit:isMajor ()</a></td>
+	<td class="summary">是否是主体单位（非召唤单位）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isMinor">AbilityUnit:isMinor ()</a></td>
+	<td class="summary">是否是召唤单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterMajor">AbilityUnit:filterMajor ()</a></td>
+	<td class="summary">筛选主体单位（常规单位）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterMinor">AbilityUnit:filterMinor ()</a></td>
+	<td class="summary">筛选召唤单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterMyMinor">AbilityUnit:filterMyMinor ()</a></td>
+	<td class="summary">筛选当前单位的召唤单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isLongSkill">AbilityUnit:isLongSkill ()</a></td>
+	<td class="summary">放技能时播放长视频</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getFramePerSec">AbilityUnit:getFramePerSec ()</a></td>
+	<td class="summary">获取帧率</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRealFrameNumber">AbilityUnit:getRealFrameNumber ()</a></td>
+	<td class="summary">获取帧数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getFrameNumber">AbilityUnit:getFrameNumber ()</a></td>
+	<td class="summary">获取帧数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isPvp">AbilityUnit:isPvp ()</a></td>
+	<td class="summary">本场战斗是PVP</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRandomGenerator">AbilityUnit:getRandomGenerator ()</a></td>
+	<td class="summary">获取战场随机数生成器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRandomInt">AbilityUnit:getRandomInt (max)</a></td>
+	<td class="summary">生成区间随机整数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRandomChoice">AbilityUnit:getRandomChoice (list)</a></td>
+	<td class="summary">从列表中随机选择一个元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRandomChoices">AbilityUnit:getRandomChoices (list, count)</a></td>
+	<td class="summary">从列表中随机选择指定数量的不重复元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getRandomProb">AbilityUnit:getRandomProb (prob)</a></td>
+	<td class="summary">概率判定（万分比）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getAttr">AbilityUnit:getAttr (attrName)</a></td>
+	<td class="summary">获取指定属性数值</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:hasAttr">AbilityUnit:hasAttr (attrName)</a></td>
+	<td class="summary">判断指定属性是否有效（数值大于0）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAttr">AbilityUnit:filterAttr (attrName)</a></td>
+	<td class="summary">创建属性筛选器（用于maxUnit等需要优先级数值的场景）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isImmune">AbilityUnit:isImmune (immuneName)</a></td>
+	<td class="summary">判断免疫</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isImmuneAny">AbilityUnit:isImmuneAny (immuneList)</a></td>
+	<td class="summary">判断免疫，如果自身属性有对应的免疫项，则成功免疫</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isAlive">AbilityUnit:isAlive ()</a></td>
+	<td class="summary">是否存活（HP大于0)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isDead">AbilityUnit:isDead ()</a></td>
+	<td class="summary">是否已死亡</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemEarth">AbilityUnit:isElemEarth ()</a></td>
+	<td class="summary">是否是地元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemIce">AbilityUnit:isElemIce ()</a></td>
+	<td class="summary">是否是冰元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemFire">AbilityUnit:isElemFire ()</a></td>
+	<td class="summary">是否是火元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemWind">AbilityUnit:isElemWind ()</a></td>
+	<td class="summary">是否是风元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemLight">AbilityUnit:isElemLight ()</a></td>
+	<td class="summary">是否是光元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isElemDark">AbilityUnit:isElemDark ()</a></td>
+	<td class="summary">是否是暗元素</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getHitedFlag">AbilityUnit:getHitedFlag ()</a></td>
+	<td class="summary">获取当前受击控制状态标识</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isHited">AbilityUnit:isHited (flag)</a></td>
+	<td class="summary">判断是否处于指定类型的受击控制状态</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findAbility">AbilityUnit:findAbility (filter)</a></td>
+	<td class="summary">查询一个符合条件的能力。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:searchAbility">AbilityUnit:searchAbility (filter)</a></td>
+	<td class="summary">查询所有符合条件的能力。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:countAbility">AbilityUnit:countAbility (filter)</a></td>
+	<td class="summary">查询所有符合条件的能力数量。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:randomListAbility">AbilityUnit:randomListAbility (filter, count)</a></td>
+	<td class="summary">查询随机count个符合条件的能力。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getStateLayer">AbilityUnit:getStateLayer (stateId, sourceUnit)</a></td>
+	<td class="summary">获取指定状态层数（相同状态ID不同来源单位会单独计算）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getUniqueStateLayer">AbilityUnit:getUniqueStateLayer (stateId)</a></td>
+	<td class="summary">获取唯一状态层数（相同状态ID不同来源单位会合并计算）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:stateGroupCount">AbilityUnit:stateGroupCount (group)</a></td>
+	<td class="summary">获取状态组的总层数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isAimed">AbilityUnit:isAimed ()</a></td>
+	<td class="summary">自己是否被集fired</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findEmptyGridByLine">AbilityUnit:findEmptyGridByLine (diffY)</a></td>
+	<td class="summary">根据Y轴偏移量和自身单位朝向查找空网格</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isBackOf">AbilityUnit:isBackOf (unit)</a></td>
+	<td class="summary">判断自身在另一个单位身后</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAnd">AbilityUnit:filterAnd (...)</a></td>
+	<td class="summary">创建一个组合筛选器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterOr">AbilityUnit:filterOr (...)</a></td>
+	<td class="summary">创建一个组合筛选器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterNot">AbilityUnit:filterNot (filter1)</a></td>
+	<td class="summary">创建一个组合筛选器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterTrue">AbilityUnit:filterTrue ()</a></td>
+	<td class="summary">返回一个筛选器，永远成功</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterFalse">AbilityUnit:filterFalse ()</a></td>
+	<td class="summary">返回一个筛选器，永远失败</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterProb">AbilityUnit:filterProb (prob)</a></td>
+	<td class="summary">返回一个筛选器，按概率成功</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterId">AbilityUnit:filterId (id)</a></td>
+	<td class="summary">返回一个筛选器，匹配ID</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterSelf">AbilityUnit:filterSelf ()</a></td>
+	<td class="summary">返回一个筛选器，只匹配自身</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterNotSelf">AbilityUnit:filterNotSelf ()</a></td>
+	<td class="summary">返回一个筛选器，不匹配自身</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterFriend">AbilityUnit:filterFriend ()</a></td>
+	<td class="summary">筛选友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterEnemy">AbilityUnit:filterEnemy ()</a></td>
+	<td class="summary">筛选敌方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterCamp">AbilityUnit:filterCamp (camp)</a></td>
+	<td class="summary">筛选指定阵营</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAimed">AbilityUnit:filterAimed ()</a></td>
+	<td class="summary">筛选被集火的敌方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAttr">AbilityUnit:filterAttr (attrName)</a></td>
+	<td class="summary">筛选具有某属性的单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAlive">AbilityUnit:filterAlive ()</a></td>
+	<td class="summary">筛选存活单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterDead">AbilityUnit:filterDead ()</a></td>
+	<td class="summary">筛选死亡单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterFireUnit">AbilityUnit:filterFireUnit ()</a></td>
+	<td class="summary">筛选火元素单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterDistance">AbilityUnit:filterDistance (distance)</a></td>
+	<td class="summary">筛选距离。筛选距离不超过范围的单位，筛选器返回优先级，数越大越近</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterDistanceX">AbilityUnit:filterDistanceX (distanceX)</a></td>
+	<td class="summary">筛选X轴距离。筛选水平距离不超过范围的单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterDistanceY">AbilityUnit:filterDistanceY (distanceY)</a></td>
+	<td class="summary">筛选Y轴距离。筛选垂直距离不超过范围的单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterForward">AbilityUnit:filterForward ()</a></td>
+	<td class="summary">返回用于前方优先排序的优先级函数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isFront">AbilityUnit:isFront ()</a></td>
+	<td class="summary">判断自己是否处于友方最前排位置</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:isBack">AbilityUnit:isBack ()</a></td>
+	<td class="summary">判断自己是否处于友方最后排位置</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterFront">AbilityUnit:filterFront ()</a></td>
+	<td class="summary">创建前排单位筛选器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterBack">AbilityUnit:filterBack ()</a></td>
+	<td class="summary">创建后排单位筛选器</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAroundTarget">AbilityUnit:filterAroundTarget (camp)</a></td>
+	<td class="summary">筛选周围一圈目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterCondition">AbilityUnit:filterCondition (conditions)</a></td>
+	<td class="summary">筛选符合条件的单位。
+ 不推荐。可以用各种条件判断函数代替。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findUnit">AbilityUnit:findUnit (filter)</a></td>
+	<td class="summary">查询一个目标。</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:maxUnit">AbilityUnit:maxUnit (filterWithPriority)</a></td>
+	<td class="summary">取优先级最大的目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:minUnit">AbilityUnit:minUnit (filterWithPriority)</a></td>
+	<td class="summary">取优先级最小的目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:searchUnit">AbilityUnit:searchUnit (filter)</a></td>
+	<td class="summary">搜索目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getTauntUnit">AbilityUnit:getTauntUnit ()</a></td>
+	<td class="summary">取自己的嘲讽来源</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findAimedEnemy">AbilityUnit:findAimedEnemy ()</a></td>
+	<td class="summary">查找自己的集火敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findNearestEnemy">AbilityUnit:findNearestEnemy ()</a></td>
+	<td class="summary">查找自己的射程内最近敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findFarestEnemy">AbilityUnit:findFarestEnemy ()</a></td>
+	<td class="summary">查找自己的射程内最远敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findNormalTarget">AbilityUnit:findNormalTarget ()</a></td>
+	<td class="summary">查找自己的攻击目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findAimedTarget">AbilityUnit:findAimedTarget ()</a></td>
+	<td class="summary">查找自己的集火目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpTarget">AbilityUnit:findMinHpTarget ()</a></td>
+	<td class="summary">生命值最少的敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpFriendTarget">AbilityUnit:findMinHpFriendTarget ()</a></td>
+	<td class="summary">生命值最少的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findOtherFriendTarget">AbilityUnit:findOtherFriendTarget ()</a></td>
+	<td class="summary">获取除自己外所有友方Unit</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMaxAtkFriendTarget">AbilityUnit:findMaxAtkFriendTarget ()</a></td>
+	<td class="summary">攻击最高的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMaxAtkFriendTargetNoSelf">AbilityUnit:findMaxAtkFriendTargetNoSelf ()</a></td>
+	<td class="summary">攻击最高的友方（不含自己）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMaxManaTarget">AbilityUnit:findMaxManaTarget ()</a></td>
+	<td class="summary">能量值最多的敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findRandomFriendTarget">AbilityUnit:findRandomFriendTarget (count)</a></td>
+	<td class="summary">随机一名或多名友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findRandomEnemyTarget">AbilityUnit:findRandomEnemyTarget (count)</a></td>
+	<td class="summary">随机一名或多名敌人</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findRandomFriendTargetNoSelf">AbilityUnit:findRandomFriendTargetNoSelf ()</a></td>
+	<td class="summary">随机一名友方（不含自己）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findAroundTarget">AbilityUnit:findAroundTarget (camp)</a></td>
+	<td class="summary">周围一圈目标 return {unit}</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterAtBack">AbilityUnit:filterAtBack (range)</a></td>
+	<td class="summary">筛选：参数在调用者的后方并且是同一排</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterCareer">AbilityUnit:filterCareer (career_1, career_2, career_3, career_4, career_5)</a></td>
+	<td class="summary">筛选:指定的职业</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findCareerFriend">AbilityUnit:findCareerFriend (career_1, career_2, career_3, career_4, career_5)</a></td>
+	<td class="summary">获取职业为x的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findFriendAtBack">AbilityUnit:findFriendAtBack (range)</a></td>
+	<td class="summary">身后N格内的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findEnemyAtBack">AbilityUnit:findEnemyAtBack (range)</a></td>
+	<td class="summary">身后N格内的敌方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findFriendAtBackNoSelf">AbilityUnit:findFriendAtBackNoSelf (range)</a></td>
+	<td class="summary">身后N格内的友方（不含自己）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findEnemyAtBackNoSelf">AbilityUnit:findEnemyAtBackNoSelf (range)</a></td>
+	<td class="summary">身后N格内的敌方（不含自己）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpPCTFriendTarget">AbilityUnit:findMinHpPCTFriendTarget ()</a></td>
+	<td class="summary">生命值百分比最少的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpPCTTarget">AbilityUnit:findMinHpPCTTarget ()</a></td>
+	<td class="summary">返回所有友方（根据生命值百分比排序）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpPCTFriendTargetNoSelf">AbilityUnit:findMinHpPCTFriendTargetNoSelf ()</a></td>
+	<td class="summary">生命值百分比最少的友方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findMinHpPCTEnemyTarget">AbilityUnit:findMinHpPCTEnemyTarget ()</a></td>
+	<td class="summary">生命值百分比最少的敌方</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findSameRowFriendTarget">AbilityUnit:findSameRowFriendTarget ()</a></td>
+	<td class="summary">同一排的目标</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:findNearestEnemyInRange">AbilityUnit:findNearestEnemyInRange (range)</a></td>
+	<td class="summary">最近的敌方单位</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:filterHPPercent">AbilityUnit:filterHPPercent ()</a></td>
+	<td class="summary">创建当前生命百分比筛选器（用于maxUnit等需要优先级数值的场景）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:printAllAttr">AbilityUnit:printAllAttr (...)</a></td>
+	<td class="summary">打印属性log</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorSkillDamage">AbilityUnit:factorSkillDamage (targetUnit, skillType, elemType, critDmgAdd, defPercent)</a></td>
+	<td class="summary">计算物理伤害倍数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorSkillLoss">AbilityUnit:factorSkillLoss (targetUnit, skillType)</a></td>
+	<td class="summary">计算生命流失倍数（无视防御、暴击机制）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorSkillHeal">AbilityUnit:factorSkillHeal (targetUnit, skillType)</a></td>
+	<td class="summary">计算治疗倍数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorSkillShield">AbilityUnit:factorSkillShield (targetUnit, skillType)</a></td>
+	<td class="summary">计算护盾生成倍数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorDefense">AbilityUnit:factorDefense (targetUnit, defPercent)</a></td>
+	<td class="summary">计算物理防御减伤系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorCrit">AbilityUnit:factorCrit (targetUnit, critDmgAdd)</a></td>
+	<td class="summary">计算暴击系数及暴击判定</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorBlock">AbilityUnit:factorBlock (targetUnit)</a></td>
+	<td class="summary">计算格挡减伤系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorPower">AbilityUnit:factorPower (targetUnit, skillType)</a></td>
+	<td class="summary">计算技能威力系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorHeal">AbilityUnit:factorHeal (targetUnit)</a></td>
+	<td class="summary">计算治疗效能系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorShield">AbilityUnit:factorShield (targetUnit)</a></td>
+	<td class="summary">计算护盾效能系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorHurt">AbilityUnit:factorHurt (targetUnit, skillType)</a></td>
+	<td class="summary">计算综合伤害系数（含PVP和技能类型修正）</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:factorElem">AbilityUnit:factorElem (targetUnit, elemType)</a></td>
+	<td class="summary">计算元素克制系数</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getEnemyCount">AbilityUnit:getEnemyCount (elem)</a></td>
+	<td class="summary">获取敌人数量</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:getFriendCount">AbilityUnit:getFriendCount (elem)</a></td>
+	<td class="summary">获取友军数量</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AbilityUnit:addOutput">AbilityUnit:addOutput (outputType, args)</a></td>
+	<td class="summary">输出信息到表现层</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "AbilityUnit:getId"></a>
+    <strong>AbilityUnit:getId ()</strong>
+    </dt>
+    <dd>
+    获取ID
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 单位的唯一标识符
+    </ol>
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getUnitCardId"></a>
+    <strong>AbilityUnit:getUnitCardId ()</strong>
+    </dt>
+    <dd>
+    获取unit的在配置表中的cardID
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 返回ID，不存在时返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getMasterUnit"></a>
+    <strong>AbilityUnit:getMasterUnit ()</strong>
+    </dt>
+    <dd>
+    获取主人单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 如果是召唤单位返回主人，常规单位返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getCamp"></a>
+    <strong>AbilityUnit:getCamp ()</strong>
+    </dt>
+    <dd>
+    获取阵营
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 阵营常量 CAMP_BLUE(1) 或 CAMP_RED(2)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getForward"></a>
+    <strong>AbilityUnit:getForward ()</strong>
+    </dt>
+    <dd>
+    获取进攻方向，蓝队向右+1，红队向左-1
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer @方向标识（1=向右，-1=向左）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getEnemyCamp"></a>
+    <strong>AbilityUnit:getEnemyCamp ()</strong>
+    </dt>
+    <dd>
+    获取敌方阵营常量
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer @敌方阵营常量（与getCamp()结果相反）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isEnemy"></a>
+    <strong>AbilityUnit:isEnemy (otherUnit)</strong>
+    </dt>
+    <dd>
+    是敌方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">otherUnit</span>
+         Unit 要判断的目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是敌方单位，false-非敌方
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isFriend"></a>
+    <strong>AbilityUnit:isFriend (otherUnit)</strong>
+    </dt>
+    <dd>
+    是友方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">otherUnit</span>
+         Unit 要判断的目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是友方单位，false-非友方
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRace"></a>
+    <strong>AbilityUnit:getRace ()</strong>
+    </dt>
+    <dd>
+    种族
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer @种族标识符（对应 BattleConst.HERO_RACE_* 常量）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isRaceOvercome"></a>
+    <strong>AbilityUnit:isRaceOvercome (targetUnit)</strong>
+    </dt>
+    <dd>
+    种族克制
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-当前单位种族克制目标单位，false-无克制关系
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isHero"></a>
+    <strong>AbilityUnit:isHero ()</strong>
+    </dt>
+    <dd>
+    是英雄
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是英雄单位，false-不是英雄
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isMonster"></a>
+    <strong>AbilityUnit:isMonster ()</strong>
+    </dt>
+    <dd>
+    是怪物
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-怪物单位，false-不是怪物单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRimuruUnit"></a>
+    <strong>AbilityUnit:getRimuruUnit ()</strong>
+    </dt>
+    <dd>
+    取本阵营利姆鲁单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit? 本阵营的利姆鲁（可能为空）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isBoss"></a>
+    <strong>AbilityUnit:isBoss ()</strong>
+    </dt>
+    <dd>
+    是Boss怪
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是Boss类型怪物，false-普通怪物或英雄
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isMajor"></a>
+    <strong>AbilityUnit:isMajor ()</strong>
+    </dt>
+    <dd>
+    是否是主体单位（非召唤单位）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是常规单位，false-是召唤单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isMinor"></a>
+    <strong>AbilityUnit:isMinor ()</strong>
+    </dt>
+    <dd>
+    是否是召唤单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-是召唤单位，false-是常规单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterMajor"></a>
+    <strong>AbilityUnit:filterMajor ()</strong>
+    </dt>
+    <dd>
+    筛选主体单位（常规单位）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):boolean 判断单位是否为主体单位的函数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterMinor"></a>
+    <strong>AbilityUnit:filterMinor ()</strong>
+    </dt>
+    <dd>
+    筛选召唤单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):boolean 判断单位是否为召唤单位的函数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterMyMinor"></a>
+    <strong>AbilityUnit:filterMyMinor ()</strong>
+    </dt>
+    <dd>
+    筛选当前单位的召唤单位
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):boolean 判断单位是否为当前单位召唤物的函数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isLongSkill"></a>
+    <strong>AbilityUnit:isLongSkill ()</strong>
+    </dt>
+    <dd>
+    放技能时播放长视频
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getFramePerSec"></a>
+    <strong>AbilityUnit:getFramePerSec ()</strong>
+    </dt>
+    <dd>
+    获取帧率
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRealFrameNumber"></a>
+    <strong>AbilityUnit:getRealFrameNumber ()</strong>
+    </dt>
+    <dd>
+    获取帧数
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getFrameNumber"></a>
+    <strong>AbilityUnit:getFrameNumber ()</strong>
+    </dt>
+    <dd>
+    获取帧数
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isPvp"></a>
+    <strong>AbilityUnit:isPvp ()</strong>
+    </dt>
+    <dd>
+    本场战斗是PVP
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRandomGenerator"></a>
+    <strong>AbilityUnit:getRandomGenerator ()</strong>
+    </dt>
+    <dd>
+    获取战场随机数生成器
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        RandomGenerator 随机数生成器对象
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRandomInt"></a>
+    <strong>AbilityUnit:getRandomInt (max)</strong>
+    </dt>
+    <dd>
+    生成区间随机整数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">max</span>
+         integer 最大值（包含）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 随机数范围 [1, max]
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRandomChoice"></a>
+    <strong>AbilityUnit:getRandomChoice (list)</strong>
+    </dt>
+    <dd>
+    从列表中随机选择一个元素
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+         table 候选列表
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any 随机选择的元素
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRandomChoices"></a>
+    <strong>AbilityUnit:getRandomChoices (list, count)</strong>
+    </dt>
+    <dd>
+    从列表中随机选择指定数量的不重复元素
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+         table 候选列表
+        </li>
+        <li><span class="parameter">count</span>
+         integer 需要选择的元素数量
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 包含随机选择元素的列表
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getRandomProb"></a>
+    <strong>AbilityUnit:getRandomProb (prob)</strong>
+    </dt>
+    <dd>
+    概率判定（万分比）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">prob</span>
+         integer 概率值，范围 [0,10000]
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否命中
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getAttr"></a>
+    <strong>AbilityUnit:getAttr (attrName)</strong>
+    </dt>
+    <dd>
+    获取指定属性数值
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number 属性数值
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:hasAttr"></a>
+    <strong>AbilityUnit:hasAttr (attrName)</strong>
+    </dt>
+    <dd>
+    判断指定属性是否有效（数值大于0）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 属性名称
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAttr"></a>
+    <strong>AbilityUnit:filterAttr (attrName)</strong>
+    </dt>
+    <dd>
+    创建属性筛选器（用于maxUnit等需要优先级数值的场景）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+         string 要比较的属性名称
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number 返回单位属性值
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isImmune"></a>
+    <strong>AbilityUnit:isImmune (immuneName)</strong>
+    </dt>
+    <dd>
+    判断免疫
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">immuneName</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isImmuneAny"></a>
+    <strong>AbilityUnit:isImmuneAny (immuneList)</strong>
+    </dt>
+    <dd>
+    判断免疫，如果自身属性有对应的免疫项，则成功免疫
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">immuneList</span>
+         table 需判断的免疫项
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否成功免疫
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isAlive"></a>
+    <strong>AbilityUnit:isAlive ()</strong>
+    </dt>
+    <dd>
+    是否存活（HP大于0)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isDead"></a>
+    <strong>AbilityUnit:isDead ()</strong>
+    </dt>
+    <dd>
+    是否已死亡
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemEarth"></a>
+    <strong>AbilityUnit:isElemEarth ()</strong>
+    </dt>
+    <dd>
+    是否是地元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemIce"></a>
+    <strong>AbilityUnit:isElemIce ()</strong>
+    </dt>
+    <dd>
+    是否是冰元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemFire"></a>
+    <strong>AbilityUnit:isElemFire ()</strong>
+    </dt>
+    <dd>
+    是否是火元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemWind"></a>
+    <strong>AbilityUnit:isElemWind ()</strong>
+    </dt>
+    <dd>
+    是否是风元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemLight"></a>
+    <strong>AbilityUnit:isElemLight ()</strong>
+    </dt>
+    <dd>
+    是否是光元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isElemDark"></a>
+    <strong>AbilityUnit:isElemDark ()</strong>
+    </dt>
+    <dd>
+    是否是暗元素
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getHitedFlag"></a>
+    <strong>AbilityUnit:getHitedFlag ()</strong>
+    </dt>
+    <dd>
+    获取当前受击控制状态标识
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string|nil @受击状态标识（"stun"=眩晕，"freeze"=冻结等），nil表示未受控制
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isHited"></a>
+    <strong>AbilityUnit:isHited (flag)</strong>
+    </dt>
+    <dd>
+    判断是否处于指定类型的受击控制状态
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">flag</span>
+         string 要检测的状态标识（"stun"/&ldquo;freeze&rdquo;/&ldquo;timelock"等）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean @true-当前处于该控制状态，false-未处于该状态
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findAbility"></a>
+    <strong>AbilityUnit:findAbility (filter)</strong>
+    </dt>
+    <dd>
+    查询一个符合条件的能力。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受ability对象，返回boolean
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability|nil 符合条件的能力
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:searchAbility"></a>
+    <strong>AbilityUnit:searchAbility (filter)</strong>
+    </dt>
+    <dd>
+    查询所有符合条件的能力。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受ability对象，返回boolean
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability[] 符合条件的能力
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:countAbility"></a>
+    <strong>AbilityUnit:countAbility (filter)</strong>
+    </dt>
+    <dd>
+    查询所有符合条件的能力数量。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受ability对象，返回boolean
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        interger
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:randomListAbility"></a>
+    <strong>AbilityUnit:randomListAbility (filter, count)</strong>
+    </dt>
+    <dd>
+    查询随机count个符合条件的能力。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受ability对象，返回boolean
+        </li>
+        <li><span class="parameter">count</span>
+         number 数量
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Ability[] 符合条件的能力
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getStateLayer"></a>
+    <strong>AbilityUnit:getStateLayer (stateId, sourceUnit)</strong>
+    </dt>
+    <dd>
+    获取指定状态层数（相同状态ID不同来源单位会单独计算）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">stateId</span>
+         number 状态ID
+        </li>
+        <li><span class="parameter">sourceUnit</span>
+         Unit 来源单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number 状态层数总和
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getUniqueStateLayer"></a>
+    <strong>AbilityUnit:getUniqueStateLayer (stateId)</strong>
+    </dt>
+    <dd>
+    获取唯一状态层数（相同状态ID不同来源单位会合并计算）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">stateId</span>
+         integer 状态ID
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 状态层数总和
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:stateGroupCount"></a>
+    <strong>AbilityUnit:stateGroupCount (group)</strong>
+    </dt>
+    <dd>
+    获取状态组的总层数
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group</span>
+         integer 要检查的状态组标识
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        integer 当前这个单位身上groupId下的状态层数的总和，没有返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isAimed"></a>
+    <strong>AbilityUnit:isAimed ()</strong>
+    </dt>
+    <dd>
+    自己是否被集fired
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findEmptyGridByLine"></a>
+    <strong>AbilityUnit:findEmptyGridByLine (diffY)</strong>
+    </dt>
+    <dd>
+    根据Y轴偏移量和自身单位朝向查找空网格
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">diffY</span>
+         number Y轴方向的偏移量，用于计算目标行坐标（当前网格Y坐标+偏移量）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table|nil 找到的空网格对象，若未找到则返回nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isBackOf"></a>
+    <strong>AbilityUnit:isBackOf (unit)</strong>
+    </dt>
+    <dd>
+    判断自身在另一个单位身后
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">unit</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAnd"></a>
+    <strong>AbilityUnit:filterAnd (...)</strong>
+    </dt>
+    <dd>
+    创建一个组合筛选器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterOr"></a>
+    <strong>AbilityUnit:filterOr (...)</strong>
+    </dt>
+    <dd>
+    创建一个组合筛选器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterNot"></a>
+    <strong>AbilityUnit:filterNot (filter1)</strong>
+    </dt>
+    <dd>
+    创建一个组合筛选器
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter1</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterTrue"></a>
+    <strong>AbilityUnit:filterTrue ()</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，永远成功
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterFalse"></a>
+    <strong>AbilityUnit:filterFalse ()</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，永远失败
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterProb"></a>
+    <strong>AbilityUnit:filterProb (prob)</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，按概率成功
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">prob</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterId"></a>
+    <strong>AbilityUnit:filterId (id)</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，匹配ID
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterSelf"></a>
+    <strong>AbilityUnit:filterSelf ()</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，只匹配自身
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterNotSelf"></a>
+    <strong>AbilityUnit:filterNotSelf ()</strong>
+    </dt>
+    <dd>
+    返回一个筛选器，不匹配自身
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterFriend"></a>
+    <strong>AbilityUnit:filterFriend ()</strong>
+    </dt>
+    <dd>
+    筛选友方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterEnemy"></a>
+    <strong>AbilityUnit:filterEnemy ()</strong>
+    </dt>
+    <dd>
+    筛选敌方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterCamp"></a>
+    <strong>AbilityUnit:filterCamp (camp)</strong>
+    </dt>
+    <dd>
+    筛选指定阵营
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">camp</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAimed"></a>
+    <strong>AbilityUnit:filterAimed ()</strong>
+    </dt>
+    <dd>
+    筛选被集火的敌方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAttr"></a>
+    <strong>AbilityUnit:filterAttr (attrName)</strong>
+    </dt>
+    <dd>
+    筛选具有某属性的单位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">attrName</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAlive"></a>
+    <strong>AbilityUnit:filterAlive ()</strong>
+    </dt>
+    <dd>
+    筛选存活单位
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterDead"></a>
+    <strong>AbilityUnit:filterDead ()</strong>
+    </dt>
+    <dd>
+    筛选死亡单位
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterFireUnit"></a>
+    <strong>AbilityUnit:filterFireUnit ()</strong>
+    </dt>
+    <dd>
+    筛选火元素单位
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterDistance"></a>
+    <strong>AbilityUnit:filterDistance (distance)</strong>
+    </dt>
+    <dd>
+    筛选距离。筛选距离不超过范围的单位，筛选器返回优先级，数越大越近
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">distance</span>
+         number 最大有效距离
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number|boolean 返回优先级函数，当单位在范围内时返回距离，否则返回false
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterDistanceX"></a>
+    <strong>AbilityUnit:filterDistanceX (distanceX)</strong>
+    </dt>
+    <dd>
+    筛选X轴距离。筛选水平距离不超过范围的单位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">distanceX</span>
+         number 最大水平距离
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number|boolean 返回优先级函数，当单位在范围内时返回水平距离，否则返回false
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterDistanceY"></a>
+    <strong>AbilityUnit:filterDistanceY (distanceY)</strong>
+    </dt>
+    <dd>
+    筛选Y轴距离。筛选垂直距离不超过范围的单位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">distanceY</span>
+         number 最大垂直距离
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number|boolean 返回优先级函数，当单位在范围内时返回垂直距离，否则返回false
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterForward"></a>
+    <strong>AbilityUnit:filterForward ()</strong>
+    </dt>
+    <dd>
+    返回用于前方优先排序的优先级函数
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number 排序函数，返回的数值越大表示单位越靠前
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isFront"></a>
+    <strong>AbilityUnit:isFront ()</strong>
+    </dt>
+    <dd>
+    判断自己是否处于友方最前排位置
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否是最前排单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:isBack"></a>
+    <strong>AbilityUnit:isBack ()</strong>
+    </dt>
+    <dd>
+    判断自己是否处于友方最后排位置
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        boolean 是否是最后排单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterFront"></a>
+    <strong>AbilityUnit:filterFront ()</strong>
+    </dt>
+    <dd>
+    创建前排单位筛选器
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):boolean 返回判断单位是否在前排的函数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterBack"></a>
+    <strong>AbilityUnit:filterBack ()</strong>
+    </dt>
+    <dd>
+    创建后排单位筛选器
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):boolean 返回判断单位是否在后排的函数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAroundTarget"></a>
+    <strong>AbilityUnit:filterAroundTarget (camp)</strong>
+    </dt>
+    <dd>
+    筛选周围一圈目标
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">camp</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterCondition"></a>
+    <strong>AbilityUnit:filterCondition (conditions)</strong>
+    </dt>
+    <dd>
+    筛选符合条件的单位。
+ 不推荐。可以用各种条件判断函数代替。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">conditions</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findUnit"></a>
+    <strong>AbilityUnit:findUnit (filter)</strong>
+    </dt>
+    <dd>
+    查询一个目标。
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受unit对象，返回boolean
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 符合条件的单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:maxUnit"></a>
+    <strong>AbilityUnit:maxUnit (filterWithPriority)</strong>
+    </dt>
+    <dd>
+    取优先级最大的目标
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filterWithPriority</span>
+         function 筛选函数，接受unit对象，返回int
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 符合条件的单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:minUnit"></a>
+    <strong>AbilityUnit:minUnit (filterWithPriority)</strong>
+    </dt>
+    <dd>
+    取优先级最小的目标
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filterWithPriority</span>
+         function 筛选函数，接受unit对象，返回int
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Unit|nil 符合条件的单位
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:searchUnit"></a>
+    <strong>AbilityUnit:searchUnit (filter)</strong>
+    </dt>
+    <dd>
+    搜索目标
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+         function 筛选函数，接受unit对象，返回boolean
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table 符合条件的单位列表
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getTauntUnit"></a>
+    <strong>AbilityUnit:getTauntUnit ()</strong>
+    </dt>
+    <dd>
+    取自己的嘲讽来源
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findAimedEnemy"></a>
+    <strong>AbilityUnit:findAimedEnemy ()</strong>
+    </dt>
+    <dd>
+    查找自己的集火敌人
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findNearestEnemy"></a>
+    <strong>AbilityUnit:findNearestEnemy ()</strong>
+    </dt>
+    <dd>
+    查找自己的射程内最近敌人
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findFarestEnemy"></a>
+    <strong>AbilityUnit:findFarestEnemy ()</strong>
+    </dt>
+    <dd>
+    查找自己的射程内最远敌人
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findNormalTarget"></a>
+    <strong>AbilityUnit:findNormalTarget ()</strong>
+    </dt>
+    <dd>
+    查找自己的攻击目标
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findAimedTarget"></a>
+    <strong>AbilityUnit:findAimedTarget ()</strong>
+    </dt>
+    <dd>
+    查找自己的集火目标
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpTarget"></a>
+    <strong>AbilityUnit:findMinHpTarget ()</strong>
+    </dt>
+    <dd>
+    生命值最少的敌人
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpFriendTarget"></a>
+    <strong>AbilityUnit:findMinHpFriendTarget ()</strong>
+    </dt>
+    <dd>
+    生命值最少的友方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findOtherFriendTarget"></a>
+    <strong>AbilityUnit:findOtherFriendTarget ()</strong>
+    </dt>
+    <dd>
+    获取除自己外所有友方Unit
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMaxAtkFriendTarget"></a>
+    <strong>AbilityUnit:findMaxAtkFriendTarget ()</strong>
+    </dt>
+    <dd>
+    攻击最高的友方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMaxAtkFriendTargetNoSelf"></a>
+    <strong>AbilityUnit:findMaxAtkFriendTargetNoSelf ()</strong>
+    </dt>
+    <dd>
+    攻击最高的友方（不含自己）
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMaxManaTarget"></a>
+    <strong>AbilityUnit:findMaxManaTarget ()</strong>
+    </dt>
+    <dd>
+    能量值最多的敌人
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findRandomFriendTarget"></a>
+    <strong>AbilityUnit:findRandomFriendTarget (count)</strong>
+    </dt>
+    <dd>
+    随机一名或多名友方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">count</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findRandomEnemyTarget"></a>
+    <strong>AbilityUnit:findRandomEnemyTarget (count)</strong>
+    </dt>
+    <dd>
+    随机一名或多名敌人
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">count</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findRandomFriendTargetNoSelf"></a>
+    <strong>AbilityUnit:findRandomFriendTargetNoSelf ()</strong>
+    </dt>
+    <dd>
+    随机一名友方（不含自己）
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findAroundTarget"></a>
+    <strong>AbilityUnit:findAroundTarget (camp)</strong>
+    </dt>
+    <dd>
+    周围一圈目标 return {unit}
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">camp</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterAtBack"></a>
+    <strong>AbilityUnit:filterAtBack (range)</strong>
+    </dt>
+    <dd>
+    筛选：参数在调用者的后方并且是同一排
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterCareer"></a>
+    <strong>AbilityUnit:filterCareer (career_1, career_2, career_3, career_4, career_5)</strong>
+    </dt>
+    <dd>
+    筛选:指定的职业
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">career_1</span>
+
+
+        </li>
+        <li><span class="parameter">career_2</span>
+
+
+        </li>
+        <li><span class="parameter">career_3</span>
+
+
+        </li>
+        <li><span class="parameter">career_4</span>
+
+
+        </li>
+        <li><span class="parameter">career_5</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findCareerFriend"></a>
+    <strong>AbilityUnit:findCareerFriend (career_1, career_2, career_3, career_4, career_5)</strong>
+    </dt>
+    <dd>
+    获取职业为x的友方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">career_1</span>
+
+
+        </li>
+        <li><span class="parameter">career_2</span>
+
+
+        </li>
+        <li><span class="parameter">career_3</span>
+
+
+        </li>
+        <li><span class="parameter">career_4</span>
+
+
+        </li>
+        <li><span class="parameter">career_5</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findFriendAtBack"></a>
+    <strong>AbilityUnit:findFriendAtBack (range)</strong>
+    </dt>
+    <dd>
+    身后N格内的友方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findEnemyAtBack"></a>
+    <strong>AbilityUnit:findEnemyAtBack (range)</strong>
+    </dt>
+    <dd>
+    身后N格内的敌方
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findFriendAtBackNoSelf"></a>
+    <strong>AbilityUnit:findFriendAtBackNoSelf (range)</strong>
+    </dt>
+    <dd>
+    身后N格内的友方（不含自己）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findEnemyAtBackNoSelf"></a>
+    <strong>AbilityUnit:findEnemyAtBackNoSelf (range)</strong>
+    </dt>
+    <dd>
+    身后N格内的敌方（不含自己）
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpPCTFriendTarget"></a>
+    <strong>AbilityUnit:findMinHpPCTFriendTarget ()</strong>
+    </dt>
+    <dd>
+    生命值百分比最少的友方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpPCTTarget"></a>
+    <strong>AbilityUnit:findMinHpPCTTarget ()</strong>
+    </dt>
+    <dd>
+    返回所有友方（根据生命值百分比排序）
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpPCTFriendTargetNoSelf"></a>
+    <strong>AbilityUnit:findMinHpPCTFriendTargetNoSelf ()</strong>
+    </dt>
+    <dd>
+    生命值百分比最少的友方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findMinHpPCTEnemyTarget"></a>
+    <strong>AbilityUnit:findMinHpPCTEnemyTarget ()</strong>
+    </dt>
+    <dd>
+    生命值百分比最少的敌方
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findSameRowFriendTarget"></a>
+    <strong>AbilityUnit:findSameRowFriendTarget ()</strong>
+    </dt>
+    <dd>
+    同一排的目标
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:findNearestEnemyInRange"></a>
+    <strong>AbilityUnit:findNearestEnemyInRange (range)</strong>
+    </dt>
+    <dd>
+    最近的敌方单位
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">range</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:filterHPPercent"></a>
+    <strong>AbilityUnit:filterHPPercent ()</strong>
+    </dt>
+    <dd>
+    创建当前生命百分比筛选器（用于maxUnit等需要优先级数值的场景）
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        fun(unit: Unit):number 返回单位属性值
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:printAllAttr"></a>
+    <strong>AbilityUnit:printAllAttr (...)</strong>
+    </dt>
+    <dd>
+    打印属性log
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         string Attr的字符串，需要打印几个写几个，如："final_mhp"
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorSkillDamage"></a>
+    <strong>AbilityUnit:factorSkillDamage (targetUnit, skillType, elemType, critDmgAdd, defPercent)</strong>
+    </dt>
+    <dd>
+    <p>计算物理伤害倍数 </p>
+
+<ul>
+<li>伤害倍数 = 防御系数 × 暴击系数 × 格挡系数 × 威力系数 × 伤害系数 × 元素系数</li>
+<li>实际伤害 = 基础伤害值 × 伤害倍数</li>
+<li>系数分解：
+
+<ol>
+<li>防御系数 (<a href="../classes/Unit.html#AbilityUnit:factorDefense">factorDefense</a>)：计算目标物理防御减伤</li>
+<li>暴击系数 (<a href="../classes/Unit.html#AbilityUnit:factorCrit">factorCrit</a>)：包含暴击率和暴击伤害计算</li>
+<li>格挡系数 (<a href="../classes/Unit.html#AbilityUnit:factorBlock">factorBlock</a>)：计算目标格挡概率及减伤</li>
+<li>威力系数 (<a href="../classes/Unit.html#AbilityUnit:factorPower">factorPower</a>)：基于技能类型的攻击强化</li>
+<li>伤害系数 (<a href="../classes/Unit.html#AbilityUnit:factorHurt">factorHurt</a>)：综合攻防双方的伤害增减益</li>
+<li>元素系数 (<a href="../classes/Unit.html#AbilityUnit:factorElem">factorElem</a>)：元素克制关系计算</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 Enum.SkillType
+        </li>
+        <li><span class="parameter">elemType</span>
+         integer 元素类型 Enum.ElemType
+        </li>
+        <li><span class="parameter">critDmgAdd</span>
+         number 暴击伤害加成（万分比，例如1000表示+10%暴击伤害）
+        </li>
+        <li><span class="parameter">defPercent</span>
+         number|nil 目标防御系数（万分比，nil表示100%，例如1000表示只代入10%目标防御）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        number damageFactor 伤害倍数</li>
+        <li>
+         boolean isCrit 是否触发暴击</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorSkillLoss"></a>
+    <strong>AbilityUnit:factorSkillLoss (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    <p>计算生命流失倍数（无视防御、暴击机制） </p>
+
+<ul>
+<li>流失倍数 = 威力系数</li>
+<li>实际流失值 = 基础值 × 流失倍数</li>
+<li>受技能类型的威力系数影响</li>
+<li>无视防御、暴击等常规战斗机制</li>
+<li>系数分解：
+
+<ol>
+<li>威力系数 (<a href="../classes/Unit.html#AbilityUnit:factorPower">factorPower</a>)：基于技能类型的攻击强化</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 Enum.SkillType
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 流失倍数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorSkillHeal"></a>
+    <strong>AbilityUnit:factorSkillHeal (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    <p>计算治疗倍数 </p>
+
+<ul>
+<li>治疗倍数 = 威力系数 × 治疗系数</li>
+<li>实际治疗量 = 基础值 × 治疗倍数</li>
+<li>系数分解：
+
+<ol>
+<li>威力系数 (<a href="../classes/Unit.html#AbilityUnit:factorPower">factorPower</a>)：基于技能类型的治疗强化</li>
+<li>治疗系数 (<a href="../classes/Unit.html#AbilityUnit:factorHeal">factorHeal</a>)：施法者治疗效能 × 目标受治疗增益</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被治疗单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 Enum.SkillType
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 治疗倍数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorSkillShield"></a>
+    <strong>AbilityUnit:factorSkillShield (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    <p>计算护盾生成倍数 </p>
+
+<ul>
+<li>护盾倍数 = 威力系数 × 护盾系数</li>
+<li>实际护盾值 = 基础值 × 护盾倍数</li>
+<li>系数分解：
+
+<ol>
+<li>威力系数 (<a href="../classes/Unit.html#AbilityUnit:factorPower">factorPower</a>)：基于技能类型的护盾强化</li>
+<li>护盾系数 (<a href="../classes/Unit.html#AbilityUnit:factorShield">factorShield</a>)：施法者护盾效能 × 目标护盾增益</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 Enum.SkillType
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 护盾倍数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorDefense"></a>
+    <strong>AbilityUnit:factorDefense (targetUnit, defPercent)</strong>
+    </dt>
+    <dd>
+    计算物理防御减伤系数
+ &ndash; 计算逻辑：
+   1. 根据目标护甲值、攻击方破甲属性计算真实护甲
+   1. 应用护甲收益曲线公式：1 / (1 + 真实护甲 / 护甲系数1)
+   1. 最终系数不低于目标单位的防御下限值
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击目标单位
+        </li>
+        <li><span class="parameter">defPercent</span>
+         number|nil 防御系数，万分比，nil表示100%
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 防御减伤系数（范围：0~1）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorCrit"></a>
+    <strong>AbilityUnit:factorCrit (targetUnit, critDmgAdd)</strong>
+    </dt>
+    <dd>
+    <p>计算暴击系数及暴击判定 </p>
+
+<ul>
+<li>计算逻辑：
+
+<ol>
+<li>暴击率 = 攻击方暴击率 &ndash; 目标暴击抵抗</li>
+<li>暴击伤害 = 基础暴伤 + 加成 &ndash; 目标暴伤减免（最低125%）</li>
+<li>万分比数值除以10000为倍数</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击目标单位
+        </li>
+        <li><span class="parameter">critDmgAdd</span>
+         integer 额外暴击伤害加成（万分比）
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        number 暴击伤害系数（1表示未暴击）</li>
+        <li>
+         boolean 是否触发暴击</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorBlock"></a>
+    <strong>AbilityUnit:factorBlock (targetUnit)</strong>
+    </dt>
+    <dd>
+    <p>计算格挡减伤系数 </p>
+
+<ul>
+<li>流程说明：
+
+<ol>
+<li>根据目标格挡率进行随机判定</li>
+<li>触发格挡时添加表现层事件</li>
+<li>格挡减伤公式：1 &ndash; 目标格挡减伤百分比</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 格挡减伤系数（1表示未格挡）
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorPower"></a>
+    <strong>AbilityUnit:factorPower (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    <p>计算技能威力系数 </p>
+
+<ul>
+<li>类型加成规则：
+
+<ol>
+<li>普攻：受 ca_percent（普攻加成）属性影响</li>
+<li>大招：受 sp_percent（大招加成）属性影响</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 目标单位（未使用）
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 @see Enum.SkillType
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 技能威力倍数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorHeal"></a>
+    <strong>AbilityUnit:factorHeal (targetUnit)</strong>
+    </dt>
+    <dd>
+    <p>计算治疗效能系数 </p>
+
+<ul>
+<li>计算公式：（10000 + 治疗者强度） × （10000 + 受治疗者增益） / 100000000</li>
+<li>属性说明：
+
+<ol>
+<li>heal_effect：治疗者的治疗强度</li>
+<li>heal_enhance_percent：受治疗者的治疗增益</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 被治疗单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 治疗效能系数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorShield"></a>
+    <strong>AbilityUnit:factorShield (targetUnit)</strong>
+    </dt>
+    <dd>
+    <p>计算护盾效能系数 </p>
+
+<ul>
+<li>计算公式：（10000 + 护盾强度） × （10000 + 护盾增益） / 100000000</li>
+<li>属性说明：
+
+<ol>
+<li>shield_effect：施法者的护盾强度</li>
+<li>shield_enhance_percent：目标的护盾增益</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 护盾目标单位
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 护盾效能系数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorHurt"></a>
+    <strong>AbilityUnit:factorHurt (targetUnit, skillType)</strong>
+    </dt>
+    <dd>
+    <p>计算综合伤害系数（含PVP和技能类型修正） </p>
+
+<ul>
+<li>计算步骤：
+
+<ol>
+<li>基础伤害加成计算</li>
+<li>PVP环境特殊修正</li>
+<li>战力压制修正</li>
+<li>技能类型专属修正</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击目标单位
+        </li>
+        <li><span class="parameter">skillType</span>
+         integer 技能类型 @see Enum.SkillType
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 伤害系数
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:factorElem"></a>
+    <strong>AbilityUnit:factorElem (targetUnit, elemType)</strong>
+    </dt>
+    <dd>
+    <p>计算元素克制系数 </p>
+
+<ul>
+<li>计算规则：
+
+<ol>
+<li>元素强化值范围：-10000~+∞</li>
+<li>元素抗性值范围：-∞~10000</li>
+<li>最终系数 = （强化百分比 × 抗性百分比）</li>
+</ol>
+</li>
+</ul>
+
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">targetUnit</span>
+         Unit 受击目标单位
+        </li>
+        <li><span class="parameter">elemType</span>
+         integer 元素类型
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+         number 元素克制系数
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Enum.html#ElemType">Enum.ElemType</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getEnemyCount"></a>
+    <strong>AbilityUnit:getEnemyCount (elem)</strong>
+    </dt>
+    <dd>
+    获取敌人数量
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number 敌人数量
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:getFriendCount"></a>
+    <strong>AbilityUnit:getFriendCount (elem)</strong>
+    </dt>
+    <dd>
+    获取友军数量
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number 友军数量
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AbilityUnit:addOutput"></a>
+    <strong>AbilityUnit:addOutput (outputType, args)</strong>
+    </dt>
+    <dd>
+    输出信息到表现层
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">outputType</span>
+
+
+        </li>
+        <li><span class="parameter">args</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-09-26 15:17:20 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

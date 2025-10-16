@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>zh-cn</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>记住账号，下次登录免扫码。</string>
+		<key>tip_web_persist</key>
+		<string>您已启用记住账号，请留意账号安全，如需撤销PC端登录凭证，请登录游戏后进入“用户中心 - 登录管理”页面进行操作。</string>
+		<key>alertClose</key>
+		<string>以后不再弹出</string>
+		<key>alertOpen</key>
+		<string>前往开启</string>
+		<key>highlightAlertSubTitle</key>
+		<string>设置-隐私-照片</string>
+		<key>alertSubTitle</key>
+		<string>前往设置-隐私-照片中授权当前APP所有照片访问权限可以在游戏中在开启快捷识别近期的二维码图片功能</string>
+		<key>alertTitle</key>
+		<string>开启快捷识别</string>
+		<key>recentQRCodeImage</key>
+		<string>近期扫描的二维码图片</string>
+		<key>torchSelected</key>
+		<string>关闭手电筒</string>
+		<key>torchNormal</key>
+		<string>打开手电筒</string>
+		<key>album</key>
+		<string>相册</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>重启照相机失败</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>无效的数据</string>
+		<key>network_unknown_error</key>
+		<string>网络繁忙，请稍候重试</string>
+		<key>alert_title_prompt</key>
+		<string>提示</string>
+		<key>nav_title_scan</key>
+		<string>扫一扫</string>
+		<key>scanning</key>
+		<string>扫一扫</string>
+		<key>btn_confirm_login</key>
+		<string>确认登录</string>
+		<key>alert_btn_confirm</key>
+		<string>确定</string>
+		<key>btn_cancle</key>
+		<string>取消</string>
+		<key>alert_btn_cancle</key>
+		<string>取消</string>
+		<key>tipsForWindow</key>
+		<string>请将取景框对准二维码进行扫描</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>配置照相机失败</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>没有照相机权限</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>没有扫描到有效二维码，请扫描游戏的二维码</string>
+		<key>label_scan_hint</key>
+		<string>将二维码放进框内，即可自动扫描</string>
+		<key>label_will_login_game</key>
+		<string>即将登录%@</string>
+		<key>network_no_internet</key>
+		<string>访问出错，请尝试切换网络，或稍候再试！</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>二维码已过期</string>
+		<key>nav_title_login</key>
+		<string>登录确认</string>
+		<key>alert_btn_open_settings</key>
+		<string>打开相机设置</string>
+		<key>sdk_internal_error</key>
+		<string>SDK内部错误</string>
+	</dict>
+	<key>zh-hk</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>記住帳號，下次登錄免掃碼。</string>
+		<key>tip_web_persist</key>
+		<string>您已啟用記住帳號，請留意帳號安全，如需撤銷PC端登錄憑證，請登錄遊戲後進入“用戶中心 - 登入管理”頁面進行操作。</string>
+		<key>alertClose</key>
+		<string>以後不再彈出</string>
+		<key>alertOpen</key>
+		<string>前往開啟</string>
+		<key>highlightAlertSubTitle</key>
+		<string>設置-隱私-照片</string>
+		<key>alertSubTitle</key>
+		<string>前往設置-隱私-照片中授權當前APP所有照片存取權限可以在遊戲中在開啟快捷識別近期的二維碼圖片功能</string>
+		<key>alertTitle</key>
+		<string>開啟快捷識別</string>
+		<key>recentQRCodeImage</key>
+		<string>近期掃描的二維碼圖片</string>
+		<key>torchSelected</key>
+		<string>關閉手電筒</string>
+		<key>torchNormal</key>
+		<string>打開手電筒</string>
+		<key>album</key>
+		<string>相冊</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>重啟照相機失敗</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>無效的資料</string>
+		<key>network_unknown_error</key>
+		<string>網路繁忙，請稍候重試</string>
+		<key>alert_title_prompt</key>
+		<string>提示</string>
+		<key>nav_title_scan</key>
+		<string>掃描</string>
+		<key>scanning</key>
+		<string>掃描</string>
+		<key>btn_confirm_login</key>
+		<string>確認登入</string>
+		<key>alert_btn_confirm</key>
+		<string>確定</string>
+		<key>btn_cancle</key>
+		<string>取消</string>
+		<key>alert_btn_cancle</key>
+		<string>取消</string>
+		<key>tipsForWindow</key>
+		<string>請將取景框對準二維碼進行掃描</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>配置照相機失敗</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>沒有拍攝照片權限</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>沒有掃描到有效QR Code，請掃描遊戲的QR Code</string>
+		<key>label_scan_hint</key>
+		<string>將QR Code放進框內，即可自動掃描</string>
+		<key>label_will_login_game</key>
+		<string>即將登入%@</string>
+		<key>network_no_internet</key>
+		<string>訪問出錯，請嘗試切換網路，或稍候再試！</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>QR Code已過期</string>
+		<key>nav_title_login</key>
+		<string>登入確認</string>
+		<key>alert_btn_open_settings</key>
+		<string>打開相機設置</string>
+		<key>sdk_internal_error</key>
+		<string>SDK內部錯誤</string>
+	</dict>
+	<key>zh-tw</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>記住帳號，下次登錄免掃碼。</string>
+		<key>tip_web_persist</key>
+		<string>您已啟用記住帳號，請留意帳號安全，如需撤銷PC端登錄憑證，請登錄遊戲後進入“用戶中心 - 登入管理”頁面進行操作。</string>
+		<key>alertClose</key>
+		<string>以後不再彈出</string>
+		<key>alertOpen</key>
+		<string>前往開啟</string>
+		<key>highlightAlertSubTitle</key>
+		<string>設置-隱私-照片</string>
+		<key>alertSubTitle</key>
+		<string>前往設置-隱私-照片中授權當前APP所有照片存取權限可以在遊戲中在開啟快捷識別近期的二維碼圖片功能</string>
+		<key>alertTitle</key>
+		<string>開啟快捷識別</string>
+		<key>recentQRCodeImage</key>
+		<string>近期掃描的二維碼圖片</string>
+		<key>torchSelected</key>
+		<string>關閉手電筒</string>
+		<key>torchNormal</key>
+		<string>打開手電筒</string>
+		<key>album</key>
+		<string>相冊</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>重啟照相機失敗</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>無效的資料</string>
+		<key>network_unknown_error</key>
+		<string>網路繁忙，請稍候重試</string>
+		<key>alert_title_prompt</key>
+		<string>提示</string>
+		<key>nav_title_scan</key>
+		<string>掃描</string>
+		<key>scanning</key>
+		<string>掃描</string>
+		<key>btn_confirm_login</key>
+		<string>確認登入</string>
+		<key>alert_btn_confirm</key>
+		<string>確定</string>
+		<key>btn_cancle</key>
+		<string>取消</string>
+		<key>alert_btn_cancle</key>
+		<string>取消</string>
+		<key>tipsForWindow</key>
+		<string>請將取景框對準二維碼進行掃描</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>配置照相機失敗</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>沒有拍攝照片權限</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>沒有掃描到有效QR Code，請掃描遊戲的QR Code</string>
+		<key>label_scan_hint</key>
+		<string>將QR Code放進框內，即可自動掃描</string>
+		<key>label_will_login_game</key>
+		<string>即將登入%@</string>
+		<key>network_no_internet</key>
+		<string>訪問出錯，請嘗試切換網路，或稍候再試！</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>QR Code已過期</string>
+		<key>nav_title_login</key>
+		<string>登入確認</string>
+		<key>alert_btn_open_settings</key>
+		<string>打開相機設置</string>
+		<key>sdk_internal_error</key>
+		<string>SDK內部錯誤</string>
+	</dict>
+	<key>en-us</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Remember my login.</string>
+		<key>tip_web_persist</key>
+		<string>Account remembered. To change your PC login credentials, please log in and navigate to the "User Center - Login Settings" page.</string>
+		<key>alertClose</key>
+		<string>Don't ask again</string>
+		<key>alertOpen</key>
+		<string>Go to setting</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Settings -&gt; Privacy -&gt; Album</string>
+		<key>alertSubTitle</key>
+		<string>Allow access all photos in Settings -&gt; Privacy -&gt; Album to enable quick identify recent QRCode images</string>
+		<key>alertTitle</key>
+		<string>Enable Quick Recognition</string>
+		<key>recentQRCodeImage</key>
+		<string>Recent QRCode image</string>
+		<key>torchSelected</key>
+		<string>Torch OFF</string>
+		<key>torchNormal</key>
+		<string>Torch ON</string>
+		<key>album</key>
+		<string>Album</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Failed to restart the camera</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Invalid data</string>
+		<key>network_unknown_error</key>
+		<string>Service busy, please try again later</string>
+		<key>alert_title_prompt</key>
+		<string>Tips</string>
+		<key>nav_title_scan</key>
+		<string>Scan</string>
+		<key>scanning</key>
+		<string>Scan</string>
+		<key>btn_confirm_login</key>
+		<string>Log In</string>
+		<key>alert_btn_confirm</key>
+		<string>Confirm</string>
+		<key>btn_cancle</key>
+		<string>Cancel</string>
+		<key>alert_btn_cancle</key>
+		<string>Cancel</string>
+		<key>tipsForWindow</key>
+		<string>Please align QR code within frame to scan</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Failed to configure the camera</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>No camera permissions</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Invalid QR Code, please scan correct QR Code</string>
+		<key>label_scan_hint</key>
+		<string>Align QR Code within frame to scan</string>
+		<key>label_will_login_game</key>
+		<string>Confirm your login to %@</string>
+		<key>network_no_internet</key>
+		<string>Access error. Switch networks and try again!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Outdated QR Code</string>
+		<key>nav_title_login</key>
+		<string>Confirm Login</string>
+		<key>alert_btn_open_settings</key>
+		<string>Turn on settings for camera</string>
+		<key>sdk_internal_error</key>
+		<string>SDK internal error</string>
+	</dict>
+	<key>ja-jp</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>アカウントを保存し、次回以降のログインのスキャンをスキップ。</string>
+		<key>tip_web_persist</key>
+		<string>アカウント保存をオンにしました。アカウントの保存を削除したい場合、ゲーム内のユーザーセンターのログイン設定よりご変更ください。</string>
+		<key>alertClose</key>
+		<string>再度表示しない</string>
+		<key>alertOpen</key>
+		<string>向かう</string>
+		<key>highlightAlertSubTitle</key>
+		<string>設定-プライバシー-写真</string>
+		<key>alertSubTitle</key>
+		<string>設定-プライバシー-写真からアプリのアクセス権限を許可すると、ゲーム内で最近のQRコードをクイックスキャンする機能を有効化できます。</string>
+		<key>alertTitle</key>
+		<string>クイックスキャンを使用</string>
+		<key>recentQRCodeImage</key>
+		<string>最近スキャンしたQRコード</string>
+		<key>torchSelected</key>
+		<string>懐中電灯オフ</string>
+		<key>torchNormal</key>
+		<string>懐中電灯オン</string>
+		<key>album</key>
+		<string>アルバム</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>カメラ再起動失敗</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>無効なデータ</string>
+		<key>network_unknown_error</key>
+		<string>ネット混雑、後程再試行してください</string>
+		<key>alert_title_prompt</key>
+		<string>注意</string>
+		<key>nav_title_scan</key>
+		<string>スキャン</string>
+		<key>scanning</key>
+		<string>スキャン</string>
+		<key>btn_confirm_login</key>
+		<string>ログイン</string>
+		<key>alert_btn_confirm</key>
+		<string>はい</string>
+		<key>btn_cancle</key>
+		<string>いいえ</string>
+		<key>alert_btn_cancle</key>
+		<string>いいえ</string>
+		<key>tipsForWindow</key>
+		<string>QRコードを揃えてスキャンしてください。</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>カメラ配置失敗</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>カメラ権限なし</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>有効なQRコードではありません、ゲームのQRコードをスキャンしてください</string>
+		<key>label_scan_hint</key>
+		<string>枠をQRコードに合わせると自動でスキャンできます</string>
+		<key>label_will_login_game</key>
+		<string>まもなく%@にログイン</string>
+		<key>network_no_internet</key>
+		<string>アクセスエラー、ネットの切替えまたは再試行をしてください</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>QRコード期限切れ</string>
+		<key>nav_title_login</key>
+		<string>ログイン確認</string>
+		<key>alert_btn_open_settings</key>
+		<string>カメラ設定オン</string>
+		<key>sdk_internal_error</key>
+		<string>SDKエラー</string>
+	</dict>
+	<key>ko-kr</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>자동 로그인을 설정하면 다음번 로그인 시 QR 코드를 스캔할 필요가 없습니다.</string>
+		<key>tip_web_persist</key>
+		<string>자동 로그인이 활성화되었습니다. 계정 보안에 유의하시기 바랍니다. PC 로그인 설정을 해제하려면 게임 내 '계정 관리-로그인 설정'에서 설정하시기 바랍니다.</string>
+		<key>alertClose</key>
+		<string>다시 보지 않기</string>
+		<key>alertOpen</key>
+		<string>활성화하기</string>
+		<key>highlightAlertSubTitle</key>
+		<string>설정-개인정보 보호-앨범</string>
+		<key>alertSubTitle</key>
+		<string>설정-개인정보 보호-앨범'에서 현재 앱의 사진 접근 권한을 허용하면, 게임 내에서 최근에 스캔한 QR 코드에 대해 빠른 스캔 기능을 활성화할 수 있습니다.</string>
+		<key>alertTitle</key>
+		<string>빠른 스캔 활성화</string>
+		<key>recentQRCodeImage</key>
+		<string>최근에 스캔한 QR 코드</string>
+		<key>torchSelected</key>
+		<string>손전등 끄기</string>
+		<key>torchNormal</key>
+		<string>손전등 켜기</string>
+		<key>album</key>
+		<string>앨범</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>카메라 재가동 실패</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>무효 데이터</string>
+		<key>network_unknown_error</key>
+		<string>네트워크 오류입니다. 잠시후 다시 접속해 주세요.</string>
+		<key>alert_title_prompt</key>
+		<string>Tips</string>
+		<key>nav_title_scan</key>
+		<string>스캔하기</string>
+		<key>scanning</key>
+		<string>스캔하기</string>
+		<key>btn_confirm_login</key>
+		<string>로그인</string>
+		<key>alert_btn_confirm</key>
+		<string>확인</string>
+		<key>btn_cancle</key>
+		<string>취소</string>
+		<key>alert_btn_cancle</key>
+		<string>취소</string>
+		<key>tipsForWindow</key>
+		<string>스캔 할 프레임 내에 QR코드를 정렬하십시오.</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>카메라 인식 실패</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>카메라 사용 권한을 허용해주세요.</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>유효한 QR코드가 아닙니다. 올바른 게임 QR코드를 스캔해 주세요.</string>
+		<key>label_scan_hint</key>
+		<string>프레임 안에 QR코드를 스캔해 주세요.</string>
+		<key>label_will_login_game</key>
+		<string>곧 %@에 로그인합니다.</string>
+		<key>network_no_internet</key>
+		<string>접속 에러가 발생했습니다. 네트워크 변경 혹은 잠시후 다시 시도해 주세요.</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>QR코드가 시간초과 되었습니다.</string>
+		<key>nav_title_login</key>
+		<string>로그인 설정</string>
+		<key>alert_btn_open_settings</key>
+		<string>카메라 설정 열기</string>
+		<key>sdk_internal_error</key>
+		<string>SDK 내부 에러 발생</string>
+	</dict>
+	<key>pt-pt</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Lembre-se de mim.</string>
+		<key>tip_web_persist</key>
+		<string>Sua conta será lembrada. Para mudar as credenciais de login, logue-se e vá até Central do Usuário – Conf. Login.</string>
+		<key>alertClose</key>
+		<string>Não perguntar de novo</string>
+		<key>alertOpen</key>
+		<string>Ativar</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Configurações -&gt; Privacidade -&gt; Galeria</string>
+		<key>alertSubTitle</key>
+		<string>Vá a Configurações -&gt; Privacidade -&gt; Galeria e conceda acesso às fotos para ativar o Escanear Rápido de Códigos QR recentes.</string>
+		<key>alertTitle</key>
+		<string>Ativar Escanear Rápido</string>
+		<key>recentQRCodeImage</key>
+		<string>Códigos QR recentes</string>
+		<key>torchSelected</key>
+		<string>Lanterna Desligada</string>
+		<key>torchNormal</key>
+		<string>Lanterna Ligada</string>
+		<key>album</key>
+		<string>Galeria</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Falha ao reiniciar a câmera</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Dados inválidos</string>
+		<key>network_unknown_error</key>
+		<string>Rede ocupada, tente novamente mais tarde</string>
+		<key>alert_title_prompt</key>
+		<string>Dicas</string>
+		<key>nav_title_scan</key>
+		<string>Escanear</string>
+		<key>scanning</key>
+		<string>Escanear</string>
+		<key>btn_confirm_login</key>
+		<string>Login</string>
+		<key>alert_btn_confirm</key>
+		<string>Confirmar</string>
+		<key>btn_cancle</key>
+		<string>Cancelar</string>
+		<key>alert_btn_cancle</key>
+		<string>Cancelar</string>
+		<key>tipsForWindow</key>
+		<string>Por favor, alinhe o Código QR dentro do quadro para digitalizar</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Falha ao configurar a câmera</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Sem permissão à câmera</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Código QR inválido. Escaneie o Código QR correto</string>
+		<key>label_scan_hint</key>
+		<string>Alinhe o Código QR no quadro para escanear</string>
+		<key>label_will_login_game</key>
+		<string>Confirmar o seu login para %@</string>
+		<key>network_no_internet</key>
+		<string>Erro de acesso. Troque a rede e tente novamente!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Código QR expirado</string>
+		<key>nav_title_login</key>
+		<string>Confirmar login</string>
+		<key>alert_btn_open_settings</key>
+		<string>Ligar as configurações de câmera</string>
+		<key>sdk_internal_error</key>
+		<string>Erro interno de SDK</string>
+	</dict>
+	<key>de-de</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Logindaten speichern</string>
+		<key>tip_web_persist</key>
+		<string>Logindaten gespeichert. Wenn Sie Ihr Konto auf dem PC löschen möchten, loggen Sie sich bitte in das Spiel ein und gehen Sie auf die Seite „Benutzerzentrale – Kontoeinstellungen“.</string>
+		<key>alertClose</key>
+		<string>Künftig keine Popups</string>
+		<key>alertOpen</key>
+		<string>Aktivieren</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Einstellungen -&gt; Datenschutz -&gt; Album</string>
+		<key>alertSubTitle</key>
+		<string>Erlauben Sie den Zugriff auf alle Fotos unter Einstellungen -&gt; Datenschutz -&gt; Album, um das Schnellscan letzter QRCode-Bilder zu ermöglichen.</string>
+		<key>alertTitle</key>
+		<string>Schnellscan aktivieren</string>
+		<key>recentQRCodeImage</key>
+		<string>Letzte QR-Codes</string>
+		<key>torchSelected</key>
+		<string>Taschenlampe AUS</string>
+		<key>torchNormal</key>
+		<string>Taschenlampe EIN</string>
+		<key>album</key>
+		<string>Album</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Kamera konnte nicht neu gestartet werden</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Ungültige Daten</string>
+		<key>network_unknown_error</key>
+		<string>Probleme mit dem Dienst, bitte versuche es später erneut.</string>
+		<key>alert_title_prompt</key>
+		<string>Tipps</string>
+		<key>nav_title_scan</key>
+		<string>Scannen</string>
+		<key>scanning</key>
+		<string>Scannen</string>
+		<key>btn_confirm_login</key>
+		<string>Einloggen</string>
+		<key>alert_btn_confirm</key>
+		<string>Bestätigen</string>
+		<key>btn_cancle</key>
+		<string>Abbrechen</string>
+		<key>alert_btn_cancle</key>
+		<string>Abbrechen</string>
+		<key>tipsForWindow</key>
+		<string>Bitte scannen Sie den QR-Code in der Box und scannen Sie ihn.</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Kamera konnte nicht konfiguriert werden</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Keine Kameraerlaubnis</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>QR-Code ungültig, bitte richtigen QR-Code scannen</string>
+		<key>label_scan_hint</key>
+		<string>Sorge dafür, dass sich der QR-Code zum Scannen im Rahmen befindet</string>
+		<key>label_will_login_game</key>
+		<string>Bestätige deine Anmeldung bei %@</string>
+		<key>network_no_internet</key>
+		<string>Zugriffsfehler. Wechsle das Netzwerk und versuche es erneut!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Alter QR-Code</string>
+		<key>nav_title_login</key>
+		<string>Login bestätigen</string>
+		<key>alert_btn_open_settings</key>
+		<string>Einstellungen für Kamera einschalten</string>
+		<key>sdk_internal_error</key>
+		<string>Interner SDK-Fehler</string>
+	</dict>
+	<key>ru-ru</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Запомнить мой логин</string>
+		<key>tip_web_persist</key>
+		<string>Учетная запись сохранена. Чтобы изменить учетные данные для входа c ПК, пожалуйста, войдите в систему и перейдите на страницу "Пользовательский центр - Настройки входа"</string>
+		<key>alertClose</key>
+		<string>Не спрашивать больше</string>
+		<key>alertOpen</key>
+		<string>Включить</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Настройки -&gt; Конфиденциальность -&gt; Альбом</string>
+		<key>alertSubTitle</key>
+		<string>Разрешите доступ ко всем фотографиям в Настройки -&gt; Конфиденциальность -&gt; Альбом, чтобы включить быстрое сканирование недавних изображений QR-кодов.</string>
+		<key>alertTitle</key>
+		<string>Включить быстрое сканирование</string>
+		<key>recentQRCodeImage</key>
+		<string>Последние QR-коды</string>
+		<key>torchSelected</key>
+		<string>Фонарик ВЫКЛ</string>
+		<key>torchNormal</key>
+		<string>Фонарик ВКЛ</string>
+		<key>album</key>
+		<string>Альбом</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Не удалось перезапустить камеру</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Недопустимые данные</string>
+		<key>network_unknown_error</key>
+		<string>Служба перегружена. Повторите попытку позже.</string>
+		<key>alert_title_prompt</key>
+		<string>Советы</string>
+		<key>nav_title_scan</key>
+		<string>Сканировать</string>
+		<key>scanning</key>
+		<string>Сканировать</string>
+		<key>btn_confirm_login</key>
+		<string>Войти</string>
+		<key>alert_btn_confirm</key>
+		<string>Подтвердить</string>
+		<key>btn_cancle</key>
+		<string>Отмена</string>
+		<key>alert_btn_cancle</key>
+		<string>Отмена</string>
+		<key>tipsForWindow</key>
+		<string>Пожалуйста, совместите QR-код и отсканируйте код.</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Не удалось настроить камеру</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Не включены разрешения камеры</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Недопустимый QR-код. Отсканируйте правильный QR-код.</string>
+		<key>label_scan_hint</key>
+		<string>Поместите QR-код в рамку, чтобы его отсканировать</string>
+		<key>label_will_login_game</key>
+		<string>Подтвердите вход в %@</string>
+		<key>network_no_internet</key>
+		<string>Ошибка доступа. Подключитесь к другой сети и повторите попытку!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Устаревший QR-код</string>
+		<key>nav_title_login</key>
+		<string>Подтвердить вход</string>
+		<key>alert_btn_open_settings</key>
+		<string>Включите камеру в настройках</string>
+		<key>sdk_internal_error</key>
+		<string>Внутренняя ошибка SDK</string>
+	</dict>
+	<key>es-es</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Recordar mi cuenta.</string>
+		<key>tip_web_persist</key>
+		<string>Tu cuenta será recordada. Para cambiar las credenciales de inicio de sesión, inicia sesión y va al Centro del usuario - Conf. Inicio de sesión.</string>
+		<key>alertClose</key>
+		<string>No volver a preguntar</string>
+		<key>alertOpen</key>
+		<string>Para habilitar</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Configuración -&gt; Privacidad -&gt; Álbum</string>
+		<key>alertSubTitle</key>
+		<string>Otorga acceso a todas las fotos en Configuración -&gt; Privacidad -&gt; Álbum para habilitar el escaneo rápido de imágenes de códigos QR recientes.</string>
+		<key>alertTitle</key>
+		<string>Habilitar escaneo rápido</string>
+		<key>recentQRCodeImage</key>
+		<string>Códigos QR recientes</string>
+		<key>torchSelected</key>
+		<string>Linterna: NO</string>
+		<key>torchNormal</key>
+		<string>Linterna: SÍ</string>
+		<key>album</key>
+		<string>Álbum</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>No se pudo reiniciar la cámara</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Datos no válidos</string>
+		<key>network_unknown_error</key>
+		<string>El servicio está ocupado. Inténtalo de nuevo más tarde.</string>
+		<key>alert_title_prompt</key>
+		<string>Consejos</string>
+		<key>nav_title_scan</key>
+		<string>Escanear</string>
+		<key>scanning</key>
+		<string>Escanear</string>
+		<key>btn_confirm_login</key>
+		<string>Iniciar sesión</string>
+		<key>alert_btn_confirm</key>
+		<string>Confirmar</string>
+		<key>btn_cancle</key>
+		<string>Cancelar</string>
+		<key>alert_btn_cancle</key>
+		<string>Cancelar</string>
+		<key>tipsForWindow</key>
+		<string>Alinee el código QR y escanee.</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>No se pudo configurar la cámara</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>No hay permisos de cámara</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Código QR no válido. Escanea el código QR correcto.</string>
+		<key>label_scan_hint</key>
+		<string>Ajusta el código QR dentro del marco para escanearlo</string>
+		<key>label_will_login_game</key>
+		<string>Confirma tu inicio de sesión en %@</string>
+		<key>network_no_internet</key>
+		<string>Error de acceso. Cambia de red e inténtalo de nuevo.</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Código QR caducado</string>
+		<key>nav_title_login</key>
+		<string>Confirmar el inicio de sesión</string>
+		<key>alert_btn_open_settings</key>
+		<string>Activar los ajustes de la cámara</string>
+		<key>sdk_internal_error</key>
+		<string>Error interno de SDK</string>
+	</dict>
+	<key>th-th</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>จดจำบัญชี ล็อกอินครั้งต่อไปไม่ต้องสแกนโค้ด</string>
+		<key>tip_web_persist</key>
+		<string>คุณเปิดใช้การจดจำบัญชีแล้ว โปรดระวังความปลอดภัยของบัญชีด้วย หากต้องการยกเลิกการอนุมัติในการล็อกอินบน PC โปรดล็อกอินเข้าเกมแล้วไปที่ "ศูนย์ผู้ใช้ - จัดการการล็อกอิน" เพื่อดำเนินการ</string>
+		<key>alertClose</key>
+		<string>ไม่ต้องแจ้งเตือนอีก</string>
+		<key>alertOpen</key>
+		<string>ไปเปิดใช้</string>
+		<key>highlightAlertSubTitle</key>
+		<string>ตั้งค่า - ส่วนตัว - รูปภาพ</string>
+		<key>alertSubTitle</key>
+		<string>ไปที่ตั้งค่า - ส่วนตัว - รูปภาพ เพื่ออนุมัติสิทธิ์ในการเข้าถึงรูปภาพทั้งหมดของ APP นี้ในเกมเพื่อเปิดใช้ฟังก์ชั่นสแกนรหัส QR ล่าสุดแบบด่วน</string>
+		<key>alertTitle</key>
+		<string>เปิดการสแกนด่วน</string>
+		<key>recentQRCodeImage</key>
+		<string>รหัส QR ล่าสุด</string>
+		<key>torchSelected</key>
+		<string>ปิดไฟฉาย</string>
+		<key>torchNormal</key>
+		<string>เปิดไฟฉาย</string>
+		<key>album</key>
+		<string>อัลบั้ม</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>ไม่สามารถรีสตาร์ตกล้องได้</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>ข้อมูลไม่ถูกต้อง</string>
+		<key>network_unknown_error</key>
+		<string>บริการไม่ว่าง โปรดลองอีกครั้งในภายหลัง</string>
+		<key>alert_title_prompt</key>
+		<string>คำแนะนำ</string>
+		<key>nav_title_scan</key>
+		<string>สแกน</string>
+		<key>scanning</key>
+		<string>สแกน</string>
+		<key>btn_confirm_login</key>
+		<string>ล็อกอิน</string>
+		<key>alert_btn_confirm</key>
+		<string>ยืนยัน</string>
+		<key>btn_cancle</key>
+		<string>ยกเลิก</string>
+		<key>alert_btn_cancle</key>
+		<string>ยกเลิก</string>
+		<key>tipsForWindow</key>
+		<string>กรุณาสแกนรหัส QR</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>ไม่สามารถกำหนดค่ากล้องได้</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>ไม่มีสิทธิ์ของกล้อง</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>รหัส QR ไม่ถูกต้อง โปรดสแกนรหัส QR ที่ถูกต้อง</string>
+		<key>label_scan_hint</key>
+		<string>จัดรหัส QR ให้อยู่ในกรอบเพื่อสแกน</string>
+		<key>label_will_login_game</key>
+		<string>ยืนยันการเข้าสู่ระบบ %@ ของคุณ</string>
+		<key>network_no_internet</key>
+		<string>ข้อผิดพลาดการเข้าถึง สลับเครือข่ายและลองอีกครั้ง</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>รหัส QR ล้าสมัย</string>
+		<key>nav_title_login</key>
+		<string>ยืนยันการล็อกอิน</string>
+		<key>alert_btn_open_settings</key>
+		<string>เปิดการตั้งค่าสำหรับกล้อง</string>
+		<key>sdk_internal_error</key>
+		<string>ข้อผิดพลาดภายในของ SDK</string>
+	</dict>
+	<key>vi-vn</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Lưu tài khoản, lần sau đăng nhập không cần quét mã QR.</string>
+		<key>tip_web_persist</key>
+		<string>Bạn đã bật lưu tài khoản, vui lòng chú ý bảo mật tài khoản, nếu cần xóa thông tin đăng nhập PC, vui lòng đăng nhập vào game và truy cập trang "Trung Tâm Người Dùng - Quản Lý Đăng Nhập" để thao tác.</string>
+		<key>alertClose</key>
+		<string>Không bật lên nữa</string>
+		<key>alertOpen</key>
+		<string>Tới Mở</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Cài đặt-Quyền riêng tư-Ảnh</string>
+		<key>alertSubTitle</key>
+		<string>Vào Cài đặt-Quyền riêng tư-Ảnh để cấp quyền cho tất cả các quyền truy cập ảnh của APP hiện tại để kích hoạt chức năng nhận dạng nhanh hình ảnh mã QR gần đây trong game</string>
+		<key>alertTitle</key>
+		<string>Bật nhận dạng nhanh</string>
+		<key>recentQRCodeImage</key>
+		<string>Hình ảnh mã QR được quét gần đây</string>
+		<key>torchSelected</key>
+		<string>Tắt đèn pin</string>
+		<key>torchNormal</key>
+		<string>Bật đèn pin</string>
+		<key>album</key>
+		<string>Album</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Không thể dùng tính năng quét mã, do thiếu quyền hạn với Camera.</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>无效的数据</string>
+		<key>network_unknown_error</key>
+		<string>Mạng đang bận, vui lòng thử lại sau</string>
+		<key>alert_title_prompt</key>
+		<string>Nhắc nhở</string>
+		<key>nav_title_scan</key>
+		<string>Quét</string>
+		<key>scanning</key>
+		<string>Quét</string>
+		<key>btn_confirm_login</key>
+		<string>Đăng nhập</string>
+		<key>alert_btn_confirm</key>
+		<string>Xác định</string>
+		<key>btn_cancle</key>
+		<string>Hủy bỏ</string>
+		<key>alert_btn_cancle</key>
+		<string>Hủy bỏ</string>
+		<key>tipsForWindow</key>
+		<string>Vui lòng căn chỉnh mã QR trong khung để quét</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Không thể dùng tính năng quét mã, do thiếu quyền hạn với Camera.</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Không thể dùng tính năng quét mã, do thiếu quyền hạn với Camera.</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Không quét được mã QR hợp lệ, vui lòng quét mã QR của Game</string>
+		<key>label_scan_hint</key>
+		<string>Vui lòng căn chỉnh mã QR trong khung để quét</string>
+		<key>label_will_login_game</key>
+		<string>Sắp đăng nhập vào %@</string>
+		<key>network_no_internet</key>
+		<string>Lỗi truy cập, vui lòng thử chuyển đổi mạng hoặc thử lại sau!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Mã QR đã hết hạn</string>
+		<key>nav_title_login</key>
+		<string>Xác nhận Đăng nhập</string>
+		<key>alert_btn_open_settings</key>
+		<string>Đến cài đặt</string>
+		<key>sdk_internal_error</key>
+		<string>SDK内部错误</string>
+	</dict>
+	<key>tr-tr</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Oturum açma bilgilerimi hatırla.</string>
+		<key>tip_web_persist</key>
+		<string>Hesap hatırlandı. PC oturum açma bilgilerinizi değiştirmek için lütfen oturum açın ve "Kullanıcı Merkezi - Giriş Ayarları" sayfasına gidin.</string>
+		<key>alertClose</key>
+		<string>Bir daha sorma</string>
+		<key>alertOpen</key>
+		<string>Etkinleştir</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Ayarlar -&gt; Gizlilik -&gt; Albüm</string>
+		<key>alertSubTitle</key>
+		<string>Son QR Kodu görsellerini hızlı taramayı etkinleştirmek için Ayarlar -&gt; Gizlilik -&gt; Albüm içinde tüm fotoğraflara erişim izni verin.</string>
+		<key>alertTitle</key>
+		<string>Hızlı Taramayı Etkinleştir</string>
+		<key>recentQRCodeImage</key>
+		<string>Son QR Kodları</string>
+		<key>torchSelected</key>
+		<string>El Feneri KAPALI</string>
+		<key>torchNormal</key>
+		<string>El Feneri AÇIK</string>
+		<key>album</key>
+		<string>Albüm</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Kamera tekrar başlatılamadı</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Geçersiz veri</string>
+		<key>network_unknown_error</key>
+		<string>Hizmet meşgul, lütfen daha sonra tekrar dene</string>
+		<key>alert_title_prompt</key>
+		<string>Sor</string>
+		<key>nav_title_scan</key>
+		<string>Tara</string>
+		<key>scanning</key>
+		<string>Tara</string>
+		<key>btn_confirm_login</key>
+		<string>Oturum Aç</string>
+		<key>alert_btn_confirm</key>
+		<string>Onayla</string>
+		<key>btn_cancle</key>
+		<string>İptal Et</string>
+		<key>alert_btn_cancle</key>
+		<string>İptal Et</string>
+		<key>tipsForWindow</key>
+		<string>Taramak için QR Kodunu çerçeve içinde hizalayın</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Kamera yapılandırılamadı</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Kamera izni yok</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Geçersiz QR kodu, lütfen doğru QR kodunu tara</string>
+		<key>label_scan_hint</key>
+		<string>Taramak için QR Kodunu çerçeve içinde hizala</string>
+		<key>label_will_login_game</key>
+		<string>%@ platformuna girişini onayla</string>
+		<key>network_no_internet</key>
+		<string>Erişim hatası. Ağı değiştirip tekrar dene!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>QR Kodunun Süresi Dolmuş</string>
+		<key>nav_title_login</key>
+		<string>Oturum Açmayı Onayla</string>
+		<key>alert_btn_open_settings</key>
+		<string>Kamera ayarlarını aç</string>
+		<key>sdk_internal_error</key>
+		<string>SDK iç hatası</string>
+	</dict>
+	<key>in-id</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Ingat login saya.</string>
+		<key>tip_web_persist</key>
+		<string>Akun diingat. Untuk mengubah kredensial login PC Anda, silakan login dan menuju ke halaman "Pusat Pengguna - Pengaturan Login".</string>
+		<key>alertClose</key>
+		<string>Jangan tanyakan lagi</string>
+		<key>alertOpen</key>
+		<string>Segera aktifkan</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Pengaturan -&gt; Privasi -&gt; Album</string>
+		<key>alertSubTitle</key>
+		<string>Izinkan akses ke semua foto di Pengaturan -&gt; Privasi -&gt; Album untuk mengaktifkan pemindaian cepat gambar QRCode terbaru.</string>
+		<key>alertTitle</key>
+		<string>Aktifkan Pindai Cepat</string>
+		<key>recentQRCodeImage</key>
+		<string>Kode QR Terbaru</string>
+		<key>torchSelected</key>
+		<string>Senter MATI</string>
+		<key>torchNormal</key>
+		<string>Senter AKTIF</string>
+		<key>album</key>
+		<string>Album</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Gagal memulai ulang kamera</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Data tidak valid</string>
+		<key>network_unknown_error</key>
+		<string>Layanan sibuk, harap coba lagi nanti</string>
+		<key>alert_title_prompt</key>
+		<string>Tips</string>
+		<key>nav_title_scan</key>
+		<string>Pindai</string>
+		<key>scanning</key>
+		<string>Pindai</string>
+		<key>btn_confirm_login</key>
+		<string>Login</string>
+		<key>alert_btn_confirm</key>
+		<string>Konfirmasi</string>
+		<key>btn_cancle</key>
+		<string>Batalkan</string>
+		<key>alert_btn_cancle</key>
+		<string>Batalkan</string>
+		<key>tipsForWindow</key>
+		<string>Harap sejajarkan kode QR di dalam bingkai untuk memindai</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Gagal mengonfigurasikan kamera</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Tak ada izin kamera</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Kode QR tidak valid, harap pindai Kode QR yang benar</string>
+		<key>label_scan_hint</key>
+		<string>Paskan Kode QR di dalam bingkai untuk memindai</string>
+		<key>label_will_login_game</key>
+		<string>Konfirmasikan loginmu ke %@</string>
+		<key>network_no_internet</key>
+		<string>Kesalahan akses. Ganti jaringan, lalu coba lagi.</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Kode QR kedaluwarsa</string>
+		<key>nav_title_login</key>
+		<string>Konfirmasi Login</string>
+		<key>alert_btn_open_settings</key>
+		<string>Aktifkan pengaturan kamera</string>
+		<key>sdk_internal_error</key>
+		<string>Kesalahan internal SDK</string>
+	</dict>
+	<key>fr-fr</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>Enregistrer mon compte</string>
+		<key>tip_web_persist</key>
+		<string>Compte enregistré. Pour modifier les informations de connexion du PC, veuillez vous connecter et aller à la page « Centre d'utilisateur - Paramètres de connexion ».</string>
+		<key>alertClose</key>
+		<string>Ne plus demander</string>
+		<key>alertOpen</key>
+		<string>Activer</string>
+		<key>highlightAlertSubTitle</key>
+		<string>Paramètres -&gt; Confidentialité -&gt; Album</string>
+		<key>alertSubTitle</key>
+		<string>Autorisez l’accès à toutes les photos dans Paramètres -&gt; Confidentialité -&gt; Album pour permettre l’analyse rapide des images de codes QR récents.</string>
+		<key>alertTitle</key>
+		<string>Activer l’analyse rapide</string>
+		<key>recentQRCodeImage</key>
+		<string>Codes QR récents</string>
+		<key>torchSelected</key>
+		<string>Lampe torche éteinte</string>
+		<key>torchNormal</key>
+		<string>Lampe torche allumée</string>
+		<key>album</key>
+		<string>Album</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>Redémarrage de l'appareil photo échoué</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>Données invalides</string>
+		<key>network_unknown_error</key>
+		<string>Service occupé, veuillez réessayer plus tard</string>
+		<key>alert_title_prompt</key>
+		<string>Astuces</string>
+		<key>nav_title_scan</key>
+		<string>Scanner</string>
+		<key>scanning</key>
+		<string>Scanner</string>
+		<key>btn_confirm_login</key>
+		<string>Se connecter</string>
+		<key>alert_btn_confirm</key>
+		<string>Confirmer</string>
+		<key>btn_cancle</key>
+		<string>Annuler</string>
+		<key>alert_btn_cancle</key>
+		<string>Annuler</string>
+		<key>tipsForWindow</key>
+		<string>Veuillez aligner the code QR dans le cadre pour scanner</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>Configuration de l'appareil photo échoué</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>Pas de permission pour l'appareil photo</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>Code QR invalide, Veuillez scanner le code QR correct</string>
+		<key>label_scan_hint</key>
+		<string>Veuillez aligner the code QR dans le cadre pour scanner</string>
+		<key>label_will_login_game</key>
+		<string>Confirmer votre identifiant auprès de %@</string>
+		<key>network_no_internet</key>
+		<string>Erreur d\'accès. Veuillez changer de réseau et réessayer!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>Code QR expiré</string>
+		<key>nav_title_login</key>
+		<string>Confirmation de la connexion</string>
+		<key>alert_btn_open_settings</key>
+		<string>Activer les paramètres de l'appareil photo</string>
+		<key>sdk_internal_error</key>
+		<string>Erreur interne SDK</string>
+	</dict>
+	<key>ar-ae</key>
+	<dict>
+		<key>remember_your_account</key>
+		<string>تذكّر حسابي.</string>
+		<key>tip_web_persist</key>
+		<string>مكّنت تذكّر الحساب. لتغيير بيانات تسجيل الدخول على الكومبيوتر، يرجى تسجيل الدخول والانتقال إلى صفحة 'مركز المستخدم - إعدادات تسجيل الدخول'.</string>
+		<key>alertClose</key>
+		<string>以后不再弹出</string>
+		<key>alertOpen</key>
+		<string>前往开启</string>
+		<key>highlightAlertSubTitle</key>
+		<string>设置-隐私-照片</string>
+		<key>alertSubTitle</key>
+		<string>前往设置-隐私-照片中授权当前APP所有照片访问权限可以在游戏中在开启快捷识别近期的二维码图片功能</string>
+		<key>alertTitle</key>
+		<string>开启快捷识别</string>
+		<key>recentQRCodeImage</key>
+		<string>近期扫描的二维码图片</string>
+		<key>torchSelected</key>
+		<string>关闭手电筒</string>
+		<key>torchNormal</key>
+		<string>打开手电筒</string>
+		<key>album</key>
+		<string>相册</string>
+		<key>alert_msg_resume_cam_fail</key>
+		<string>فشلت إعادة تشغيل الكاميرا</string>
+		<key>alert_msg_server_invalid_data</key>
+		<string>بيانات غير صالحة</string>
+		<key>network_unknown_error</key>
+		<string>الخدمة مشغولة، الرجاء المحاولة مرة أخرى لاحقًا</string>
+		<key>alert_title_prompt</key>
+		<string>نصائح</string>
+		<key>nav_title_scan</key>
+		<string>مسح</string>
+		<key>scanning</key>
+		<string>扫一扫</string>
+		<key>btn_confirm_login</key>
+		<string>تسجيل الدخول</string>
+		<key>alert_btn_confirm</key>
+		<string>تأكيد</string>
+		<key>btn_cancle</key>
+		<string>إلغاء</string>
+		<key>alert_btn_cancle</key>
+		<string>إلغاء</string>
+		<key>tipsForWindow</key>
+		<string>请将取景框对准二维码进行扫描</string>
+		<key>alert_msg_config_cam_fail</key>
+		<string>فشلت تهيئة الكاميرا</string>
+		<key>alert_msg_no_cam_permission</key>
+		<string>لا توجد أذونات للكاميرا</string>
+		<key>alert_msg_unsupported_qrcode</key>
+		<string>رمز استجابة سريع غير صالح، الرجاء مسح رمز الاستجابة السريع الصحيح</string>
+		<key>label_scan_hint</key>
+		<string>يجب محاذاة رمز الاستجابة السريع داخل الإطار للمسح</string>
+		<key>label_will_login_game</key>
+		<string>تأكيد تسجيل دخولك إلى %@</string>
+		<key>network_no_internet</key>
+		<string>خطأ في الوصول. بدّل الشبكات وحاول مرة أخرى!</string>
+		<key>alert_msg_outdated_qrcode</key>
+		<string>رمز استجابة سريع قديم</string>
+		<key>nav_title_login</key>
+		<string>تأكيد تسجيل الدخول</string>
+		<key>alert_btn_open_settings</key>
+		<string>شغّل إعدادات الكاميرا</string>
+		<key>sdk_internal_error</key>
+		<string>خطأ داخلي في SDK</string>
+	</dict>
+</dict>
+</plist>

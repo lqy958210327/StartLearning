@@ -1,0 +1,11 @@
+local Const = {}
+
+Const.BTN_TYPE_MENU = 0
+Const.BTN_TYPE_BUTTON = 1
+Const.BTN_TYPE_COMBOX = 2
+Const.BTN_TYPE_CHECKBOX = 3
+Const.BTN_TYPE_TEST_COMBOX = 4
+Const.BTN_TYPE_INPUT = 5
+Const.BTN_TYPE_BUTTON_NAMED = 6
+
+return Const
